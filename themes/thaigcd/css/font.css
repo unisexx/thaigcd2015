@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+.B { font-weight:700;}
+.f10 { font-size:10px;}
+.f11 { font-size:11px;}
+.f12 { font-size:12px;}
+.f14 { font-size:14px;}
+.TxtGray { color:#696969;}
+.TxtGray2 { color:#969797;}
+.TxtGray3 { color:#4c4e4f;}
+.TxtGray4 { color:#333;}
+.TxtWhite { color:#FFF;}
+.TxtBlue { color:#3979a6;} 
+.TxtBlue2 { color:#095f7f;} 
+.TxtPurple { color:#6645b0;}
+.TxtRed { color:#C00;}
+
+.link_advs:link{color:#666;text-decoration:underline;} 
+.link_advs:visited{color:#666;text-decoration:underline;}
+.link_advs:hover{color:#666;text-decoration:none;} 
+ 
+.link_prev:link{color:#333;text-decoration:none;} 
+.link_prev:visited{color:#333;text-decoration:none;}
+.link_prev:hover{color:#06C;text-decoration:underline;} 
+
+.link_next:link{color:#666;text-decoration:underline;} 
+.link_next:visited{color:#666;text-decoration:underline;} 
+.link_next:hover{color:#666;text-decoration:none;} 
+
+.link_web:link{color:#06C;text-decoration:none;} 
+.link_web:visited{color:#09F;text-decoration:none;}
+.link_web:hover{color:#09F;text-decoration:none;}  
+
+.link_url:link{color:#F30;text-decoration:none;} 
+.link_url:visited{color:#F30;text-decoration:none;}
+.link_url:hover{color:#F60;text-decoration:none;} 
+
+
+ 
+ 
+  

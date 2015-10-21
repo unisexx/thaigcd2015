@@ -1,0 +1,161 @@
+* {
+	margin:0;
+	padding:0;
+	font-family:Tahoma, "MS Sans Serif"; /* แบบอักษรทั้งหมด */
+	font-size:100%;
+}
+body {
+	color:#000000;
+	margin:0 auto;
+	/*background:#ffffff url(img/bg.gif) top center repeat-y;*/
+	font-size:8pt; /* ขนาดอักษรทั้งหมด */
+}
+img { /* รูปไม่มีกรอบ */
+	border:none;
+	vertical-align:middle;
+}
+a { /* ลิงค์ทั่วไป */
+	text-decoration:none;
+	color:#000000;
+}
+h1 { /* logo ของ chat */
+	font-size:100%;
+	display:block;
+	text-align:center;
+	color:#999999;
+	padding:10px;
+}
+h2 { /* ส่วนแสดงสถานะการ login */
+	color:#666666;
+	font-weight:bold;
+	font-size:100%;
+	text-align:center;
+	padding:6px;
+}
+h3 { /* ส่วนแสดงตัวเลือกไอคอนและสี */
+	font-weight:normal;
+	font-size:100%;
+	text-align:center;
+	padding:4px;
+}
+em { /* ข้อความเน้นทั่วไป */
+	color:red;
+	font-style:normal;
+}
+.o { /* ตัว O ในชื่อเว็บ */
+	color:red;
+	font-size:150%;
+}
+.cite { /* ข้อความชื่อเว็บ */
+	color:black;
+	font-family:"Comic Sans MS";
+	font-size:120%;
+}
+.footer {
+	display:block;
+	text-align:center;
+	color:blue;
+}
+/* กรอบเงาด้านล่าง */
+.shadow {
+	/* background-image:url(img/shadow-bottom.png);  เงาด้านล่าง
+	background-position:bottom right;
+	background-repeat:no-repeat;*/
+
+	float:none;
+	margin:0 auto;
+	display:table;
+	width:450px; /* ความกว้างของฟอร์ม login */
+	padding-bottom:5px;
+}
+/* กรอบเงาด้านซ้าย */
+.shadowright {
+	/*background-image:url(img/shadow-right.png); เงาด้านขวา
+	background-position:top right;
+	background-repeat:no-repeat;*/
+
+	display:block;
+	padding-right:5px;
+}
+/* ฟอร์ม login */
+form#login {
+	padding:10px;
+	border:1px solid #AAAAAA; /* สีกรอบ */
+	background-color:#F0F0F0; /* สีพื้น */
+	display:block;
+}
+#login p {
+	padding:2px;
+}
+#login input { /* input */
+	padding:2px;
+	margin-left:2px;
+	margin-right:2px;
+	border:none;
+	border-bottom:3px solid #DDDDDD;
+	background-color:#FAFAFA;
+	color:#666666;
+}
+#login input#submit { /* ปุ่ม login */
+	border:1px solid #dddddd;
+}
+#login label { /* label ของ input ต่างๆ */
+	font-weight:bold;
+	color:#666666;
+	position:relative;
+	float:left;
+	width:140px;
+	text-align:right;
+}
+
+.menu { /* บรรทัดของ สี,icon,ภาษา */
+	text-align:center;
+	padding:2px;
+}
+.menu img { /* รูปไอคอนของ user */
+	cursor:pointer;
+	padding:1px;
+}
+.menu a { /* ระยะห่างของรูปไอคอนภาษา */
+	padding:2px;
+}
+/* รายการลิสต์ของปุ่มเลือกสี */
+.menu span {
+	padding:2px;
+	cursor:pointer;
+	white-space:nowrap;
+}
+ol.menu {
+	list-style-type:none;
+}
+.menu li {
+	display:inline;
+}
+/* จบ รายการลิสต์ของปุ่มเลือกสี */
+.menu .button { /* ปุ่มเลือกสี,ไอคอน ปกติ */
+	margin:1px;
+}
+.menu .hover { /* ปุ่มเลือกสี,ไอคอน เมื่อเมาส์อยู่บน */
+	background:#CCFFCC;
+	border:1px solid #339933;
+	margin:0;
+	cursor:pointer;
+}
+.menu .current { /* ปุ่มเลือกสี,ไอคอน เมื่อเลือก */
+	background:#CCFFCC;
+	border:1px solid #339933;
+	margin:0;
+}
+.menu span#colors { /* ปุ่มเลือกสี (กรอบ)*/
+	position:absolute;
+	width:18px;
+	height:17px;
+}
+.menu font#btncolor { /* ปุ่มเลือกสี */
+	cursor:pointer;
+	width:16px;
+	height:16px;
+	margin-left:-8px;
+	position:absolute;
+}
+/* จบ ฟอร์ม login */

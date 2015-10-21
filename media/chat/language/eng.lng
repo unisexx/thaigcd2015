@@ -1,0 +1,52 @@
+<?php
+	//web title
+	$title = 'Goragod.com';
+
+	//login page
+	$login_title = 'Login';
+	$login_logo='<img src="skin/img/chat.gif" alt="" />&nbsp;&nbsp;Welcome to ThaiGCD Chat Room';
+	$login_header = 'Please enter your <em>name</em>';
+	$login_header_error = '<em>User name or Password is incorrect</em>';
+	$login_label = 'name :';
+	$password_label = 'password :';
+	$password_c_label = '<em>member only</em>';
+	$login_submit_value = 'login';
+	$login_style = "select icon and color";
+	//$login_footer = 'Copy right  &copy; (7 กค. 2550) <a href="http://www.goragod.com" target="_blank" class="cite"><font style="color:red;font-size:120%">G</font>oragod.com</a> <font style="color:#999999;font-size:90%">not for sale or copy</font>';
+	$login_error0 = "Please enter your name";
+	$login_error1 = "name length are less than 10 char";
+	$login_error2 = "can&#39;t use specail charactor and space in your name";
+	$login_color_hint = "select user color";
+	$guest = "Guest";
+	$member = "Member";
+	//end login page
+
+	//chat page
+	$chat_title="Chat Room";
+	$alluser = "All user";
+	$alluser_title = "talk to all users.";
+	$welcome = '<img src="skin/img/login.gif" alt="" /> %1 join my room.';
+	$logout = '<img src="skin/img/logout.gif" alt="" /> %1 logout.';
+	$pm_hint = "private message.";
+	$pm_to = "pm to";
+	$pm_form = "pm form";
+	$con_text = "click for say to...";
+	$newroom_hint = "private room";
+	$talk = "send message to";
+	$block_hint = "view-unview message of this user";
+	$btnB_hint = "Bold [b]...[/b]";
+	$btnI_hint = "Italic [i]...[/i]";
+	$btnU_hint = "Underline [u]...[/u]";
+	$btnIMG_hint = "insert image from URL [img=http://www]";
+	$btnSMILE_hint = "smile icons";
+	$btnCOLOR_hint = "font and color";
+	$btnSOUND_hint = "open/close sound";
+	$btnLOGIN_hint = "goto login";
+	$btnMEMBER_hint = "user's page/changed icon";
+	$btnFONT_hint = "Font size";
+	$btnSEND = "Send.";
+	$selFONT = "font size";
+	$selFONT1 = "medium";
+	$selFONT2 = "large";
+	$selFONT3 = "largest";
+?>

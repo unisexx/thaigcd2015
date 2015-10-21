@@ -1,0 +1,62 @@
+<?php
+	
+class Weblinks extends Admin_Controller{
+	
+	function __construct(){
+		parent::__construct();
+	}
+	
+	function index()
+	{
+		$data['weblinks'] = new Weblink();
+		if(@$_POST['search'])$data['weblinks']->where("title like '%".$_POST['search']."%'");
+		if(@$_POST['category_id'])$data['weblinks']->where("category_id = ".$_POST['category_id']);
+		$data['weblinks']->order_by('id','desc')->get_page(limit());
+		$this->template->append_metadata(js_lightbox());
+		$this->template->build('admin/weblinks_index',$data);
+	}
+	
+	function form($id=FALSE)
+	{
+		$data['weblinks'] = new Weblink($id);
+		$this->template->append_metadata(js_datepicker());
+		$this->template->build('admin/weblinks_form',$data);
+	}
+	
+	function save($id=FALSE)
+	{
+		if($_POST)
+		{
+			$weblink = new Weblink($id);
+			if($_FILES['image']['name'])
+			{
+				if($weblink->id){
+					$weblink->delete_file($weblink->id,'uploads/weblinks/','image');
+				}
+				$_POST['image'] = $weblink->upload($_FILES['image'],'uploads/weblinks/',98,90);
+				//$weblink->thumb('uploads/weblinks/thumb',50,50);
+			}
+			$_POST['title'] = lang_encode($_POST['title']);
+			$_POST['description'] = lang_encode($_POST['description']);
+			$_POST['user_id'] = $this->session->userdata('id');
+			$weblink->from_array($_POST);
+			$weblink->save();
+			set_notify('success', lang('save_data_complete'));
+		}
+		redirect('weblinks/admin/weblinks');
+	}
+	
+	function delete($id=FALSE)
+	{
+		if($id)
+		{
+			$weblink = new Weblink($id);
+			$weblink->delete_file($weblink->id,'uploads/weblinks/','image');
+			$weblink->delete();
+			set_notify('success', lang('delete_data_complete'));
+		}
+		redirect('weblinks/admin/weblinks');
+	}
+}
+
+?>

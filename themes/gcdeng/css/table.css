@@ -1,0 +1,164 @@
+@charset "utf-8";
+/* CSS Document */
+
+#tb1
+{
+	background: #fff;
+	margin: 0;
+	margin-left:0;
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+}
+#tb1 th
+{
+	font-size: 14px;
+	font-weight: normal;
+	color:#069;
+	padding: 5px;
+	border-bottom: 1px solid #ccc;
+	border-top: 2px solid #ccc;
+}
+#tb1 td
+{
+	color:#595959;
+	padding: 5px;
+	height:25px;
+	border-top: 0px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+#tb1 .alt { background-color:#ECFAFF}
+
+.tbwebboard
+{
+	font-size: 12px;
+	background: #fff;
+	margin:0;
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+}
+.tbwebboard th
+{
+	font-size: 13px;
+	font-weight:700;
+	color:#069;
+	padding:5px;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+.tbwebboard td
+{
+	color:#595959;
+	padding:5px;
+	height:25px;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+.tbwebboard tbody tr:hover td
+{
+	
+	
+}
+
+.tbmedia
+{
+	font-size: 12px;
+	background: #fff;
+	margin:0;
+	margin-bottom:10px;
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+}
+.tbmedia th
+{
+	font-size: 14px;
+	font-weight:700;
+	color:#069;
+	padding:5px;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+.tbmedia td
+{
+	padding:5px;
+	height:25px;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+.tbmedia th h3 { font-size:14px; color:#069;}
+.tbmedia h3 { font-size:13px; color:#09F; font-weight:700;}
+
+
+.tbnotify
+{
+	font-size: 12px;
+	background: #fff;
+	margin:0;
+	margin:10px 0;
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+}
+.tbnotify th
+{
+	font-size: 14px;
+	font-weight:700;
+	color:#C60;
+	padding:5px;
+	border-bottom: 2px solid #E78F08;
+	border-top: 0px solid #ccc;
+	border-left: 0px solid #ccc;
+	border-right: 0px solid #ccc;
+}
+.tbnotify td
+{
+	padding:5px;
+	height:25px;
+	border-top: 0px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-left: 0px solid #ccc;
+	border-right: 0px solid #ccc;
+}
+
+
+#tbregmember
+{
+	font-size: 12px;
+	background: #fff;
+	margin:0;
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+}
+#tbregmember th
+{
+	font-size: 13px;
+	font-weight:700;
+	background:#F3F3F3;
+	color:#999;
+	padding:3px;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+#tbregmember td
+{
+	padding:5px;
+	border-top: 0px solid #ccc;
+	border-bottom: 0px solid #ccc;
+	border-left: 0px solid #ccc;
+	border-right: 0px solid #ccc;
+}

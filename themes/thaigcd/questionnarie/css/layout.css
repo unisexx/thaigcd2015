@@ -1,0 +1,90 @@
+body { margin: 0; background-color:#E1E1E1; font-size:13px; font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif; color: #333; margin:0px;}
+
+.bghead { background-image:url(../images/bghead.gif); background-repeat:repeat-x;}
+a:link {color: #575757; text-decoration:none;}
+a:visited {color: #575757; text-decoration:none;}
+a:hover {color: #575757; text-decoration:underline;}
+a:active {color: #575757; text-decoration:none;}
+a:hover img{ Filter: Alpha(opacity=80); -moz-opacity: 0.8;-khtml-opacity: 0.8;opacity: 0.8;}
+
+.left1 { margin:0; float:left; display:inline;}
+.right1 { margin:0; float:right; display:inline;}
+
+#btnADD { text-align:right; padding:10px 15px 0 0;}
+
+#DvLogin { width:98%; background:url(../images/head_questionnarie.gif) no-repeat left; background-color:#FFF; text-align:right; padding:15px 1%;  margin-bottom:10px}
+
+#DvNavi { margin:0 auto; width:900px; height:23px; padding:5px; background-color:#09F;}
+
+#DvSample { margin:5px auto; width:860px; height:20px; padding:5px; background-color:#FFF; border:1px dashed #069;}
+
+#DvForm { margin:0 auto; width:850px; padding:10px; background-color:#FFF; border:1px solid #999;}
+#DvForm .txtboxTopic { width:99%; height:24px; font-size:18px;}
+#DvForm .txtboxDetailTopic { width:99%; height:100px; font-size:14px;}
+#DvForm ul { list-style:none;}
+#DvForm li { margin:10px 0px;}
+#DvTextAns { padding-left:14%;}
+
+#DvText { margin-top:10px;}
+#DvText .show{display:block;}
+#DvText:hover .show{display:inline;}
+
+#DvParagraphText { margin-top:10px;}
+#DvParagraphText .show{display:block;}
+#DvParagraphText:hover .show{display:inline;}
+
+#DvMutipleChoice { margin-top:10px;}
+#DvMutipleChoice .show{display:block;}
+#DvMutipleChoice:hover .show{display:inline;}
+
+#DvCheckboxes { margin-top:10px;}
+#DvCheckboxes .show{display:block;}
+#DvCheckboxes:hover .show{display:inline;}
+
+#DvScale { margin-top:10px;}
+#DvScale .show{display:block;}
+#DvScale:hover .show{display:inline;}
+
+#DvGrid { margin-top:10px;}
+#DvGrid .show{display:block;}
+#DvGrid:hover .show{display:inline;}
+
+.txtboxDis { border:1px dashed #999;}
+
+.clear { clear:both;}
+
+.tb1
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	background: #fff;
+	margin: 0;
+	margin-left:0;
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+}
+.tb1 th
+{
+	font-size: 14px;
+	font-weight: normal;
+	color:#333;
+	padding: 10px 5px;
+	border-bottom: 0px solid #06C;
+}
+.tb1 td
+{
+	color:#595959;
+	padding: 5px;
+	height:25px;
+	border-top: 0px solid #cccccc;
+	border-bottom: 0px solid #cccccc;
+	border-left: 0px solid #cccccc;
+	border-right: 0px solid #cccccc;
+}
+.tb1 tbody:hover
+{	
+	background-color:#F0FDFF;
+}
+
+.tb1 tr td a img {margin-right:15px;}

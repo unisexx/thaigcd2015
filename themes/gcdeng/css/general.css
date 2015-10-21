@@ -1,0 +1,231 @@
+.watermark{   
+    background:url(http://www.google.com/cse/intl/en/images/google_site_search_watermark.gif) no-repeat 5px 2px;   
+}  
+
+/*--- Start Popup Executives --------------------*/
+
+/*--- Start Tooltip Gallery --------------------*/
+#simpleTooltip { padding: 7px; border: 1px solid #A6A7AB; background: #F2F3F5; opacity:0.8;filter:alpha(opacity=80) }
+
+/*--- Start Gallery --------------------*/
+.gallery {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.gallery li {
+	margin: 10px 16px;
+	padding: 0;
+	float: left;
+	position: relative;
+	width: 180px;
+	height: 180px;
+}
+
+.gallery a {
+	text-decoration: none;
+	color: #666;
+}
+.gallery a:hover {
+	color: #000;
+	text-decoration: underline;
+}
+.gallery img {
+	background: #fff;
+	border: solid 1px #ccc;
+	padding: 4px;
+}
+.gallery span {
+	width: 30px;
+	height: 60px;
+	display: block;
+	position: absolute;
+	top: -5px;
+	left: -2px;
+	background: url(../images/paper-clip.png) no-repeat;
+}
+
+
+/*--- Start slideshow Gallery --------------------*/
+#slider{}	
+#slider ul, #slider li{
+	margin:0;
+	padding:0;
+	list-style:none;
+	} 
+#slider li{ 
+	width:585px;
+	height:110px;
+	overflow:hidden; 
+	}	
+#prevBtn, #nextBtn{ 
+	display:block;
+	width:30px;
+	height:77px;
+	position:absolute;
+	left:-30px;
+	top:71px;
+	}	
+#nextBtn{ 
+	left:635px;
+	}	
+#prevBtn{ 
+	left:10px;
+	}	
+#prevBtn a, #nextBtn a{  
+	display:block;
+	width:30px;
+	height:77px;
+	background:url(../images/back.png) no-repeat 0 0;	
+	}	
+#nextBtn a{ 
+	background:url(../images/next.png) no-repeat 0 0;	
+	}	
+
+/*--- Start slideshow Header --------------------*/
+#slideshow {
+    position:relative;
+    height:260px;
+}
+
+#slideshow IMG {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:8;
+}
+
+#slideshow IMG.active {
+    z-index:10;
+}
+
+#slideshow IMG.last-active {
+    z-index:9;
+}
+
+/*--- Start scrollbar VDO & NewsBoss --------------------*/
+#pane1, #pane2, #pane3 {height: 175px;}
+			
+			#pane4 {height: 115px;}
+			
+			.bossBar .jScrollPaneTrack {
+				background:#fff;
+			}
+			.bossBar .jScrollPaneDrag {
+				background:#A9887A;
+			}
+			.bossBar .jScrollPaneDragTop {
+				height:2px;
+				background:#966
+			}
+			.bossBar .jScrollPaneDragBottom {
+				height: 2px;
+				background:#966
+			}
+		
+/*--- Start FAQ --------------------*/		
+.faqsection {
+	margin: 10px 0;
+}
+
+div.faq {
+	margin: 10px 0 0 10px;
+}
+
+div.faq .question {
+	color: #2763A5;
+	cursor:  pointer;
+	padding-left: 10px;
+	background: url(../images/arrow_r_black.gif) no-repeat left 5px;
+	font-size:14px;
+}
+
+div.faq .question.active {
+	background-image: url(../images/arrow_b_black.gif);
+}
+
+div.faq .answer  {
+	margin-left: 10px;	
+}
+
+div.faq ul,
+div.faq ol {
+	margin: 0 0 10px 20px;
+}
+
+.executive_contact{width:435px; height:430px;}
+table{font-size:14px;}
+.executive_contact table.form td{padding:5px;}
+.executive_contact table.form th{text-align:right; vertical-align:middle; padding:5px 5px 5px; font-weight:bold;}
+.executive_contact table.form th.top{vertical-align:top;}
+.executive_contact table.form input[type=text],table.form input[type=password]{width:290px; border:none; padding:5px;}
+.executive_contact table.form select{width:250px;}
+.executive_contact table.form textarea{width:250px; height:100px;}
+.executive_contact table.form input[type=text].full{width:500px;}
+.executive_contact table.form textarea.full{width:675px;}
+.executive_contact table.form .img{border:solid 1px #CCC;}
+.executive_contact table.form td .cirkuitSkin td.mceToolbar{padding:1px 0 2px 0;}
+.executive_contact table.form h2{padding:5px 10px;border-bottom:solid 2px #0080c0;font-size:16px; text-align:left;}
+
+.poll-bar{background:#DDD;}
+.poll-foreground{height:10px; background:#000;}
+.poll-percent{text-align:right;}
+.poll-text{text-align:center;}
+.poll-result{margin:5px 0 0 0;}
+
+.readall{text-align:right; padding:5px 0 0 0;}
+.readall a{text-decoration:underline;}
+
+
+table.form td{padding:5px;}
+table.form th{text-align:right; vertical-align:middle; padding:5px 5px 5px; font-weight:bold;}
+table.form th.top{vertical-align:top;}
+table.form input[type=text],table.form input[type=password]{width:290px;}
+table.form select{width:250px;}
+table.form textarea{width:250px; height:100px;}
+table.form input[type=text].full{width:500px;}
+table.form textarea.full{width:675px;}
+table.form .img{border:solid 1px #CCC;}
+table.form td .cirkuitSkin td.mceToolbar{padding:1px 0 2px 0;}
+table.form h2{padding:5px 10px;border-bottom:solid 2px #0080c0;font-size:16px; text-align:left;}
+
+/* custome event */
+.e-blue, .e-blue a {
+	border-style: solid; 
+	border-color: #36c; 
+	background-color: #36c; 
+	color: #fff;
+} 
+.e-blue a:hover {
+	background:#0080ff;
+}
+
+.e-red, .e-red a {
+	border-style: solid; 
+	border-color: #b42d05; 
+	background-color: #b42d05; 
+	color: #fff;
+} 
+.e-red a:hover {
+	background:#db3606;
+}
+
+.e-green, .e-green a {
+	border-style: solid; 
+	border-color: #008000;
+	background-color: #008000; 
+	color: #fff;
+} 
+.e-green a:hover {
+	background:#009f00;
+}
+
+.e-violet, .e-violet a {
+	border-style: solid; 
+	border-color: #6666ff;
+	background-color: #6666ff; 
+	color: #fff;
+} 
+.e-violet a:hover {
+	background:#8080ff;
+}

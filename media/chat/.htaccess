@@ -1,0 +1,4 @@
+php_value session.cache_expire 3000000
+
+Options +FollowSymlinks
+RewriteEngine off

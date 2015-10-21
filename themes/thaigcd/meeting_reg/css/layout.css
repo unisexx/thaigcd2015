@@ -1,0 +1,21 @@
+body { margin: 0; background-image:url(../images/bg.gif); background-repeat:repeat-x; background-color:#F3F3F3; font-size:13px; font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; color: #333; margin:0px;}
+
+.bghead { background-image:url(../images/bghead.gif); background-repeat:repeat-x;}
+a:link {color: #575757; text-decoration:none;}
+a:visited {color: #575757; text-decoration:none;}
+a:hover {color: #575757; text-decoration:underline;}
+a:active {color: #575757; text-decoration:none;}
+
+.left1 { margin:0; float:left; display:inline;}
+.right1 { margin:0; float:right; display:inline;}
+
+#btnADD { text-align:right; padding:10px 15px 0 0;}
+
+#header { height: 242px; }
+#login { background: url(../images/bg_login.gif) no-repeat top center; height: 77px; }
+#loged { background: url(../images/bg_loged.gif) no-repeat top center; height: 77px; }
+#container { background:url(../images/bg_page.gif) repeat-y; height: 100%;}
+
+.clear { clear:both; }
+
+

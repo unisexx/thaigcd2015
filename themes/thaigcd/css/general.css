@@ -1,0 +1,137 @@
+.watermark{   
+    background:url(http://www.google.com/cse/intl/en/images/google_site_search_watermark.gif) no-repeat 5px 2px;   
+}  
+
+/*--- Start Popup Executives --------------------*/
+#popupContact{
+display:none;
+position:fixed;
+_position:absolute; /* hack for internet explorer 6*/
+height:450px;
+width:455px;
+background:url(../images/bg_contactboss.png) no-repeat;
+z-index:2;
+font-size:13px;
+}
+
+#popupContactClose{
+font-size:14px;
+line-height:14px;
+right:-6px;
+top:-4px;
+position:absolute;
+color:#6fa5fd;
+font-weight:700;
+display:block;
+} 
+
+.buttonnotify{ width:111px; height:37px; border:none; background: transparent url(../images/btn_notice.gif) no-repeat center left; overflow: hidden; text-indent: -5000px; line-height: 0px; margin-top:20px;
+cursor: pointer; /* hand-shaped cursor */ 
+cursor: hand; /* for IE 5.x */ }
+
+
+/*--- Start slideshow Gallery --------------------*/
+#slider{}	
+#slider ul, #slider li{
+	margin:0;
+	padding:0;
+	list-style:none;
+	} 
+#slider li{ 
+	width:585px;
+	height:110px;
+	overflow:hidden; 
+	}	
+#prevBtn, #nextBtn{ 
+	display:block;
+	width:30px;
+	height:77px;
+	position:absolute;
+	left:-30px;
+	top:71px;
+	}	
+#nextBtn{ 
+	left:635px;
+	}	
+#prevBtn{ 
+	left:10px;
+	}	
+#prevBtn a, #nextBtn a{  
+	display:block;
+	width:30px;
+	height:77px;
+	background:url(../images/back.png) no-repeat 0 0;	
+	}	
+#nextBtn a{ 
+	background:url(../images/next.png) no-repeat 0 0;	
+	}	
+
+/*--- Start slideshow Header --------------------*/
+#slideshow {
+    position:relative;
+    height:260px;
+}
+
+#slideshow IMG {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:8;
+}
+
+#slideshow IMG.active {
+    z-index:10;
+}
+
+#slideshow IMG.last-active {
+    z-index:9;
+}
+
+/*--- Start scrollbar VDO & NewsBoss --------------------*/
+#pane1, #pane2, #pane3 {height: 175px;}
+			
+			#pane4 {height: 135px;}
+			
+			.bossBar .jScrollPaneTrack {
+				background:#fff;
+			}
+			.bossBar .jScrollPaneDrag {
+				background:#A9887A;
+			}
+			.bossBar .jScrollPaneDragTop {
+				height:2px;
+				background:#966
+			}
+			.bossBar .jScrollPaneDragBottom {
+				height: 2px;
+				background:#966
+			}
+		
+/*--- Start FAQ --------------------*/		
+.faqsection {
+	margin: 10px 0;
+}
+
+div.faq {
+	margin: 10px 0 0 10px;
+}
+
+div.faq .question {
+	color: #2763A5;
+	cursor:  pointer;
+	padding-left: 10px;
+	background: url(../images/arrow_r_black.gif) no-repeat left 5px;
+	font-size:14px;
+}
+
+div.faq .question.active {
+	background-image: url(../images/arrow_b_black.gif);
+}
+
+div.faq .answer  {
+	margin-left: 10px;	
+}
+
+div.faq ul,
+div.faq ol {
+	margin: 0 0 10px 20px;

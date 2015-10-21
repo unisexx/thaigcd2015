@@ -1,0 +1,51 @@
+<?php
+	//ไตเติลของเว็บ
+	$title = 'สำนักโรคติดต่อทั่วไป :: chat online';
+
+	//หน้า login
+	$login_title = 'เข้าระบบ';
+	$login_logo='<img src="skin/img/chat.gif" alt="" />&nbsp;&nbsp;ยินดีต้อนรับสู่ระบบห้องสนทนาออนไลน์';
+	$login_header = 'กรุณาใส่<em>ชื่อ</em>ที่คุณต้องการแสดงในห้องสนทนา';
+	$login_header_error = '<em>ชื่อ หรือ รหัสผ่าน ไม่ถูกต้อง</em>';
+	$login_label = 'ชื่อ :';
+	$password_label = 'รหัสผ่าน :';
+	$password_c_label = '<em>สำหรับสมาชิกเท่านั้น</em>';
+	$login_submit_value = 'เข้าระบบ';
+	$login_style = "เลือก ไอคอน และ สี ประจำตัวคุณ (ถ้ามีรูปสมาชิกไม่ต้องเลือกไอคอน)";
+	//$login_footer = 'สงวนลิขสิทธ์  &copy; (7 กค. 2550) <a href="http://www.goragod.com" target="_blank" class="cite"><font style="color:red;font-size:120%">G</font>oragod.com</a> <font style="color:#999999;font-size:90%">ห้ามจำหน่าย จ่าย แจก หรือ ทำซ้ำ</font>';
+	$login_error0 = "กรุณาใส่ชื่อของคุณ";
+	$login_error1 = "ชื่อของคุณไม่ควรเกิน 10 ตัวอักษร";
+	$login_error2 = "ห้ามมีเครื่องหมายต่างๆ และ ช่องว่างในชื่อ";
+	$login_color_hint = "เลือกสีของคุณ";
+	$guest = "บุคคลทั่วไป";
+	$member = "สมาชิก";
+	//จบ หน้า login
+
+	$chat_title = "สนทนา";
+	$alluser = "ทุกคน";
+	$alluser_title = "คลิกเพื่อคุยกับทุกคนในห้องนี้.";
+	$welcome = '<img src="skin/img/login.gif" alt="" /> คุณ %1 เข้าร่วมสนทนา.';
+	$logout = '<img src="skin/img/logout.gif" alt="" /> คุณ %1 ออกจากห้อง.';
+	$pm_hint = "คลิกเพื่อส่งข้อความลับๆไปหาคนนี้.";
+	$pm_to = "ส่งไปหา";
+	$pm_form = "ข้อความจาก";
+	$con_text = "คลิกเพื่อคุยกับคนนี้...(ไม่ลับนะจ๊ะ).";
+	$newroom_hint = "คลิกเพื่อสร้างห้องใหม่แล้วชวนเพื่อนไปคุยกัน.";
+	$talk = "คุยกับ";
+	$block_hint = "แสดง -ไม่แสดงข้้อความของคนนี้";
+	$btnSMILE_hint = "ไอคอนแสดงอารมณ์";
+	$btnB_hint = "ตัวหนา [b]...[/b]";
+	$btnI_hint = "ตัวเอียง [i]...[/i]";
+	$btnU_hint = "ขีดเส้นใต้ [u]...[/u]";
+	$btnIMG_hint = "แทรกรูปจากเว็บอื่น [img=http://www]";
+	$btnCOLOR_hint = "สีข้อความ";
+	$btnSOUND_hint = "ปิด/เปิดเสียง";
+	$btnLOGIN_hint = "กลับไปหน้าเข้าระบบ";
+	$btnMEMBER_hint = "แก้ไขข้อมูลของสมาชิก-เปลี่ยนรูป";
+	$btnFONT_hint = "ขนาดตัวอักษร";
+	$btnSEND = "ส่ง.";
+	$selFONT = "ขนาดตัวอักษร";
+	$selFONT1 = "ปานกลาง";
+	$selFONT2 = "ใหญ่";
+	$selFONT3 = "ใหญ่มาก";
+?>

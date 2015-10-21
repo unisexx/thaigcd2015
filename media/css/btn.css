@@ -1,0 +1,19 @@
+.btn, a:link.btn, a:visited.btn{
+    padding: 1px 8px;
+    text-decoration: none;
+    outline: none;
+    color: #252525;
+    font-size: 12px;
+	font-weight:normal;
+    background-image: url(images/btn_bg.gif);
+    background-repeat: repeat-x;
+    border: solid #acacac 1px;
+    cursor: pointer; 
+    cursor: hand; 
+}
+.btn:hover, a:hover.btn{
+    text-decoration: none;
+    outline: none;
+    color: #000;
+    border: solid black 1px;
+}
