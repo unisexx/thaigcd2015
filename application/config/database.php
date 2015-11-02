@@ -41,17 +41,15 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-//$db['default']['hostname'] = 'localhost';
-//$db['default']['username'] = 'root';
-//$db['default']['password'] = '1234';
-#$db['default']['hostname'] = 'localhost';
-#$db['default']['database'] = 'thaigcd';
-#$db['default']['username'] = 'thaigcd';
-#$db['default']['password'] = 'thaigcd@fd';
-$db['default']['hostname'] = 'mysql1.favouritehosting.com';
-$db['default']['database'] = 'c11thaigcd_th';
-$db['default']['username'] = 'c11thaigcd_th';
-$db['default']['password'] = 'th@igcd1*';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
+$db['default']['database'] = 'thaigcd2015';
+
+// $db['default']['hostname'] = 'mysql1.favouritehosting.com';
+// $db['default']['database'] = 'c11thaigcd_th';
+// $db['default']['username'] = 'c11thaigcd_th';
+// $db['default']['password'] = 'th@igcd1*';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

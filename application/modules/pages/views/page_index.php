@@ -1,3 +1,11 @@
+<div id="page">
+	<div id="breadcrumb"><a href="home">หน้าแรก</a> > <?php echo lang_decode($page->title) ?></div>
+    <div id="page-content">
+    <div class="title-page"><?php echo lang_decode($page->title) ?></div>
+
+
+
+
 <?if($this->uri->segment(3) == 58):?>
 	<?if($_POST['p'] == 'gcddrivercar'):?>
 		<div class="topic cufon"><span style="color:#8E4F3B;"><?php echo lang_decode($page->title) ?></span></div>
@@ -15,8 +23,6 @@
 	<?endif;?>
 
 <?else:?>
-<div class="topic cufon"><span style="color:#8E4F3B;"><?php echo lang_decode($page->title) ?> <span class="f10 TxtGray2"> <?php echo mysql_to_th($page->created) ?> - <?php echo $page->counter ?> ครั้ง</span></span></div>
-<div id="data">
 	<?php echo lang_decode($page->detail) ?>
 <?endif;?>
 
@@ -111,4 +117,8 @@
 	</div>
 	<?php endif; ?>
 	
-</div><!--data-->
+
+
+
+	</div>
+</div>

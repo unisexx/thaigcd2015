@@ -1,0 +1,140 @@
+		*{	margin:0;	padding:0;	list-style:none;	border:none;	}
+
+/*TAB-ONE*/		
+		div.domtab{padding:0;width:100%;margin-top:50px;}
+		ul.domtabs{width:100%;	}
+		ul.domtabs li{	float:left;	padding:0px 1px; margin-bottom:-1px;}
+		ul.domtabs a:link,
+		ul.domtabs a:visited{
+			width:151px; height:46px; background-image: url(../images/bg-tab-reg.png); background-repeat:no-repeat;
+			text-align:center;display:block;color:white;	font-family: 'dbEurotextXbd'; font-size:26px;	text-decoration:none;	}
+		ul.domtabs a:active{ 
+			width:151px; height:36px; background-image: url(../images/bg-tab-reg.png); background-repeat:no-repeat;
+			text-align:center;display:block;color:white;	font-family: 'dbEurotextXbd'; font-size:26px;	text-decoration:none;	}
+		ul.domtabs a:hover{ 
+			width:151px; height:36px; background-image: url(../images/bg-tab-reg.png); background-repeat:no-repeat; margin-top:-1px;
+			text-align:center;display:block;color:white;	font-family: 'dbEurotextXbd'; font-size:26px;	text-decoration:none;	}
+		html>body ul.domtabs a:link,
+		html>body ul.domtabs a:visited,
+		html>body ul.domtabs a:active,
+		html>body ul.domtabs a:hover{
+			height:auto;
+		}
+		ul.domtabs a:hover{width:151px; height:41px; background-image: url(../images/bg-tab-hot.png); background-repeat:no-repeat; color:#e95301; font-family: 'dbEurotextXbd'; font-size:26px;}
+		div.domtab div{
+			clear:both;	width:auto;background:white;	color:#333;padding:20px;}
+		ul.domtabs li.active a:link,
+		ul.domtabs li.active a:visited,
+		ul.domtabs li.active a:active,
+		ul.domtabs li.active a:hover{margin-top:-5px; width:151px; height:41px; background-image: url(../images/bg-tab-hot.png); background-repeat:no-repeat; color:#e95301; font-family: 'dbEurotextXbd'; font-size:26px;}
+		#domtabprintview{
+			float:right;
+			padding-right:1em;
+			text-align:right;
+		}
+		#domtabprintview a:link,
+		#domtabprintview a:visited,
+		#domtabprintview a:active,
+		#domtabprintview a:hover{
+			color:#fff;
+		}
+		p{
+			margin:0 0 .5em 0;
+			line-height:1.3em;
+		}
+	
+		pre{
+			font-size:1.2em;
+			padding:1em;
+		}
+		div.domtab div a:link,
+		div.domtab div a:visited,
+		div.domtab div a:active
+		{color:#333; display:block;	padding:1px 1px;	font-size:12px; 	text-decoration:none;	}
+		div.domtab div h2 a,
+		div.domtab div h2 a:hover,
+		div.domtab div h2 a:active
+		{
+			color:#cfc;
+			display:inline;
+			padding:0;
+			font-weight:normal;
+			font-size:1em;
+		}
+		
+/* other scheme! */
+#other{
+	font-size:.8em;
+	margin-left:.3em;
+	width:60em;
+	margin-bottom:3em;
+	float:left;
+}
+div#other.domtab div{
+	clear:both;
+	width:54em;
+	background:#669;
+	color:#fff;
+	padding:1em 3em;
+}
+		
+#other ul.domtabs a:hover{
+	background:#669;
+}
+div#other ul.domtabs li.active a:link,
+div#other ul.domtabs li.active a:visited,
+div#other ul.domtabs li.active a:active,
+div#other ul.domtabs li.active a:hover{
+	background:#669;
+	color:#fff;
+}
+#other div{
+	float:left;
+}
+ul.prevnext{
+	float:left;
+	width:100%;
+}
+ul.prevnext li{
+	float:left;
+	width:49%;
+}
+ul.prevnext li.next{
+	float:right;
+	text-align:right;
+}
+
+
+/*TAB-TWO*/
+
+		div.domtab2{padding:0;width:100%;margin-top:30px;}
+		ul.domtabs2{width:100%;	}
+		ul.domtabs2 li{	float:left;	padding:0px 1px; margin-bottom:-1px;}
+		ul.domtabs2 a:link,
+		ul.domtabs2 a:visited{
+			width:151px; height:46px; background-image: url(../images/bg-tab-reg.png); background-repeat:no-repeat;
+			text-align:center;display:block;color:white;	font-family: 'dbEurotextXbd'; font-size:26px;	text-decoration:none;	}
+		ul.domtabs2 a:active{ 
+			width:151px; height:36px; background-image: url(../images/bg-tab-reg.png); background-repeat:no-repeat;
+			text-align:center;display:block;color:white;	font-family: 'dbEurotextXbd'; font-size:26px;	text-decoration:none;	}
+		ul.domtabs2 a:hover{ 
+			width:151px; height:36px; background-image: url(../images/bg-tab-reg.png); background-repeat:no-repeat; margin-top:-1px;
+			text-align:center;display:block;color:white;	font-family: 'dbEurotextXbd'; font-size:26px;	text-decoration:none;	}
+		html>body ul.domtabs a:link,
+		html>body ul.domtabs a:visited,
+		html>body ul.domtabs a:active,
+		html>body ul.domtabs a:hover{
+			height:auto;
+		}
+		ul.domtabs2 a:hover{width:151px; height:41px; background-image: url(../images/bg-tab-hot.png); background-repeat:no-repeat; color:#e95301; font-family: 'dbEurotextXbd'; font-size:26px;}
+		div.domtab2 div{
+			clear:both;	width:auto;background:white;	color:#333;padding:20px;}
+		ul.domtabs2 li.active a:link,
+		ul.domtabs2 li.active a:visited,
+		ul.domtabs2 li.active a:active,
+		ul.domtabs2 li.active a:hover{margin-top:-5px; width:151px; height:41px; background-image: url(../images/bg-tab-hot.png); background-repeat:no-repeat; color:#e95301; font-family: 'dbEurotextXbd'; font-size:26px;}
+		#domtabprintview{
+			float:right;
+			padding-right:1em;
+			text-align:right;
+		}

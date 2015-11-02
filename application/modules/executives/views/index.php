@@ -1,8 +1,17 @@
+<div id="page">
+	<div id="breadcrumb"><a href="home">หน้าแรก</a> > ผู้บริหาร</div>
+    <div id="page-content">
+    <div class="title-page">ผู้บริหาร</div>
+
+
+
+
+
 <style>
 	.more a{float:right; font-size:10px;color:purple;font-weight;bold;}
 	h3{font-size:16px; color:brown;}
 </style>
-<div class="topic"><img class="topic_executives" src="<?php echo topic("topic_executives.png") ?>" ></div>
+
 <div id="data" class="dexclutive">
 	<!-- <?php foreach($users as $user): ?>
 	<div class="box-executive"> 
@@ -21,13 +30,13 @@
 	<?php endforeach; ?> -->
 	
 
-<div class="addthis_toolbox addthis_default_style ">
+<!-- <div class="addthis_toolbox addthis_default_style ">
 <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
 <a class="addthis_button_tweet"></a>
 <a class="addthis_button_pinterest_pinit"></a>
 <a class="addthis_counter addthis_pill_style"></a>
 </div>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-522ea3b9086ce9ee"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-522ea3b9086ce9ee"></script> -->
 
 <br clear="all">
 	<h1 style="color:green;font-size:20px;"><?php echo lang_decode($users->profile->first_name)?> <?php echo lang_decode($users->profile->last_name)?></h1><br clear="all">
@@ -90,3 +99,10 @@
 	</div>
 	<br clear="all">
 </div><!--data-->
+
+
+
+
+
+	</div>
+</div>

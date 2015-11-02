@@ -1,3 +1,9 @@
+<div id="page">
+	<div id="breadcrumb"><a href="home">หน้าแรก</a> > <?php echo lang_decode($page->title) ?></div>
+    <div id="page-content">
+    <div class="title-page"><?php echo lang_decode($page->title) ?></div>
+
+
 <script type="text/javascript">
 	$(function(){
 		$(".detail").hide();
@@ -34,4 +40,8 @@
 		<?php endforeach; ?>
 		</ul>
 	</div><!--data-->
+</div>
+
+
+	</div>
 </div>
