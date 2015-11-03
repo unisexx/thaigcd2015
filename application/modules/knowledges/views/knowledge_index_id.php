@@ -1,5 +1,5 @@
 <div id="page">
-	<div id="breadcrumb"><a href="home">หน้าแรก</a> > <?php echo lang_decode($page->title) ?></div>
+	<div id="breadcrumb"><a href="home">หน้าแรก</a> > คลังความรู้ ศูนย์รวมวิชาการ</div>
     <div id="page-content">
     <div class="title-page"><?php echo lang_decode($page->title) ?></div>
 

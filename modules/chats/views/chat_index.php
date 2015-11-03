@@ -1,1 +1,0 @@
-<iframe width="960" height="600" src="media/chat/index.php" marginwidth="0" marginheight="0" vspace="0" hspace="0" frameborder="0" align="middle" scrolling="no"></iframe> 
