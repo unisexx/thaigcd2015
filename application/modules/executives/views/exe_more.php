@@ -1,8 +1,3 @@
-<div id="page">
-	<div id="breadcrumb"><a href="home">หน้าแรก</a> > <a href="executives">ผู้บริหาร</a> > ข่าวสารผู้บริหาร</div>
-    <div id="page-content">
-    <div class="title-page">ข่าวสารผู้บริหาร</div>
-    
 
 	<ul>
   		<?php foreach($executives as $row):?>
@@ -10,7 +5,3 @@
 		<?php endforeach;?>
   	</ul>
 	
-
-
-	</div>
-</div>

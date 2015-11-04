@@ -27,7 +27,7 @@ class Groups extends Public_Controller
 	function view($id = FALSE)
 	{
 			$data['group'] = new Group($id);
-			$this->template->set_layout('group_layout');
+			// $this->template->set_layout('group_layout');
 			$this->template->build('group_view',$data);
 	}
 	

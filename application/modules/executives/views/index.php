@@ -1,12 +1,3 @@
-<div id="page">
-	<div id="breadcrumb"><a href="home">หน้าแรก</a> > ผู้บริหาร</div>
-    <div id="page-content">
-    <div class="title-page">ผู้บริหาร</div>
-
-
-
-
-
 <style>
 	.more a{float:right; font-size:10px;color:purple;font-weight;bold;}
 	h3{font-size:16px; color:brown;}
@@ -99,10 +90,3 @@
 	</div>
 	<br clear="all">
 </div><!--data-->
-
-
-
-
-
-	</div>
-</div>

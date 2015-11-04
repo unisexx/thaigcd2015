@@ -1,11 +1,3 @@
-<div id="page">
-	<div id="breadcrumb"><a href="home">หน้าแรก</a> > <?php echo lang_decode($page->title) ?></div>
-    <div id="page-content">
-    <div class="title-page"><?php echo lang_decode($page->title) ?></div>
-
-
-
-
 <?if($this->uri->segment(3) == 58):?>
 	<?if($_POST['p'] == 'gcddrivercar'):?>
 		<div class="topic cufon"><span style="color:#8E4F3B;"><?php echo lang_decode($page->title) ?></span></div>
@@ -116,9 +108,3 @@
 		</form>
 	</div>
 	<?php endif; ?>
-	
-
-
-
-	</div>
-</div>

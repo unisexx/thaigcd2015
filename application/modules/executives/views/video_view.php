@@ -1,11 +1,4 @@
-<div id="page">
-	<div id="breadcrumb"><a href="home">หน้าแรก</a> > <a href="executives">ผู้บริหาร</a> > คลิปวิดีโอ</div>
-    <div id="page-content">
-    <div class="title-page">คลิปวิดีโอ</div>
-    
-    
 
-	<h3><?php echo lang_decode($video->title) ?></h3>
 	<?php echo youtube($video->url,'635','390')?>
   	
   	<div class="clear"></div>
@@ -19,7 +12,3 @@
   		</ul>
 	</div>
 	
-
-
-	</div>
-</div>

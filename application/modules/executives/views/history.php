@@ -1,4 +1,3 @@
-<div class="topic"><img class="topic_executives" src="<?php echo topic("topic_executives.png") ?>" height="25" width="200"></div>
 <div id="data"> 
 	<div class="box-executive"> 
 		<img src="uploads/users/<?php echo $user->profile->avatar ?>" class="executivephoto" width="140">

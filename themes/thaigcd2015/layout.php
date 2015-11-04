@@ -22,7 +22,13 @@
 <div id="wrap1">
 	<? include "_header.php";?>
 	
-	<?php echo $template["body"] ?>
+	<div id="page">
+		<? include "_breadcrumb.php";?>
+		<?php echo $template["body"] ?>
+		</div> 
+		<!-- END <div id="page-content"> -->
+	</div> 
+	<!-- END <div id="page"> -->
 
 	<? include "_footer.php";?>
 </div>
