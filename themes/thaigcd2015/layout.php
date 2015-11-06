@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="themes/thaigcd2015/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="themes/thaigcd2015/css/topmenu.css">
 <script type="text/javascript" src="themes/thaigcd2015/js/domtab.js"></script>
-<script type="text/javascript" src="themes/thaigcd2015/js/domtab.js"></script>
 	<script type="text/javascript">
 		document.write('<style type="text/css">');    
 		document.write('div.domtab div{display:none;}<');

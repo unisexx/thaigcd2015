@@ -1,12 +1,4 @@
-<div id="page">
-	<div id="breadcrumb"><a href="home">หน้าแรก</a> > คลังความรู้ ศูนย์รวมวิชาการ</div>
-    <div id="page-content">
-    <div class="title-page"><?php echo lang_decode($page->title) ?></div>
-
-
-
 <div class="corner" id="boxknowledge">
-	<div class="topic"><img width="200" height="25" src="<?php echo topic("topic_knowledge.png") ?>"></div>
 	<div class="subtopic"> 
 		<form method="get">
 			<p class="search">
@@ -42,9 +34,4 @@
 			<?php endforeach; ?>
 			<?php echo $category->knowledge->pagination() ?>
 	</div><!--data-->
-</div>
-
-
-
-	</div>
 </div>

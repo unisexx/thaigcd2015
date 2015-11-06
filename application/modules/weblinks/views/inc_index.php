@@ -1,3 +1,89 @@
+<div id="weblink">
+    <div class="tabs">
+           <div class="titleweblink">เว็บไซต์ที่เกี่ยวข้อง :</div>
+           <div class="tab">
+               <input type="radio" id="tab-1" name="tab-group-1" checked>
+               <label for="tab-1">หน่วยงานราชการ</label>
+               
+               <div class="content">
+                   <ul>
+                   		<li><img src="themes/thaigcd2015/images/logo-weblink01.jpg" width="98" height="90" /></li>
+                        <li><img src="themes/thaigcd2015/images/logo-weblink02.jpg" width="98" height="90" /></li>
+                        <li><img src="themes/thaigcd2015/images/logo-weblink03.jpg" width="98" height="90" /></li>
+                        <li><img src="themes/thaigcd2015/images/logo-weblink04.jpg" width="98" height="90" /></li>
+                        <li><img src="themes/thaigcd2015/images/logo-weblink05.jpg" width="98" height="90" /></li>
+                        <li><img src="themes/thaigcd2015/images/logo-weblink06.jpg" width="98" height="90" /></li>
+                        <li><img src="themes/thaigcd2015/images/logo-weblink07.jpg" width="98" height="90" /></li>
+                        <li><img src="themes/thaigcd2015/images/logo-weblink08.jpg" width="98" height="90" /></li>
+                   </ul>
+               </div> 
+           </div>
+            
+           <div class="tab">
+               <input type="radio" id="tab-2" name="tab-group-1">
+               <label for="tab-2">สถาบันการแพทย์</label>
+               
+               <div class="content">
+                   <ul>
+                   		<li><img src="themes/thaigcd2015/images/logo-weblink09.jpg" width="98" height="90" /></li>
+                        <li><img src="themes/thaigcd2015/images/logo-weblink10.jpg" width="98" height="90" /></li>
+                        <li><img src="themes/thaigcd2015/images/logo-weblink11.jpg" width="98" height="90" /></li>
+                        <li><img src="themes/thaigcd2015/images/logo-weblink12.jpg" width="98" height="90" /></li>
+                        <li><img src="themes/thaigcd2015/images/logo-weblink13.jpg" width="98" height="90" /></li>
+                        <li><img src="themes/thaigcd2015/images/logo-weblink14.jpg" width="98" height="90" /></li>
+                        <li><img src="themes/thaigcd2015/images/logo-weblink15.jpg" width="98" height="90" /></li>
+                        <li><img src="themes/thaigcd2015/images/logo-weblink16.jpg" width="98" height="90" /></li>
+                   </ul>
+               </div> 
+           </div>
+            
+            <div class="tab">
+               <input type="radio" id="tab-3" name="tab-group-1">
+               <label for="tab-3">สุขภาพและอนามัย</label>
+             
+               <div class="content">
+                   <p>ขออภัย! กำลังปรับปรุง</p>
+               </div> 
+           </div>
+           
+           <div class="tab">
+               <input type="radio" id="tab-4" name="tab-group-1">
+               <label for="tab-4">ข่าวสารและสื่อทั่วไป</label>
+             
+               <div class="content">
+                   <p>ขออภัย! กำลังปรับปรุง</p>
+               </div> 
+           </div>
+           
+           <div class="tab">
+               <input type="radio" id="tab-5" name="tab-group-1">
+               <label for="tab-5">นิตยสารวารสาร</label>
+             
+               <div class="content">
+                   <p>ขออภัย! กำลังปรับปรุง</p>
+               </div> 
+           </div>
+           
+           <div class="tab">
+               <input type="radio" id="tab-6" name="tab-group-1">
+               <label for="tab-6">อื่นๆ</label>
+             
+               <div class="content">
+                   <p>ขออภัย! กำลังปรับปรุง</p>
+               </div> 
+           </div>
+            
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
 <style type="text/css">
 .clear{
 clear:both;

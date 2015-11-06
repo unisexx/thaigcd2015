@@ -67,7 +67,7 @@
 <div id="mail">
 	<ul>
     	<li><img src="themes/thaigcd2015/images/icon-email.png" width="20" height="20" />&nbsp;<a href="#">ตอบรับข่าวสาร</a><span style="padding-left:13px;padding-right:18px">|</span></li>
-        <li><img src="themes/thaigcd2015/images/icon-graph.png" width="21" height="22" />&nbsp;<a href="#">แบบสำรวจความคิดเห็น</a></li>
+        <li><img src="themes/thaigcd2015/images/icon-graph.png" width="21" height="22" />&nbsp;<a href="polls">แบบสำรวจความคิดเห็น</a></li>
     </ul>
 </div>
 <div class="clearfix">&nbsp;</div>

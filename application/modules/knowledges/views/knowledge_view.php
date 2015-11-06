@@ -1,13 +1,6 @@
-<div id="page">
-	<div id="breadcrumb"><a href="home">หน้าแรก</a> > คลังความรู้ ศูนย์รวมวิชาการ</div>
-    <div id="page-content">
-    <div class="title-page"><?php echo lang_decode($page->title) ?></div>
-
-
-
-<div class="topic"><img src="<?php echo topic("topic_knowledge.png") ?>" height="25" width="200"></div>
+<!-- <div class="topic"><img src="<?php echo topic("topic_knowledge.png") ?>" height="25" width="200"></div> -->
 <div id="data">
-	<h2><?php echo lang_decode($knowledge->title) ?><span class="f10 TxtGray2"> <?php echo mysql_to_th($knowledge->start_date) ?> - <?php echo $knowledge->counter ?> ครั้ง</span></h2>
+	<!-- <h2><?php echo lang_decode($knowledge->title) ?><span class="f10 TxtGray2"> <?php echo mysql_to_th($knowledge->start_date) ?> - <?php echo $knowledge->counter ?> ครั้ง</span></h2> -->
     <?php echo lang_decode($knowledge->detail) ?>
 		
 	<div class="download-box-list">
@@ -26,8 +19,3 @@
 	<div class="tag"><strong>TAG :</strong> <span><?php echo tag_decode($knowledge->tag) ?></span></div>
 	<?php endif; ?>
 </div><!--data-->
-
-
-
-	</div>
-</div>
