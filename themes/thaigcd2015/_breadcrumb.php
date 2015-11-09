@@ -73,6 +73,17 @@
 		$breadcrumb = " > แบบสำรวจความคิดเห็น";
 		$title_page = "แบบสำรวจความคิดเห็น";
 	}
+	
+	//------------------------------------------------ LAWS ------------------------------------------------
+	if($this->uri->segment(1) == 'laws' and $this->uri->segment(2) == ''){ 						
+		$breadcrumb = " > กฏหมายที่เกี่ยวข้อง";
+		$title_page = "กฏหมายที่เกี่ยวข้อง";
+	}
+	
+	if($this->uri->segment(1) == 'laws' and $this->uri->segment(2) == 'view'){ 						
+		$breadcrumb = " > <a href='laws'>กฏหมายที่เกี่ยวข้อง</a> > ".lang_decode($law->title);
+		$title_page = lang_decode($law->title);
+	}
 ?>
 
 <div id="breadcrumb"><a href="home">หน้าแรก</a> <?=$breadcrumb?></div>

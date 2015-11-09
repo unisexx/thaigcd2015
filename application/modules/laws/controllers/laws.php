@@ -11,7 +11,7 @@ class Laws extends Public_Controller
 	{
 		$categories = new Category();
 		$data['categories'] = $categories->where("module = 'laws' and parents <> 0")->order_by('id','asc')->get(); 
-		$this->template->set_layout('layout_blank');
+		// $this->template->set_layout('layout_blank');
 		$this->template->build('law_index',$data);
 	}
 	

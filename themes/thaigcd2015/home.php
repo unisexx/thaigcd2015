@@ -25,11 +25,11 @@
 	<? include "_header.php";?>
 	
 	<div id="login">
-	<form class="form-login">
-      <input type="text" name="login" placeholder="Username or email" style="margin-bottom:-5px;">
+	<form class="form-login" action="users/signin" method="post">
+      <input type="text" name="username" placeholder="Username or email" style="margin-bottom:-5px;">
       <input type="password" name="password" placeholder="Password" style="margin-bottom:8px;">
         <div style="width:87%; margin:0 auto;">
-        	<div class="btn-regis"><a href="#">&nbsp;</a></div>
+        	<div class="btn-regis"><a href="users/register">&nbsp;</a></div>
         	<div class="btn-login"><a href="#">&nbsp;</a></div>
         </div>
     </form>​​
@@ -46,6 +46,13 @@
 <?php echo modules::run('hilights/inc_home'); ?>
 
 <!------------------------------------------------------------END HighLight----------------------------------------------------------->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.index_label li a').each(function(){
+			$(this).attr('href', 'knowledges/17?label='+$(this).text());
+		});
+	});
+</script>
 <div class="clearfix">&nbsp;</div>
 <div id="km">
 	<div class="title-km">ความรู้เรื่องโรคติดต่อ</div>
@@ -56,7 +63,7 @@
             	<li>
                     <ul class="dropdown-index">
                         <li><a href="#">&nbsp;</a>
-                            <ul>
+                            <ul class="index_label">
                                 <li><a href="#">ก</a></li>
                                 <li><a href="#">ข</a></li>
                                 <li><a href="#">ฃ</a></li>
@@ -221,13 +228,13 @@
 	<div class="inline-icon">
 	  <a name="km" id="km"><span style="display:none;">คลังความรู้</span></a>
 		<ul>
-        	<li><a href="#" class="img-height"><span class="img-icon12">&nbsp;</span></a><br><a href="#"><span class="title-icon">ความรู้<br>เรื่องโรคติดต่อ</span></a></li>
-            <li><a href="#" class="img-height"><span class="img-icon13">&nbsp;</span></a><br><a href="#"><span class="title-icon">คู่มือ/แนวทาง/<br>มาตรฐาน/หลักเกณฑ์</span></a></li>
-            <li><a href="#" class="img-height"><span class="img-icon14">&nbsp;</span></a><br><a href="#"><span class="title-icon">ผลงานวิชาการ/ผลการวิจัย/<br>ผลการสำรวจ/ผลการประเมิน</span></a></li>
-            <li><a href="#" class="img-height"><span class="img-icon15">&nbsp;</span></a><br><a href="#"><span class="title-icon">เอกสาร/<br>รายงานการประชุม</span></a></li>
-            <li><a href="#" class="img-height"><span class="img-icon16">&nbsp;</span></a><br><a href="#"><span class="title-icon">สื่อประกอบ<br>การบรรยาย</span></a></li>
-            <li><a href="#" class="img-height"><span class="img-icon17">&nbsp;</span></a><br><a href="#"><span class="title-icon">นโยบาย/<br>แผนยุทธศาสตร์/<br>แผนปฏิบัติราชการ</span></a></li>
-            <li><a href="#" class="img-height"><span class="img-icon18">&nbsp;</span></a><br><a href="#"><span class="title-icon">กฏหมาย<br>ที่เกี่ยวข้อง</span></a></li>
+        	<li><a href="knowledges/17" class="img-height"><span class="img-icon12">&nbsp;</span></a><br><a href="#"><span class="title-icon">ความรู้<br>เรื่องโรคติดต่อ</span></a></li>
+            <li><a href="knowledges/16" class="img-height"><span class="img-icon13">&nbsp;</span></a><br><a href="#"><span class="title-icon">คู่มือ/แนวทาง/<br>มาตรฐาน/หลักเกณฑ์</span></a></li>
+            <li><a href="knowledges/15" class="img-height"><span class="img-icon14">&nbsp;</span></a><br><a href="#"><span class="title-icon">ผลงานวิชาการ/ผลการวิจัย/<br>ผลการสำรวจ/ผลการประเมิน</span></a></li>
+            <li><a href="knowledges/112" class="img-height"><span class="img-icon15">&nbsp;</span></a><br><a href="#"><span class="title-icon">เอกสาร/<br>รายงานการประชุม</span></a></li>
+            <li><a href="knowledges/111" class="img-height"><span class="img-icon16">&nbsp;</span></a><br><a href="#"><span class="title-icon">สื่อประกอบ<br>การบรรยาย</span></a></li>
+            <li><a href="knowledges/110" class="img-height"><span class="img-icon17">&nbsp;</span></a><br><a href="#"><span class="title-icon">นโยบาย/<br>แผนยุทธศาสตร์/<br>แผนปฏิบัติราชการ</span></a></li>
+            <li><a href="laws" class="img-height"><span class="img-icon18">&nbsp;</span></a><br><a href="#"><span class="title-icon">กฏหมาย<br>ที่เกี่ยวข้อง</span></a></li>
         </ul>
       </div>
       <!------------------------------------------------------------END CONTENT TAB PR----------------------------------------------------------->

@@ -1,16 +1,23 @@
 <div class="corner" id="boxknowledge">
 	<div class="subtopic"> 
-		<form method="get">
+		<!-- <form method="get">
 			<p class="search">
 			<strong>หัวข้อ: </strong>
 			<input type="text" id="textfield" name="search" value="<?php echo @$_GET['search'] ?>">
 			<input type="submit" class="btn_search2" value="ค้นหา">
 			</p>
+		</form> -->
+		<form class="form-inline" method="get">
+		  <div class="form-group">
+		    <label for="exampleInputName2">หัวข้อ: </label>
+		    <input type="text" class="form-control input-sm" id="exampleInputName2" name="search" value="<?php echo @$_GET['search'] ?>">
+		  </div>
+		  <button type="submit" class="btn btn-default">ค้นหา</button>
 		</form>
 	</div>
 	<div id="data">
 		
-		<div class="groupname"><?php echo lang_decode($category->name) ?></div>
+		<!-- <div class="groupname"><?php echo lang_decode($category->name) ?></div> -->
 		<?php if($category->id==17): ?>
 		<div class="knowledage_label">
 		<?php foreach ($category->knowledge->label() as $label): ?>

@@ -25,7 +25,7 @@
     		<div id='cssmenu'> 
                 <ul>
                    <li><a href='home' class="active">หน้าแรก</a></li>
-                   <li class='active has-sub'><a href='#'>เกี่ยวกับสำนัก</a>
+                   <li class='active has-sub'><a href='pages/aboutus'>เกี่ยวกับสำนัก</a>
                       <ul class="has-sub1">
                          <li><a href='pages/department_history'>ประวัติองค์กร</a></li>
                          <li><a href='pages/department_vision'>วิสัยทัศน์ / พันธกิจ</a></li>
