@@ -26,7 +26,7 @@ $(function(){
 });
 </script>
 <div id="data">
-<div class="topic"><img width="200" height="25" alt="แบบสำรวจความคิดเห็น" src="themes/gcdnew/images/topic_poll.png"></div>
+<!-- <div class="topic"><img width="200" height="25" alt="แบบสำรวจความคิดเห็น" src="themes/gcdnew/images/topic_poll.png"></div> -->
 <div id="poll">
 	<?php echo $polls->pagination() ?>
 	<?php foreach($polls as $poll): ?>

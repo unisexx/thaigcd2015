@@ -25,7 +25,7 @@
     		<div id='cssmenu'> 
                 <ul>
                    <li><a href='home' class="active">หน้าแรก</a></li>
-                   <li class='active has-sub'><a href='#'>เกี่ยวกับสำนัก</a>
+                   <li class='active has-sub'><a href='pages/aboutus'>เกี่ยวกับสำนัก</a>
                       <ul class="has-sub1">
                          <li><a href='pages/department_history'>ประวัติองค์กร</a></li>
                          <li><a href='pages/department_vision'>วิสัยทัศน์ / พันธกิจ</a></li>
@@ -67,7 +67,7 @@
 <div id="mail">
 	<ul>
     	<li><img src="themes/thaigcd2015/images/icon-email.png" width="20" height="20" />&nbsp;<a href="#">ตอบรับข่าวสาร</a><span style="padding-left:13px;padding-right:18px">|</span></li>
-        <li><img src="themes/thaigcd2015/images/icon-graph.png" width="21" height="22" />&nbsp;<a href="#">แบบสำรวจความคิดเห็น</a></li>
+        <li><img src="themes/thaigcd2015/images/icon-graph.png" width="21" height="22" />&nbsp;<a href="polls">แบบสำรวจความคิดเห็น</a></li>
     </ul>
 </div>
 <div class="clearfix">&nbsp;</div>

@@ -1,4 +1,3 @@
-<div class="topic"><img class="topic_group" src="<?php echo topic("topic_group.png") ?>" height="25" width="200"></div>
 <div id="data">
 	<?php foreach($groups as $group): ?>
 	<div class="box-group"> 

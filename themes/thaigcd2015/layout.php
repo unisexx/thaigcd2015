@@ -8,7 +8,8 @@
 <link rel="stylesheet" href="themes/thaigcd2015/css/bootstrap.min.css">
 <link rel="stylesheet" href="themes/thaigcd2015/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="themes/thaigcd2015/css/topmenu.css">
-<script type="text/javascript" src="themes/thaigcd2015/js/domtab.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="media/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="themes/thaigcd2015/js/domtab.js"></script>
 	<script type="text/javascript">
 		document.write('<style type="text/css">');    

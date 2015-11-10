@@ -1,24 +1,23 @@
-<div id="page">
-	<div id="breadcrumb"><a href="home">หน้าแรก</a> > คลังความรู้ ศูนย์รวมวิชาการ</div>
-    <div id="page-content">
-    <div class="title-page"><?php echo lang_decode($page->title) ?></div>
-
-
-
 <div class="corner" id="boxknowledge">
-	<div class="topic"><img width="200" height="25" src="<?php echo topic("topic_knowledge.png") ?>"></div>
 	<div class="subtopic"> 
-		<form method="get">
+		<!-- <form method="get">
 			<p class="search">
 			<strong>หัวข้อ: </strong>
 			<input type="text" id="textfield" name="search" value="<?php echo @$_GET['search'] ?>">
 			<input type="submit" class="btn_search2" value="ค้นหา">
 			</p>
+		</form> -->
+		<form class="form-inline" method="get">
+		  <div class="form-group">
+		    <label for="exampleInputName2">หัวข้อ: </label>
+		    <input type="text" class="form-control input-sm" id="exampleInputName2" name="search" value="<?php echo @$_GET['search'] ?>">
+		  </div>
+		  <button type="submit" class="btn btn-default">ค้นหา</button>
 		</form>
 	</div>
 	<div id="data">
 		
-		<div class="groupname"><?php echo lang_decode($category->name) ?></div>
+		<!-- <div class="groupname"><?php echo lang_decode($category->name) ?></div> -->
 		<?php if($category->id==17): ?>
 		<div class="knowledage_label">
 		<?php foreach ($category->knowledge->label() as $label): ?>
@@ -42,9 +41,4 @@
 			<?php endforeach; ?>
 			<?php echo $category->knowledge->pagination() ?>
 	</div><!--data-->
-</div>
-
-
-
-	</div>
 </div>
