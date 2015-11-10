@@ -1,7 +1,7 @@
 <?
 	//----------------------------- BREADCRUMB LV.1 -----------------------------
-	$breadcrumb_lv1 .= lang_decode($page->title);
-	$breadcrumb_lv1 .= ($this->uri->segment(1) == 'executives')?"ผู้บริหาร":"";
+	$breadcrumb_lv1 .= " > ".lang_decode($page->title);
+	$breadcrumb_lv1 .= ($this->uri->segment(1) == 'executives')?" > ผู้บริหาร":"";
 	
 	//----------------------------- BREADCRUMB LV.2 -----------------------------
 	$breadcrumb_lv2 .= ($this->uri->segment(1) == 'executives' and $this->uri->segment(2) == 'history')?"ประวัติผู้บริหาร":"";
@@ -25,13 +25,8 @@
 	$title_page .= ($this->uri->segment(1) == 'executives' and $this->uri->segment(2) == 'video_view')?lang_decode($video->title):"";
 ?>
 
-<?if($breadcrumb_lv3):?>
-	<div id="breadcrumb"><a href="home">หน้าแรก</a> > <a href="<?=$this->uri->segment(1)?>"><?=$breadcrumb_lv1?></a> > <a href="<?=$this->uri->segment(2)?>"><?=$breadcrumb_lv2?></a> > <?=$breadcrumb_lv3?></div>
-<?elseif($breadcrumb_lv2):?>
-	<div id="breadcrumb"><a href="home">หน้าแรก</a> > <a href="<?=$this->uri->segment(1)?>"><?=$breadcrumb_lv1?></a> > <?=$breadcrumb_lv2?></div>
-<?else:?>
-	<div id="breadcrumb"><a href="home">หน้าแรก</a> > <?=$breadcrumb_lv1?></div>
-<?endif;?>
+
+<div id="breadcrumb"><a href="home">หน้าแรก</a> <?=$breadcrumb_lv1?> <?=$breadcrumb_lv2?> <?=$breadcrumb_lv3?></div>
 
 
 <div id="page-content">
