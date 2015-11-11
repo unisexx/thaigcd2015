@@ -8,7 +8,7 @@ class Informations extends Public_Controller
 	
 	function index($id=FALSE)
 	{
-		$this->template->set_layout('layout_blank');
+		// $this->template->set_layout('layout_blank');
 		if($id)
 		{
 			$data['category'] = new Category($id);

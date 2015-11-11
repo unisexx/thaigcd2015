@@ -160,24 +160,24 @@
 	  <a name="pr" id="pr"><span style="display:none;">ข่าวประชาสัมพันธ์</span></a>
          <table width="95%" border="0" cellspacing="0" cellpadding="0" style="margin:0 auto;">
           <tr>
-            <td align="center" valign="bottom"><a href="#" class="img-height"><span class="img-icon1">&nbsp;</span></a></td>
-            <td align="center" valign="bottom"><a href="#" class="img-height"><span class="img-icon2">&nbsp;</span></a></td>
-            <td align="center" valign="bottom"><a href="#" class="img-height"><span class="img-icon3">&nbsp;</span></a></td>
-            <td align="center" valign="bottom"><a href="#" class="img-height"><span class="img-icon4">&nbsp;</span></a></td>
-            <td align="center" valign="bottom"><a href="#" class="img-height"><span class="img-icon5">&nbsp;</span></a></td>
-            <td align="center" valign="bottom"><a href="#" class="img-height"><span class="img-icon6">&nbsp;</span></a></td>
-            <td align="center" valign="bottom"><a href="#" class="img-height"><span class="img-icon7">&nbsp;</span></a></td>
-            <td align="center" valign="bottom"><a href="#" class="img-height"><span class="img-icon8">&nbsp;</span></a></td>
+            <td align="center" valign="bottom"><a href="informations/index/145" class="img-height"><span class="img-icon1">&nbsp;</span></a></td>
+            <td align="center" valign="bottom"><a href="informations/index/2" class="img-height"><span class="img-icon2">&nbsp;</span></a></td>
+            <td align="center" valign="bottom"><a href="informations/index/3" class="img-height"><span class="img-icon3">&nbsp;</span></a></td>
+            <td align="center" valign="bottom"><a href="informations/index/4" class="img-height"><span class="img-icon4">&nbsp;</span></a></td>
+            <td align="center" valign="bottom"><a href="informations/index/97" class="img-height"><span class="img-icon5">&nbsp;</span></a></td>
+            <td align="center" valign="bottom"><a href="informations/index/109" class="img-height"><span class="img-icon6">&nbsp;</span></a></td>
+            <td align="center" valign="bottom"><a href="informations/index/174" class="img-height"><span class="img-icon7">&nbsp;</span></a></td>
+            <td align="center" valign="bottom"><a href="informations/index/210" class="img-height"><span class="img-icon8">&nbsp;</span></a></td>
    		  </tr>
           <tr>
-            <td align="center" valign="top"><a href="#"><span class="title-icon">เรื่องเด่น<br>ประเด็นร้อน</span></a></td>
-            <td align="center" valign="top"><a href="#"><span class="title-icon">เรื่องทั่วไป</span></a></td>
-            <td align="center" valign="top"><a href="#"><span class="title-icon">วิชาการ</span></a></td>
-            <td align="center" valign="top"><a href="#"><span class="title-icon">ประชุม/อบรม</span></a></td>
-            <td align="center" valign="top"><a href="#"><span class="title-icon">ศูนย์เด็กเล็กฯ</span></a></td>
-            <td align="center" valign="top"><a href="#"><span class="title-icon">โครงการ/โครงงาน</span></a></td>
-            <td align="center" valign="top"><a href="#"><span class="title-icon">ข่่าวสารสำหรับประชาชน<br>เรื่องโรคติดต่อทั่วไป<br>และภัยสุขภาพ</span></a></td>
-            <td align="center" valign="top"><a href="#"><span class="title-icon">งานบุคลากร</span></a></td>
+            <td align="center" valign="top"><a href="informations/index/145"><span class="title-icon">เรื่องเด่น<br>ประเด็นร้อน</span></a></td>
+            <td align="center" valign="top"><a href="informations/index/2"><span class="title-icon">เรื่องทั่วไป</span></a></td>
+            <td align="center" valign="top"><a href="informations/index/3"><span class="title-icon">วิชาการ</span></a></td>
+            <td align="center" valign="top"><a href="informations/index/4"><span class="title-icon">ประชุม/อบรม</span></a></td>
+            <td align="center" valign="top"><a href="informations/index/97"><span class="title-icon">ศูนย์เด็กเล็กฯ</span></a></td>
+            <td align="center" valign="top"><a href="informations/index/109"><span class="title-icon">โครงการ/โครงงาน</span></a></td>
+            <td align="center" valign="top"><a href="informations/index/174"><span class="title-icon">ข่่าวสารสำหรับประชาชน<br>เรื่องโรคติดต่อทั่วไป<br>และภัยสุขภาพ</span></a></td>
+            <td align="center" valign="top"><a href="informations/index/210"><span class="title-icon">งานบุคลากร</span></a></td>
           </tr>
 	</table>
       </div>
@@ -247,7 +247,7 @@
     <div id="about_col1">
     <span style="font-weight:bold; color:#0541ca;">นายแพทย์รุ่งเรือง กิจผาติ</span><br>ผู้อำนวยการสำนักโรคติดต่อทั่วไป<br>
 		<ul>
-        	<li><a href="#">ทำเนียบผู้บริหาร</a></li>
+        	<li><a href="executives">ทำเนียบผู้บริหาร</a></li>
             <li><a href="#">ส่งสารถึงผู้อำนวยการ</a></li>
         </ul>    
 	  <div class="dr">
@@ -257,21 +257,16 @@
 	<div id="about_col2">
       <ul>
         <strong>เกี่ยวกับสำนัก</strong>
-            <li><a href="#">ประวัติองค์กร</a></li>
-            <li><a href="#">วิสัยทัศน์ / พันธกิจ</a></li>
-            <li><a href="#">โครงสร้างหน่วยงาน</a></li>
-            <li><a href="#">ที่ตั้งหน่วยงาน</a></li>
-            <li><a href="#">แผนปฏิบัติราชการ</a></li>
-            <li><a href="#">ผลการดำเนินงาน</a></li>
+            <li><a href="pages/department_history">ประวัติองค์กร</a></li>
+            <li><a href="pages/department_vision">วิสัยทัศน์ / พันธกิจ</a></li>
+            <li><a href="pages/department_structure">โครงสร้างหน่วยงาน</a></li>
+            <li><a href="pages/department_location">ที่ตั้งหน่วยงาน</a></li>
+            <li><a href="pages/department_plan">แผนปฏิบัติราชการ</a></li>
+            <!-- <li><a href="#">ผลการดำเนินงาน</a></li> -->
       </ul>
     </div>
     <div id="about_col3">
-    	<img src="themes/thaigcd2015/images/vdo.jpg" width="258" height="157" style="margin-left:30px;"><br>
-        <ul>
-            <li><a href="#">รายการบ่ายนี้มีคำตอบ</a></li>
-            <li><a href="#">ระบบได้มาตรฐานสกัดเมอร์ส ขอประชาชนมั่นใจ</a></li>
-            <div class="vdoall"><a href="#">ดููวีดีโอทั้งหมด</a></div>
-      </ul>
+    	<?php echo modules::run('executives/inc_home_video'); ?>
     </div>
 </div>
 <!------------------------------------------------------------END ABOUT-----------------------------------------------------------> 

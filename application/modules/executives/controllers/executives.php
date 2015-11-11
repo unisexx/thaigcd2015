@@ -156,5 +156,11 @@ class Executives extends Public_Controller
 		$data['videos']->order_by('id','desc')->get();
 		$this->template->build('video_view',$data);
 	}
+	
+	function inc_home_video(){
+		$data['video'] = new Executive_video();
+		$data['video']->order_by('id','desc')->get(1);
+		$this->load->view('inc_home_video',$data);
+	}
 }
 ?>
