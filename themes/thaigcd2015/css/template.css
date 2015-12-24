@@ -305,3 +305,7 @@ body div.pagination span.current,div.pagination a:hover{
     border:1px solid #266DBB;
     text-shadow:-1px -1px 1px #266DBB;
 }
+
+/* Dear custom css */
+span.date{font-size: 11px;color: #999;}
+ul.mediapublic li{padding:8px 5px; border-bottom:1px #ccc dashed;}

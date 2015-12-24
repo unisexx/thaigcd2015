@@ -190,12 +190,13 @@
        </div>
 	  <!------------------------------------------------------------END CONTENT TAB procurement-------------------------------------------------->
       
-      <div class="inline-icon">
-	  <a name="media" id="media"><span style="display:none;">ข่าวจัดซื้อ-จัดจ้าง</span></a>
-		<ul>
+      <div>
+	  <a name="media" id="media"><span style="display:none;">สื่อเผยแพร่ สำนัก</span></a>
+		<!-- <ul>
             <li><a href="#" class="img-height"><span >&nbsp;</span></a><br><a href="#"><span class="title-icon">ขออภัย! กำลังปรับปรุง</span></a></li>
-        </ul>
-       </div>
+        </ul> -->
+        <?php echo modules::run('mediapublics/inc_home'); ?>
+      </div>
 	  <!------------------------------------------------------------END CONTENT TAB media-------------------------------------------------->
       
       <div class="inline-icon">
@@ -251,7 +252,7 @@
             <li><a href="#">ส่งสารถึงผู้อำนวยการ</a></li>
         </ul>    
 	  <div class="dr">
-      <img src="themes/thaigcd2015/images/dr.png" width="135" height="136" /><br><a href="#" class="link-facebook">&nbsp;</a>&nbsp;<a href="#" class="link-twitter">&nbsp;</a></div>
+      <img src="themes/thaigcd2015/images/dr.png" width="135" height="136" /><br><a href="https://www.facebook.com/tmanwg" class="link-facebook">&nbsp;</a>&nbsp;<a href="https://twitter.com/gcdmoph" class="link-twitter">&nbsp;</a></div>
     </div>
 
 	<div id="about_col2">
@@ -286,7 +287,6 @@
 </div>
 <!------------------------------------------------------------END BANNER SYSTEM------------------------------------------------------>
 <div class="clearfix">&nbsp;</div>
-
 <?php echo modules::run('weblinks/inc_home'); ?>
 <!------------------------------------------------------------END WEBLINK------------------------------------------------------>
 
