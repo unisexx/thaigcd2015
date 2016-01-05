@@ -9,7 +9,7 @@
 		
 		function index($group_id=FALSE,$category_id=FALSE)
 		{
-			$this->template->set_layout('layout_blank');
+			// $this->template->set_layout('layout_blank');
 			$data['group_id'] = $group_id;
 			if($group_id)
 			{
