@@ -205,6 +205,7 @@
 		<ul>
             <li><a href="#" class="img-height"><span >&nbsp;</span></a><br><a href="#"><span class="title-icon">ขออภัย! กำลังปรับปรุง</span></a></li>
         </ul>
+        <?php echo modules::run('galleries/inc_home'); ?>
        </div>
 	  <!------------------------------------------------------------END CONTENT TAB event-------------------------------------------------->
 
