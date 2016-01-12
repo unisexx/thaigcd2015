@@ -13,9 +13,9 @@
 <script type="text/javascript" src="media/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="themes/thaigcd2015/js/domtab.js"></script>
 	<script type="text/javascript">
-		document.write('<style type="text/css">');    
+		document.write('<style type="text/css">');
 		document.write('div.domtab div{display:none;}<');
-		document.write('/s'+'tyle>');    
+		document.write('/s'+'tyle>');
     </script>
 <?php // echo $template['metadata'] ?>
 </head>
@@ -23,7 +23,7 @@
 <body>
 <div id="wrap1">
 	<? include "_header.php";?>
-	
+
 	<div id="login">
 	<form class="form-login" action="users/signin" method="post">
       <input type="text" name="username" placeholder="Username or email" style="margin-bottom:-5px;">
@@ -182,14 +182,15 @@
 	</table>
       </div>
       <!------------------------------------------------------------END CONTENT TAB PR----------------------------------------------------------->
-      <div class="inline-icon">
+      <div>
 	  <a name="procurement" id="procurement"><span style="display:none;">ข่าวจัดซื้อ-จัดจ้าง</span></a>
-		<ul>
+		<!-- <ul>
             <li><a href="#" class="img-height"><span >&nbsp;</span></a><br><a href="#"><span class="title-icon">ขออภัย! กำลังปรับปรุง</span></a></li>
-        </ul>
+        </ul> -->
+				<?php echo modules::run('notices/inc_home'); ?>
        </div>
 	  <!------------------------------------------------------------END CONTENT TAB procurement-------------------------------------------------->
-      
+
       <div>
 	  <a name="media" id="media"><span style="display:none;">สื่อเผยแพร่ สำนัก</span></a>
 		<!-- <ul>
@@ -198,17 +199,17 @@
         <?php echo modules::run('mediapublics/inc_home'); ?>
       </div>
 	  <!------------------------------------------------------------END CONTENT TAB media-------------------------------------------------->
-      
+
       <div class="inline-icon">
-	  <a name="event" id="event"><span style="display:none;">ข่าวจัดซื้อ-จัดจ้าง</span></a>
+	  <a name="event" id="event"><span style="display:none;">ภาพกิจกรรม</span></a>
 		<ul>
             <li><a href="#" class="img-height"><span >&nbsp;</span></a><br><a href="#"><span class="title-icon">ขออภัย! กำลังปรับปรุง</span></a></li>
         </ul>
        </div>
 	  <!------------------------------------------------------------END CONTENT TAB event-------------------------------------------------->
-      
+
       <div class="inline-icon">
-	  <a name="intranet" id="intranet"><span style="display:none;">ข่าวจัดซื้อ-จัดจ้าง</span></a>
+	  <a name="intranet" id="intranet"><span style="display:none;">Intranet</span></a>
 		<ul>
         	<li><a href="#" class="img-height"><span class="img-icon8">&nbsp;</span></a><br><a href="#"><span class="title-icon">งานบุคลากร</span></a></li>
             <li><a href="#" class="img-height"><span class="img-icon9">&nbsp;</span></a><br><a href="#"><span class="title-icon">งานการเงิน</span></a></li>
@@ -217,9 +218,9 @@
         </ul>
        </div>
 	  <!------------------------------------------------------------END CONTENT TAB intranet-------------------------------------------------->
-    
+
 </div>
-<!------------------------------------------------------------END TAB ONE-----------------------------------------------------------> 
+<!------------------------------------------------------------END TAB ONE----------------------------------------------------------->
 
 <div class="clearfix">&nbsp;</div>
 <div class="domtab2">
@@ -239,9 +240,9 @@
         </ul>
       </div>
       <!------------------------------------------------------------END CONTENT TAB PR----------------------------------------------------------->
-    
+
 </div>
-<!------------------------------------------------------------END TAB TWO-----------------------------------------------------------> 
+<!------------------------------------------------------------END TAB TWO----------------------------------------------------------->
 <div class="clearfix">&nbsp;</div>
 <div id="about">
 	<div id="title_about">เกี่ยวกับ <span style="color:#333333;">สำนักโรคติดต่อทั่วไป</span></div>
@@ -250,7 +251,7 @@
 		<ul>
         	<li><a href="executives">ทำเนียบผู้บริหาร</a></li>
             <li><a href="#">ส่งสารถึงผู้อำนวยการ</a></li>
-        </ul>    
+        </ul>
 	  <div class="dr">
       <img src="themes/thaigcd2015/images/dr.png" width="135" height="136" /><br><a href="https://www.facebook.com/tmanwg" class="link-facebook">&nbsp;</a>&nbsp;<a href="https://twitter.com/gcdmoph" class="link-twitter">&nbsp;</a></div>
     </div>
@@ -270,7 +271,7 @@
     	<?php echo modules::run('executives/inc_home_video'); ?>
     </div>
 </div>
-<!------------------------------------------------------------END ABOUT-----------------------------------------------------------> 
+<!------------------------------------------------------------END ABOUT----------------------------------------------------------->
 <div id="bannerSystem">
     <ul>
         <li><a href="http://support.ddc.moph.go.th/dT_Report"><img src="themes/thaigcd2015/images/bannerSystem-01.png" width="178" height="65" /></a></li>
@@ -292,7 +293,7 @@
 
 	<? include "_footer.php";?>
 </div>
-<!------------------------------------------------------------END Wrap1-----------------------------------------------------------> 
+<!------------------------------------------------------------END Wrap1----------------------------------------------------------->
     <div class="clearfix">&nbsp;</div>
 
 

@@ -8,18 +8,18 @@ p { word-break: break-all; }
 
 @font-face {
   font-family: 'dbEurotextX';  src: url('../fonts/dbEurotextX.eot') format('eot');
-  src: url('../fonts/dbEurotextX.eot?#iefix') format('embedded-opentype'), 
-  url('../fonts/dbEurotextX.woff') format('woff'), 
-  url('../fonts/dbEurotextX.ttf') format('truetype'), 
+  src: url('../fonts/dbEurotextX.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/dbEurotextX.woff') format('woff'),
+  url('../fonts/dbEurotextX.ttf') format('truetype'),
   url('../fonts/dbEurotextX.svg#dbJariyathamX') format('svg');
 }
 .dbEurotextX {  font-family: 'dbEurotextX';  }
 
 @font-face {
   font-family: 'dbEurotextXbd';  src: url('../fonts/dbEurotextXbd.eot') format('eot');
-  src: url('../fonts/dbEurotextXbd.eot?#iefix') format('embedded-opentype'), 
-  url('../fonts/dbEurotextXbd.woff') format('woff'), 
-  url('../fonts/dbEurotextXbd.ttf') format('truetype'), 
+  src: url('../fonts/dbEurotextXbd.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/dbEurotextXbd.woff') format('woff'),
+  url('../fonts/dbEurotextXbd.ttf') format('truetype'),
   url('../fonts/dbEurotextXbd.svg#dbJariyathamXbd') format('svg');
 }
 
@@ -37,7 +37,7 @@ p { word-break: break-all; }
 	#search { float:right; margin-top:-73px; }
 	#searchbox textarea, #searchbox { width: 180px;  height: 29px;   background-image: url(../images/icon-search.png);   background-color: white;
     background-repeat: no-repeat;    background-position: 150px 3px; color: #333;   padding-left: 10px;    padding-top: 1px;  padding-right: 22px; font-size:12px;	 border: 1px solid #e8e8e8;   border-radius: 15px;     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);}
-	
+
 	.filter a{float:right; font-size:12px; color:#355ab6 !important; text-decoration:underline; padding-top:5px; padding-right:5px;}
 	.filter a:hover {color:#486fd0 !important;}
 
@@ -60,7 +60,7 @@ p { word-break: break-all; }
 	.btn-regis a:hover{width:104px; height:33px; background-image: url(../images/btn-regis-hot.png); background-repeat:no-repeat; text-decoration:none;}
 	.btn-login a{float:right; margin-right:3px; display:block;width:83px; height:33px; background-image: url(../images/btn-login-reg.png); background-repeat:no-repeat;}
 	.btn-login a:hover{width:83px; height:33px; background-image: url(../images/btn-login-hot.png); background-repeat:no-repeat; text-decoration:none;}
-	
+
 	.line1{height:1px;width: 85%; margin:0 auto; background-image: url(../images/line1.png); background-repeat:repeat-x;margin-top:-3px; }
 
 
@@ -176,14 +176,14 @@ p { word-break: break-all; }
 
 	.img-icon16{display:block; width:69px; height:60px; background-image: url(../images/km-icon-05-gray.png); background-repeat:no-repeat; margin:0 auto;}
 	.img-icon16:hover{width:69px; height:60px; background-image: url(../images/km-icon-05.png); background-repeat:no-repeat;}
-	
+
 	.img-icon17{display:block; width:44px; height:44px; background-image: url(../images/km-icon-06-gray.png); background-repeat:no-repeat; margin:0 auto;}
 	.img-icon17:hover{width:44px; height:44px; background-image: url(../images/km-icon-06.png); background-repeat:no-repeat;}
-	
+
 	.img-icon18{display:block; width:66px; height:54px; background-image: url(../images/km-icon-07-gray.png); background-repeat:no-repeat; margin:0 auto;}
 	.img-icon18:hover{width:66px; height:54px; background-image: url(../images/km-icon-07.png); background-repeat:no-repeat;}
 
-	/*ABOUT*/	
+	/*ABOUT*/
 	#about{margin-top:30px; background-color:#e2fbfb; height:300px; border-radius:4px; padding-left:15px; padding-bottom:15px; padding-right:15px;}
 	#title_about{font-family: 'dbEurotextXbd'; font-size:28px; color:#053695; width:842px; height:58px; background-image: url(../images/icon-lamp.png); background-repeat:no-repeat;
 	padding-left:40px; padding-top:20px; margin-bottom:10px;}
@@ -247,7 +247,7 @@ p { word-break: break-all; }
 
 		.visitor {text-align:center; margin-top:5px; font-size:13px; color:#013b5c;}
 		.visitorAll a { color:#1253b3; text-decoration:underline; }
-	
+
 
 
 
@@ -308,4 +308,4 @@ body div.pagination span.current,div.pagination a:hover{
 
 /* Dear custom css */
 span.date{font-size: 11px;color: #999;}
-ul.mediapublic li{padding:8px 5px; border-bottom:1px #ccc dashed;}
+ul.mediapublic li,ul.notice li{padding:8px 5px; border-bottom:1px #ccc dashed;}
