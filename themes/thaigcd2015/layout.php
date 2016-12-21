@@ -16,22 +16,29 @@
 		document.write('div.domtab div{display:none;}<');
 		document.write('/s'+'tyle>');    
     </script>
+    <script>
+    	$(document).ready(function(){
+    		$('#page img').addClass('img-responsive');
+    	});
+    </script>
 <?php echo $template['metadata'] ?>
+<? include "change_font.php";?>
+<? include "change_page.php";?>
+
 </head>
 
 <body>
 <div id="wrap1">
 	<? include "_header.php";?>
 	
-	<div id="page">
-		<? include "_breadcrumb.php";?>
-		<?php echo $template["body"] ?>
+		<div id="page">
+			<? include "_breadcrumb.php";?>
+			<?php echo $template["body"] ?>
 		</div> 
-		<!-- END <div id="page-content"> -->
-	</div> 
 	<!-- END <div id="page"> -->
 
-	<? include "_footer.php";?>
+	    <? //include "_footer.php";?>
+        <?=modules::run('log/statvisits'); ?>
 </div>
 <!------------------------------------------------------------END Wrap1-----------------------------------------------------------> 
     <div class="clearfix">&nbsp;</div>

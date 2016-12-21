@@ -22,10 +22,10 @@ class Knowledges extends Public_Controller
 				{
 					$data['category']->knowledge->where('label',$_GET['label']);
 				}
-				else
-				{
-					$data['category']->knowledge->where('main',1);
-				}
+				// else
+				// {
+					// $data['category']->knowledge->where('main',1);
+				// }
 			}
 			else
 			{

@@ -1,23 +1,32 @@
 <div id="name">&nbsp;</div>
     <div id="select-font-size">
+    
+
     	<div class="font-a">
             <ul>
-                <li><a href="#"><img src="themes/thaigcd2015/images/a-small.png" width="22" height="14" /></a></li>
-                <li><a href="#"><img src="themes/thaigcd2015/images/a-normal.png" width="27" height="14" /></a></li>
-                <li><a href="#"><img src="themes/thaigcd2015/images/a-large.png" width="27" height="14" /></a></li>
+                <li><a class="fontSizeMinus" href="#" ><img src="themes/thaigcd2015/images/a-small.png" width="22" height="14"  /></a></li>
+                <li><a class="fontReset" href="#" ><img src="themes/thaigcd2015/images/a-normal.png" width="27" height="14"  /></a></li>
+                <li><a class="fontSizePlus" href="#" ><img src="themes/thaigcd2015/images/a-large.png" width="27" height="14"  /></a></li>
             </ul>
         </div>
+		       
     	<div class="font-c">
             <ul>
-                <li><a href="#"><img src="themes/thaigcd2015/images/c-black-white.png" width="19" height="21" /></a></li>
-                <li><a href="#"><img src="themes/thaigcd2015/images/c-normal.png" width="21" height="21" /></a></li>
-                <li><a href="#"><img src="themes/thaigcd2015/images/c-black-yellow.png" width="19" height="21" /></a></li>
+                <li><a class="cbw" href="#" ><img src="themes/thaigcd2015/images/c-black-white.png" width="19" height="21" /></a></li>
+                <li><a class="cnormal" href="#" ><img src="themes/thaigcd2015/images/c-normal.png" width="21" height="21" /></a></li>
+                <li><a class="cby" href="#" ><img src="themes/thaigcd2015/images/c-black-yellow.png" width="19" height="21" /></a></li>
             </ul>
         </div>
     </div>
     <div class="clearfix">&nbsp;</div>
     <div id="search">
-    	<input name="searchbox" id="searchbox" maxlength="50" value="Search..." type="text">
+    
+    
+    	<!--<input name="searchbox" id="searchbox" maxlength="50" value="Search..." type="text">-->
+    	
+      <INPUT TYPE='text' name='searchbox' id='searchbox' maxlength='50' value='Search...' onClick="document.getElementById('searchbox').value=''" onkeydown="if (event.keyCode == 13 || event.which == 13) { location='http://www.google.com/search?q=' + encodeURIComponent(document.getElementById('searchbox').value)+'&sa=' + encodeURIComponent(document.getElementById('searchbox').value)+'&domains=thaigcd.ddc.moph.go.th&sitesearch=thaigcd.ddc.moph.go.th'; }">   	
+    	
+    	
         <br>
         <div class="filter"><a href="#">ค้นหาอย่างละเอียด</a></div>
     </div>
@@ -38,7 +47,13 @@
                    <li><a href='executives'>ผู้บริหาร</a></li>
                    <li class='active has-sub'><a href='#'>กลุ่มงาน</a>
                       <ul class="has-sub2">
-                          <li><a href="groups/view/1">กลุ่มบริหารทั่วไป</a></li>
+                          <?php      
+                          $groups = get_option('id','name','groups','order by id asc ','th');
+                          foreach ($groups as $key => $val){
+                          ?>
+                          <li><a href="groups/view/<?php echo $key;?>"><?php echo (string) $val?></a></li>
+                          <?php }?>
+                          <!--
 					      <li><a href="groups/view/2">กลุ่มโรคติดต่อทางอาหารและน้ำ</a></li>
 					      <li><a href="groups/view/3">กลุ่มโรคติดต่อที่ป้องกันได้ด้วยวัคซีน</a></li>
 					      <li><a href="groups/view/4">กลุ่มโรคติดต่อระหว่างสัตว์และคน</a></li>
@@ -55,19 +70,43 @@
 					      <li><a href="groups/view/11">กลุ่มปฏิบัติการเตรียมพร้อมตอบโต้ภาวะฉุกเฉินด้านการควบคุมโรคและภัยสุขภาพ</a></li>
 					      <li><a href="groups/view/17">กลุ่มศูนย์เด็กเล็กและโรคติดต่อในเด็ก</a></li>
 					      <li class="last"><a href="groups/view/15">โครงการตามพระราชดำริฯ ควบคุมโรคหนอนพยาธิ</a></li>
+					      -->
                       </ul>
                    </li>
                    <li><a href='knowledges/17'>ความรู้เรื่องโรคติดต่อ</a></li>
-                   <li><a href='#'>Download</a></li>
+                   <li><a href='downloads/inc_home'>ดาวน์โหลด</a></li>
                    <li class='last'><a href='pages/contactus'>ติดต่อสอบถาม</a></li>
                 </ul>
       		</div>
     </div> 
     <!------------------------------------------------------END TopMenu---------------------------------------------------> 
-<div id="mail">
+<div id="mail">  
 	<ul>
-    	<li><img src="themes/thaigcd2015/images/icon-email.png" width="20" height="20" />&nbsp;<a href="#">ตอบรับข่าวสาร</a><span style="padding-left:13px;padding-right:18px">|</span></li>
-        <li><img src="themes/thaigcd2015/images/icon-graph.png" width="21" height="22" />&nbsp;<a href="polls">แบบสำรวจความคิดเห็น</a></li>
+	    	<li>
+	    	
+		    	<a href="https://www.facebook.com/tmanwg" class="link-facebook">&nbsp;</a>
+		    	<span style="padding-left:13px;padding-right:18px">|</span>
+	    	
+	    	</li>
+	    	<li>
+	    	
+		    	<a href="https://twitter.com/gcdmoph" class="link-twitter">&nbsp;</a>
+		    	<span style="padding-left:13px;padding-right:18px">|</span>
+	    	
+	    	</li>	    	
+	    	
+    	<li>
+    	
+    		<img src="themes/thaigcd2015/images/icon-email.png" width="20" height="20" />&nbsp;
+    		<a href="#">ตอบรับข่าวสาร</a><span style="padding-left:13px;padding-right:18px">|</span>
+    	
+    	</li>
+        <li>
+        
+        	<img src="themes/thaigcd2015/images/icon-graph.png" width="21" height="22" />&nbsp;
+        	<a href="polls">แบบสำรวจความคิดเห็น</a>
+        
+        </li>
     </ul>
 </div>
 <div class="clearfix">&nbsp;</div>
