@@ -10,13 +10,16 @@ class Home extends Public_Controller {
 	
 	function first_page()
 	{
-		$coverpage = new Coverpage();
+/*		$coverpage = new Coverpage();
 		$coverpage->where("status = 'approve' and active = 1")->get();
 		if($coverpage->id != ""){
 			redirect("coverpages/index/".$coverpage->id);
 		}else{
 			redirect("home/index");
-		}
+		}*/
+		
+		redirect("coverpages/index");
+		
 	}
 	
 	function index()
@@ -24,6 +27,13 @@ class Home extends Public_Controller {
 		$this->template->set_layout('home');
 		$this->template->build('index');
 	}
+	
+	function test()
+	{
+		//$this->template->set_layout('home');
+		$this->template->build('normal');
+	}
+	
 	
 	public function lang($lang)
 	{

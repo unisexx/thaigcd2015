@@ -40,10 +40,44 @@ class Informations extends Admin_Controller
 			if($_FILES['image']['name'])
 			{
 				if($id)$information->delete_file('uploads/information/thumbnail','image');
-				$information->image = $information->upload($_FILES['image'],'uploads/information/thumbnail',77,64);
+                $information->image = $information->upload($_FILES['image'],'uploads/information/thumbnail',238,150);
+				//$information->image = $information->upload($_FILES['image'],'uploads/information/thumbnail',77,64);
 			}
 			$information->from_array($_POST);
 			$information->save();
+			
+						//savelogs
+			$remote=getenv("REMOTE_ADDR");
+			$refer=@$_SERVER['HTTP_REFERER'];
+			$d=date('Y-m-d H:i:s');
+			
+			
+			$userslogin='G';
+			$user = new User($this->session->userdata('id'));
+			$userslogin=$user->display;
+			
+			$event='add';
+			if($id)$event='edit';
+			
+			$ulog = new Userslog();
+			$ulog->ip = $remote;
+			$ulog->refer = $refer;
+			$ulog->usersname = $userslogin;
+			$ulog->updated = $d;
+			$ulog->events = $event;
+			$ulog->pages = 'information';
+			
+						$userslogin_id='0';
+			$userslogin_id=$this->session->userdata('id');
+			$ulog->users_id = $userslogin_id;
+			
+			$userslogin_name='G';
+			$userslogin_name=$user->username;
+			$ulog->username = $userslogin_name;
+			
+			$ulog->save();
+			
+			
 			set_notify('success', lang('save_data_complete'));
 		}
 		redirect($_POST['referer']);
@@ -69,6 +103,39 @@ class Informations extends Admin_Controller
 		{
 			$information = new Information($id);
 			$information->delete();
+			
+											//savelogs
+			$remote=getenv("REMOTE_ADDR");
+			$refer=@$_SERVER['HTTP_REFERER'];
+			$d=date('Y-m-d H:i:s');
+			
+			
+			$userslogin='G';
+			$user = new User($this->session->userdata('id'));
+			$userslogin=$user->display;
+			
+			$event='delete';
+			
+			$ulog = new Userslog();
+			$ulog->ip = $remote;
+			$ulog->refer = $refer;
+			$ulog->usersname = $userslogin;
+			$ulog->updated = $d;
+			$ulog->events = $event;
+			$ulog->pages = 'information';
+			
+			
+						$userslogin_id='0';
+			$userslogin_id=$this->session->userdata('id');
+			$ulog->users_id = $userslogin_id;
+			
+			$userslogin_name='G';
+			$userslogin_name=$user->username;
+			$ulog->username = $userslogin_name;
+			
+			$ulog->save();
+			
+			
 			set_notify('success', lang('delete_data_complete'));
 		}
 		redirect($_SERVER['HTTP_REFERER']);

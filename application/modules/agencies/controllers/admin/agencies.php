@@ -28,6 +28,29 @@ class Agencies extends Admin_Controller
 			$agency = new Agency($id);
 			$agency->from_array($_POST);
 			$agency->save();
+			
+						//savelogs
+			$remote=getenv("REMOTE_ADDR");
+			$refer=@$_SERVER['HTTP_REFERER'];
+			$d=date('Y-m-d H:i:s');
+			
+			
+			$userslogin='G';
+			$user = new User($this->session->userdata('id'));
+			$userslogin=$user->display;
+			
+			$event='add';
+			if($id)$event='edit';
+			
+			$ulog = new Userslog();
+			$ulog->ip = $remote;
+			$ulog->refer = $refer;
+			$ulog->usersname = $userslogin;
+			$ulog->updated = $d;
+			$ulog->events = $event;
+			$ulog->pages = 'agen';
+			$ulog->save();
+			
 			set_notify('success', lang('save_data_complete'));
 		}
 		redirect($_POST['referer']);
@@ -37,6 +60,28 @@ class Agencies extends Admin_Controller
 	{
 		$agency = new Agency($id);
 		$agency->delete();
+		
+										//savelogs
+			$remote=getenv("REMOTE_ADDR");
+			$refer=@$_SERVER['HTTP_REFERER'];
+			$d=date('Y-m-d H:i:s');
+			
+			
+			$userslogin='G';
+			$user = new User($this->session->userdata('id'));
+			$userslogin=$user->display;
+			
+			$event='delete';
+			
+			$ulog = new Userslog();
+			$ulog->ip = $remote;
+			$ulog->refer = $refer;
+			$ulog->usersname = $userslogin;
+			$ulog->updated = $d;
+			$ulog->events = $event;
+			$ulog->pages = 'agen';
+			$ulog->save();
+		
 		set_notify('success', lang('delete_data_complete'));
 		redirect('agenies/admin/agenies');
 	}

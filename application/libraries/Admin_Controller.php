@@ -6,8 +6,8 @@ class Admin_Controller extends Master_Controller
 	{
 		parent::__construct();
 		// Check Auth Login
-		if(!is_login('Administrator')) redirect('users/admin/auth');
-		if(!is_auth()) redirect('users/admin/auth/fail');
+/*		if(!is_login('Administrator')) redirect('users/admin/auth');
+		if(!is_auth()) redirect('users/admin/auth/fail');*/
 
 		$this->template->set_theme('admin');
 		

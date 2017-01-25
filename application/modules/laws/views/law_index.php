@@ -11,11 +11,20 @@
   <div class="tab-content">
     <?php foreach($categories as $key => $category): ?>
 	<div role="tabpanel" class="tab-pane <?if($key==0)echo"active";?>" id="<?php echo lang_decode($category->name,'')?>">
-		<?php foreach($category->law->where("start_date <= date(sysdate()) and (end_date >= date(sysdate()) or end_date = date('0000-00-00')) and status = 'approve'")->limit(($key==0)?2:20)->get() as $key => $law): ?>
+     <?php $inew=1; ?> 
+		<?php foreach($category->law->where("start_date <= date(sysdate()) and (end_date >= date(sysdate()) or end_date = date('0000-00-00')) and status = 'approve'")->order_by('id','desc')->limit(($key==0)?2:20)->get() as $key => $law): ?>
+        
 		<?php if($law->category_id ==11): ?><h3><?php echo lang_decode($law->title) ?></h3>
 		<?php echo lang_decode($law->detail) ?>
 		<?php else: ?>
-		<a href="laws/view/<?php echo $law->id ?>"><h3><?php echo lang_decode($law->title) ?></h3></a>
+        <a href="laws/view/<?php echo $law->id ?>">
+        <h3>
+        <?php if($inew==1){echo "<img src='themes/images/label_new_red.png' width='35';>";$inew=0;} ?>
+		<?php echo lang_decode($law->title) ?>
+        (<?php echo mysql_to_th($law->updated,'S',TRUE) ?>)
+        </h3>
+        </a>
+		
 		<?php endif; ?>
 		<div class="clear"></div>
 		<?php endforeach;?>

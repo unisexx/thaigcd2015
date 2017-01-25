@@ -1,11 +1,14 @@
 <style>
-	.more a{float:right; font-size:10px;color:purple;font-weight;bold;}
+	.more a{float:right; font-size:14px;color:purple;font-weight;bold;}
 	h3{font-size:16px; color:brown;}
+	body ul li{
+		font-size:14px;
+	}
 </style>
 
 <div id="data" class="dexclutive">
 	<!-- <?php foreach($users as $user): ?>
-	<div class="box-executive"> 
+	<div class="box-executive">
 		<img src="uploads/users/<?php echo $user->profile->avatar ?>" class="executivephoto" height="140" width="140">
 		<div class="box_info">
 			<h3><?php echo $user->profile->first_name.' '.$user->profile->last_name ?></h3>
@@ -19,7 +22,7 @@
    		</div>
 	<div class="clear"></div>
 	<?php endforeach; ?> -->
-	
+
 
 <!-- <div class="addthis_toolbox addthis_default_style ">
 <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
@@ -28,17 +31,15 @@
 <a class="addthis_counter addthis_pill_style"></a>
 </div>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-522ea3b9086ce9ee"></script> -->
-
-<br clear="all">
-	<h1 style="color:green;font-size:20px;"><?php echo lang_decode($users->profile->first_name)?> <?php echo lang_decode($users->profile->last_name)?></h1><br clear="all">
-	<div style="width:250px;float:left;">
+	<h2 style="color:green;font-size:20px!important;"><?php echo $users->profile->first_name?> <?php echo $users->profile->last_name?></h2><br clear="all">
+	<div style="width:350px;float:left;">
 		<img src="uploads/users/<?php echo $users->profile->avatar ?>" class="executivephoto" width="300">
 		<div>
 			<?php echo lang_decode($users->profile->short_history)?>
-			<div class="more"><a href="executives/history/<?php echo $users->id?>">อ่านต่อ</a></div>
+			<div class="more"><a href="executives/history/<?php echo $users->id?>" class="btn btn-default">อ่านต่อ</a></div>
 		</div>
 	</div>
-	<div style="width:350px;float:right;">
+	<div style="width:550px;float:right;">
 		<!-- <div class="infos">
 			<h3>ข่าวประชาสัมพันธ์</h3>
 			<ul>
@@ -52,11 +53,12 @@
 			<h3>ผู้บริหารเทคโนโลยีสารสนเทศระดับสูง สำนักโรคติดต่อทั่วไป</h3>
 			<ul>
 				<?php foreach($executive_its as $it):?>
-					<li style="list-style-type: disc !important;"><a href="executives/it_view/<?php echo $it->id?>"><?php echo lang_decode($it->title)?></a></li>
+					<li style="list-style-type: disc !important;"><a href="executives/it_view/<?php echo $it->id?>"><?php echo $it->title?></a></li>
 				<?php endforeach;?>
 			</ul>
-			<div class="more"><a href="executives/it_more">อ่านต่อ</a></div>
-		</div>	
+			<div class="more"><a href="executives/it_more" class="btn btn-sm btn-default">อ่านต่อ</a></div>
+		</div>
+		<br clear="all">
 		<div class="executive" style="margin-top:10px;">
 			<h3>ข่าวสารผู้บริหาร</h3>
 			<ul>
@@ -64,15 +66,15 @@
 					<li style="list-style-type: disc !important;"><a href="executives/view/<?php echo $executive->id?>"><?php echo lang_decode($executive->title)?></a></li>
 				<?php endforeach;?>
 			</ul>
-			<div class="more"><a href="executives/exe_more">อ่านต่อ</a></div>
+			<div class="more"><a href="executives/exe_more" class="btn btn-sm btn-default">อ่านต่อ</a></div>
 			<br>
 		</div>
-					
+
 	</div>
 	<br clear="all">
 	<div style="margin-top:10px;">
 			<h3>ผู้บริหารสำนักโรคติดต่อทั่วไป</h3>
-			<?php 
+			<?php
 				$excutive_list = new Page(84);
 				echo lang_decode($excutive_list->detail);
 			?>
@@ -86,7 +88,7 @@
 				<li style="list-style-type: disc !important;"><a href="executives/video_view/<?php echo $video->id?>"><?php echo $video->title?></a></li>
 			<?php endforeach;?>
 		</ul>
-		<div class="more"><a href="executives/video_view/<?php echo $video->id?>">อ่านต่อ</a></div>
+		<div class="more"><a href="executives/video_view/<?php echo $video->id?>" class="btn btn-sm btn-default">>อ่านต่อ</a></div>
 	</div>
 	<br clear="all">
 </div><!--data-->

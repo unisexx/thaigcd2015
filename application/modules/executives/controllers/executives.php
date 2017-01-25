@@ -158,9 +158,94 @@ class Executives extends Public_Controller
 	}
 	
 	function inc_home_video(){
-		$data['video'] = new Executive_video();
+/*		$data['video'] = new Executive_video();
+		$data['video']->order_by('id','desc')->get(1);*/
+				
+		$data['video'] = new Mediafile();
 		$data['video']->order_by('id','desc')->get(1);
+		
+		$data['videoall'] = new Mediafile();
+		$data['videoall']->order_by('id','desc')->get(3);
+		
 		$this->load->view('inc_home_video',$data);
+	}
+
+
+	function inc_home_video_all(){
+
+		
+		$data['videoall'] = new Mediafile();
+		$data['videoall']->order_by('id','desc')->get(4);
+		
+		$this->load->view('inc_home_video_all',$data);
+	}
+	
+	function all_video(){
+		
+		
+/*		$data['rs'] = new Executive_video();
+		$data['rs']->order_by('id desc')->get_page();*/
+		
+		$data['video'] = new Mediafile();
+		$data['video']->order_by('id','desc')->get(1);
+		
+		$data['rs'] = new Mediafile();
+		$data['rs']->order_by('id desc')->get_page();
+		
+		$this->template->build('list',$data);
+		
+		
+	}
+	
+	
+	function pole(){
+		
+	
+		
+		$this->template->build('pole');
+		
+		
+	}
+	function save_pole(){
+		
+	
+		
+		if($_POST)
+		{
+			$pole = new Poles();
+/*			$_POST['title'] = lang_encode($_POST['title']);
+			$_POST['intro'] = lang_encode($_POST['intro']);
+			$_POST['detail'] = lang_encode($_POST['detail']);
+			$_POST['start_date'] = Date2DB($_POST['start_date']);
+			$_POST['end_date'] = Date2DB($_POST['end_date']);
+			if(!$id)$_POST['user_id'] = $this->session->userdata('id');*/
+			$d=date('Y-m-d H:i:s');
+			$remote=getenv("REMOTE_ADDR");
+			
+			$_POST['ipaddress'] = $remote;  
+			$_POST['updated'] = $d;
+			$_POST['status'] = 0;
+			//$_POST['details'] = lang_encode($_POST['detail']);
+			$pole->from_array($_POST);
+			$pole->save();
+			set_notify('success', lang('save_data_complete'));
+			redirect('home');
+		}
+		
+		
+	}	
+	function all_video_view($id=false){
+		
+		$data['rs'] = new Mediafile($id);
+		
+		$data['video'] = new Mediafile();
+		$data['video']->order_by('id desc')->get_page();
+		
+		$this->template->build('all_video_view',$data);
+	}
+	
+	function ajax_show_vid(){
+		echo youtube($_GET['url']);
 	}
 }
 ?>

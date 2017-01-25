@@ -10,7 +10,7 @@ class User extends ORM {
 	,"webboard_answer","page","chat","mediapublic","academic",'blogcomment'
 	,'webboard_relate_del','calendar',"newsletter","hilight","webboard_status_config"
 	,"private_calendar","pm","webboard_bad_word","menu","information_comment"
-	,"blogfavourite","english_zone",
+	,"blogfavourite","english_zone","download",
 	 'user' => array(
             'class' => 'question',
             'other_field' => 'user'

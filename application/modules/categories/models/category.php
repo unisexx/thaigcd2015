@@ -5,7 +5,8 @@ class Category extends ORM {
 	
 	var $has_one = array("user","group");
 	
-	var $has_many = array("article","information","notice","law","knowledge","gallery","weblink","faq","mediafile","webboard_quiz","webboard_answer","mediapublic","academic","newsletter");
+	var $has_many = array("article","information","notice","law","knowledge","gallery","weblink","faq","mediafile","webboard_quiz","webboard_answer"
+	                       ,"mediapublic","academic","newsletter","download");
 
     function __construct($id = NULL)
     {
@@ -18,7 +19,7 @@ class Category extends ORM {
 					FROM $this->table
 					WHERE module = '".plural($this->parent['model'])."'
 					AND parents <> 0  
-					ORDER BY id asc";
+					ORDER BY orderlist,id asc";
 		//$query = $this->query($query)->all_to_assoc('id','name');
 		//return $query;
 		$CI =& get_instance();

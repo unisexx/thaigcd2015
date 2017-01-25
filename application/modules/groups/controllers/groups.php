@@ -18,7 +18,7 @@ class Groups extends Public_Controller
 		else
 		{
 			$data['groups'] = new Group();
-			$data['groups']->order_by('id','asc')->get_page();
+			$data['groups']->where('status','0')->order_by('id','asc')->get_page();
 			$this->template->build('group_index',$data);
 		}
 		

@@ -2,7 +2,7 @@
 	$(function(){
 		$("a[rel='ajax']").click(function(){
 			$(this).parent().parent().find('.counter').text(parseInt($(this).parent().parent().find('.counter').text()) + 1);
-		
+
 		});
 	});
 </script>
@@ -24,10 +24,19 @@
                     	<tbody>
 							<?php foreach($mediapublics as $mediapublic):?>
 							<tr>
-		                      <td><img width="100" src="<?php echo $mediapublic->image?>"></td>
-		                      <td valign="top" style="padding: 10px;"><h3><?php echo lang_decode($mediapublic->title)?></h3><p><?php echo lang_decode($mediapublic->detail)?></p>
-		                      <a rel="ajax" href="mediapublics/download/<?php echo $mediapublic->id?>"><img width="80" height="24" style="margin-top: 5px;" title="ดาวน์โหลดไฟล์นี้" alt="ดาวน์โหลดไฟล์นี้" src="themes/gcdnew/images/btn_save.png"></a>
-		                      <div style="text-align: right;"><span class="f11 TxtGray2">ดาวน์โหลดไป <span class="counter"><?php echo $mediapublic->counter?></span> ครั้ง</span></div></td>
+		            <td>
+									<img width="100" src="<?php echo $mediapublic->image?>">
+								</td>
+		            <td valign="top" style="padding: 10px;">
+									<h3><?php echo lang_decode($mediapublic->title)?></h3><p><?php echo lang_decode($mediapublic->detail)?></p>
+		              <a rel="ajax" href="mediapublics/download/<?php echo $mediapublic->id?>"><img width="80" height="24" style="margin-top: 5px;" title="ดาวน์โหลดไฟล์นี้" alt="ดาวน์โหลดไฟล์นี้" src="themes/gcdnew/images/btn_save.png"></a>
+		              <div style="text-align: right;"><span class="f11 TxtGray2">ดาวน์โหลดไป <span class="counter"><?php echo $mediapublic->counter?></span> ครั้ง</span></div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<hr>
+								</td>
 							</tr>
 							<?php endforeach;?>
 						</tbody>

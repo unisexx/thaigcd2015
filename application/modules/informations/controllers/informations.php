@@ -5,13 +5,15 @@ class Informations extends Public_Controller
 	{
 		parent::__construct();
 	}
-	
+
 	function index($id=FALSE)
 	{
 		// $this->template->set_layout('layout_blank');
 		if($id)
 		{
 			$data['category'] = new Category($id);
+            $category_type = "informations";$category_id = $id;
+            auth_access($category_type,$category_id);
 			$where = '';
 			if(@$_GET['search'])$where .= " and title like '%".$_GET['search']."%'";
 			if(@$_GET['start_date'])$where .= " and start_date = '".Date2DB($_GET['start_date'])."'";
@@ -21,11 +23,12 @@ class Informations extends Public_Controller
 		else
 		{
 			$data['categories'] = new Category();
-			$data['categories']->where("module = 'informations' and parents <> 0")->order_by('id','asc')->get(); 
+
+			$data['categories']->where("module = 'informations' and parents <> 0")->order_by('id','asc')->get();
 			$this->template->build('information_index',$data);
 		}
 	}
-	
+
 	function view($id,$group = FALSE)
 	{
 		$data['information'] = new Information($id);
@@ -45,7 +48,7 @@ class Informations extends Public_Controller
 			$this->template->build('information_view',$data);
 		}
 	}
-	
+
 	function group($id)
 	{
 		$data['informations'] = new Information();
@@ -55,7 +58,7 @@ class Informations extends Public_Controller
 		$this->template->set_layout('group_layout');
 		$this->template->build('information_group',$data);
 	}
-	
+
 	function tag($tag)
 	{
 		$data['tag'] = $tag;
@@ -63,27 +66,27 @@ class Informations extends Public_Controller
 		lang_filter($data['informations']->where("tag like '%$tag%'"))->get_page(limit());
 		$this->template->build('information_tag',$data);
 	}
-	
+
 	function inc_home($id = FALSE)
 	{
 		$data['where'] = ($this->session->userdata('lang')=="en")?'and title NOT REGEXP \'"en":""}$\'':'';
-		
-		
+
+
 		if($id)
 		{
 			$data['informations'] = new information();
-			$data['informations']->where("start_date <= date(sysdate()) and (end_date >= date(sysdate()) or end_date = date('0000-00-00')) and informations.status = 'approve'");
-			$data['informations']->order_by('id','desc')->where('group_id',$id)->limit(5)->get(); 
+			$data['informations']->where("category_id = 145  and start_date <= date(sysdate()) and (end_date >= date(sysdate()) or end_date = date('0000-00-00')) and informations.status = 'approve'");
+			$data['informations']->order_by('id','desc')->where('group_id',$id)->limit(5)->get();
 			$this->load->view('inc_group',$data);
 		}
 		else
 		{
 			$data['categories'] = new Category();
-			$data['categories']->where("module = 'informations' and parents <> 0")->order_by('orderlist','asc')->get(); 
+			$data['categories']->where("module = 'informations' and parents <> 0")->order_by('orderlist','asc')->get();
 			$this->load->view('inc_index',$data);
 		}
 	}
-	
+
 	function comment($id)
 	{
 		if(!empty($_POST['captcha']) && $_POST['captcha']==$_SESSION['captcha'])
@@ -115,7 +118,7 @@ class Informations extends Public_Controller
 			redirect($_SERVER['HTTP_REFERER']);
 		}
 	}
-	
+
 	function commentdel($id)
 	{
 		if($this->session->userdata('id'))
@@ -129,7 +132,7 @@ class Informations extends Public_Controller
 		}
 		redirect($_SERVER['HTTP_REFERER']);
 	}
-	
+
 	function vote($id=NULL)
 	{
 		if((@$_POST['rating'])&&($id))
@@ -146,7 +149,7 @@ class Informations extends Public_Controller
 		}
 		redirect($_SERVER['HTTP_REFERER']);
 	}
-	
+
 	function alert($id)
 	{
 		if($_POST)
@@ -167,15 +170,43 @@ class Informations extends Public_Controller
 			$this->template->build('alert',$data);
 		}
 	}
-	
+
 	function json($cat_id=NULL,$id=NULL)
 	{
 		$data['categories'] = new Category();
 		$data['categories']->set_json_content_type();
-		$data['categories']->where("module = 'informations' and parents <> 0")->order_by('id','asc')->get(); 
+		$data['categories']->where("module = 'informations' and parents <> 0")->order_by('id','asc')->get();
 		echo $data['categories']->all_to_json(array('id','name'));
 	}
-	
-	
+
+
+	function news_index()
+	{
+
+			$data['informations'] = new information();
+			$data['informations']->where("informations.status = 'approve' and category_id = 145");
+			$data['informations']->order_by('id','desc')->limit(3)->get();
+			$this->load->view('news_index',$data);
+
+
+	}
+
+	function news_view($id=false)
+	{
+
+		$informations = new information($id);
+
+		$informations->counter +=1;
+
+		$informations->save();
+
+		$data['informations'] = new information($id);
+
+		$this->template->build('view',$data);
+
+
+
+	}
+
 }
 ?>

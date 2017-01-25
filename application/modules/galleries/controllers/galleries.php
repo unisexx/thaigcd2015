@@ -31,7 +31,7 @@
 			$this->template->build('gallery_index',$data);
 		}
 		
-		function view($id,$group=FALSE)
+/*		function view($id,$group=FALSE)
 		{
 			$this->template->set_layout('layout_blank');
 			$data['catagory_id'] = $id;
@@ -46,7 +46,7 @@
 				$this->template->set_layout('group_blank');
 			}
 			$this->template->build('gallery_view',$data);
-		}
+		}*/
 		
 		function inc_home($id=FALSE)
 		{
@@ -66,6 +66,41 @@
 				$this->load->view('inc_index',$data);
 			}
 		}
+		
+		function list_index()
+		{
+			
+			//$id = '101';
+			//$this->db->debug = true;
+			$data['rs'] = new Category();
+			$data['rs']->where("module = 'galleries'")->order_by('id','desc')->limit(1)->get();
+			$data['galleries'] = new Gallery();
+			$data['galleries']->where("category_id = ".$data['rs']->id)->order_by('id','desc')->limit(10)->get();
+			
+			$this->load->view('list_index',$data);
+		
+		}
+		
+		function lists(){
+
+			$data['categories'] = new Category();
+			$data['categories']->where("parents <> 0 and module = 'galleries' and status = 'approve'")->order_by('id','desc')->get_page();
+			$this->template->build('list',$data);
+	    }
+	    
+	    function view($id)
+		{
+			$data['rs'] = new Category($id);
+			
+			$data['galleries'] = new Gallery();
+			$data['galleries']->where("category_id = '$id'")->order_by('id','desc')->get();
+			
+			$data['categories'] = new Category();
+			$data['categories']->where("parents <> 0 and module = 'galleries' and status = 'approve'")->order_by('id','desc')->limit(6)->get();
+			
+			$this->template->build('view',$data);
+		}
+	
 
 	}
 

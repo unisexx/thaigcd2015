@@ -1,8 +1,8 @@
 h2{font-size: 20px !important;}
 h3{font-size: 18px !important;}
 
-/*body{ background-image:url(../images/bg2-green.jpg); background-repeat:no-repeat;  background-position:top center; background-color:#97F0AE !important;  font-family: tahoma, Arial, sans-serif; font-size:13px; color:black; font-weight:normal;}*/
-body{background-repeat:no-repeat;  background-position:top center; background-color:#eaeaea !important;  font-family: tahoma, Arial, sans-serif; font-size:13px; color:black; font-weight:normal;}
+body{ background-image:url(../images/bg2-green.jpg); background-repeat:no-repeat;  background-position:top center; background-color:#97F0AE !important;  font-family: tahoma, Arial, sans-serif; font-size:13px; color:black; font-weight:normal;}
+/*body{background-repeat:no-repeat;  background-position:top center; background-color:#eaeaea !important;  font-family: tahoma, Arial, sans-serif; font-size:13px; color:black; font-weight:normal;}*/
 :focus {outline:none;}
 
 p { word-break: break-all; }

@@ -60,6 +60,8 @@ class Pages extends Public_Controller
 			redirect($_SERVER['HTTP_REFERER']);
 		}
 		$data['page'] = new Page($id);
+        $category_type = "pages";$category_id = $id;
+        auth_access($category_type,$category_id);
 		$data['page']->counter();
 		$this->template->build('page_index',$data);
 	}
@@ -71,6 +73,18 @@ class Pages extends Public_Controller
 				// <marquee  align="middle" scrollamount="5" scrolldelay="91" onmouseover="this.stop();" onmouseout="this.start();">'.lang_decode($page->detail).'</marquee>
 			// </div>';
 	}
+	
+	function save(){
+        if($_POST)
+        {
+			$data['contact'] = new Contact;
+			$data['contact']->from_array($_POST);
+			$data['contact']->save();
+            
+            set_notify('success', 'ติดต่อสอบถามค่ะ');
+        }
+        redirect($_SERVER['HTTP_REFERER']);
+    }
 	
 }
 ?>

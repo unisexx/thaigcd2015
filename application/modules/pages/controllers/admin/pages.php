@@ -9,9 +9,11 @@ class Pages extends Admin_Controller
 	
 	function index()
 	{
+		if(!is_login('Administrator')) redirect('users/admin/auth');
+		
 		$pages = new Page();
 		if(@$_GET['search'])$pages->where("title like '%".$_GET['search']."%'");
-		$data['pages'] = $pages->order_by('id','desc')->get_page();
+		$data['pages'] = $pages->where('shows','1')->order_by('id','desc')->get_page();
 		$this->template->build('admin/page_index',$data);
 	}
 	
@@ -24,27 +26,99 @@ class Pages extends Admin_Controller
 	
 	function save($id=FALSE)
 	{
-		$this->db->debug = true;
+		//$this->db->debug = true;
 		if($_POST)
 		{
 			$page = new Page($id);
 			$_POST['title'] = lang_encode($_POST['title']);
 			$_POST['detail'] = lang_encode($_POST['detail']);
+			$_POST['shows'] = '1';
+			//$_POST['detail'] = '"th":"'.$_POST['detail']['th'].'","en":""';
 			$_POST['user_id'] = $this->session->userdata('id');
 			$page->from_array($_POST);
 			$page->save();
+			
+			//savelogs
+			$remote=getenv("REMOTE_ADDR");
+			$refer=@$_SERVER['HTTP_REFERER'];
+			$d=date('Y-m-d H:i:s');
+			
+			
+			$userslogin='G';
+			$user = new User($this->session->userdata('id'));
+			$userslogin=$user->display;
+			
+			$event='add';
+			if($id)$event='edit';
+			
+			$ulog = new Userslog();
+			$ulog->ip = $remote;
+			$ulog->refer = $refer;
+			$ulog->usersname = $userslogin;
+			$ulog->updated = $d;
+			$ulog->events = $event;
+			$ulog->pages = 'pages';
+			
+						$userslogin_id='0';
+			$userslogin_id=$this->session->userdata('id');
+			$ulog->users_id = $userslogin_id;
+			
+			$userslogin_name='G';
+			$userslogin_name=$user->username;
+			$ulog->username = $userslogin_name;
+			
+			$ulog->save();
 			
 			
 			
 			set_notify('success', lang('save_data_complete'));
 		}
-		//redirect('pages/admin/pages');
+		redirect('pages/admin/pages');
 	}
 	
 	function delete($id)
 	{
-		$page = new Page($id);
-		$page->delete();
+/*		$page = new Page($id);
+		$page->delete();*/
+		
+			$page = new Page($id);
+			
+			$page->shows = '0';
+			
+			$page->save();
+		
+		
+					//savelogs
+			$remote=getenv("REMOTE_ADDR");
+			$refer=@$_SERVER['HTTP_REFERER'];
+			$d=date('Y-m-d H:i:s');
+			
+			
+			$userslogin='G';
+			$user = new User($this->session->userdata('id'));
+			$userslogin=$user->display;
+			
+			$event='delete';
+			
+			$ulog = new Userslog();
+			$ulog->ip = $remote;
+			$ulog->refer = $refer;
+			$ulog->usersname = $userslogin;
+			$ulog->updated = $d;
+			$ulog->events = $event;
+			$ulog->pages = 'pages'.'id:'.$id;
+			
+						$userslogin_id='0';
+			$userslogin_id=$this->session->userdata('id');
+			$ulog->users_id = $userslogin_id;
+			
+			$userslogin_name='G';
+			$userslogin_name=$user->username;
+			$ulog->username = $userslogin_name;
+			
+			$ulog->save();
+			
+			
 		set_notify('success', lang('delete_data_complete'));
 		redirect('pages/admin/pages');
 	}

@@ -1,0 +1,15 @@
+
+#wrap-infographic{ position:relative; }
+
+#run-info {text-align:center; width:50%; height:40px;}
+
+
+.info{float:left; margin:25px;}
+#pic-info{float:left; width:57%; position:relative;  }
+#text-info{float:right; width:43%;   margin-top:25px;}
+		#text-info ul {padding:0;   margin:0; list-style:none; }
+		#text-info ul li {padding:0; margin:0; background-image: url(../images/infographic/edit.png); background-repeat:no-repeat; padding-left:25px; padding-bottom:8px; padding-top:8px; background-position:0px 7px; 
+							border-bottom: 1px dotted #ccc;}
+		#text-info ul li a{color:#333;}
+		#text-info ul li a:hover{color:#337ab7;}
+

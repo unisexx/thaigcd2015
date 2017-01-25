@@ -72,5 +72,88 @@ class Executives extends Admin_Controller
 	{
 		$this->template->build('admin/history_form');
 	}
+	
+	function index_polls()
+	{
+		if(!is_login('Administrator')) redirect('users/admin/auth');
+		
+		$data['rs']  = new Poles();
+	
+		$data['rs']->where('status','0')->order_by('id','desc')->get_page();
+		
+		$this->template->build('admin/poles_index',$data);
+	}
+	
+	function form_pole($id=FALSE)
+	{
+		$data['poles'] = new Poles($id);
+		$this->template->append_metadata(js_datepicker());
+		$this->template->build('admin/poles_form',$data);
+	}
+	
+/*	function save_pole($id=FALSE)
+	{
+		if($_POST)
+		{
+			$poles = new Poles($id);
+
+			if(!$id)$_POST['user_id'] = $this->session->userdata('id');
+			$poles->from_array($_POST);
+			$poles->save();
+			set_notify('success', lang('save_data_complete'));
+			redirect($_POST['referer']);
+		}
+		
+	}*/
+	
+	
+	function delete_pole($id=FALSE)
+	{
+		if($id)
+		{
+			$poles = new Poles($id);
+			
+			$poles->status = '1';
+			
+			$poles->save();
+			
+			
+			//savelogs
+			$remote=getenv("REMOTE_ADDR");
+			$refer=@$_SERVER['HTTP_REFERER'];
+			$d=date('Y-m-d H:i:s');
+			
+			
+			$userslogin='G';
+			$user = new User($this->session->userdata('id'));
+			$userslogin=$user->display;
+			
+			$event='delete';
+			
+			$ulog = new Userslog();
+			$ulog->ip = $remote;
+			$ulog->refer = $refer;
+			$ulog->usersname = $userslogin;
+			$ulog->updated = $d;
+			$ulog->events = $event;
+			$ulog->pages = 'รับเรื่องร้องเรียน';
+			
+						$userslogin_id='0';
+			$userslogin_id=$this->session->userdata('id');
+			$ulog->users_id = $userslogin_id;
+			
+			$userslogin_name='G';
+			$userslogin_name=$user->username;
+			$ulog->username = $userslogin_name;
+			
+			$ulog->save();
+			
+			
+			//$poles->delete();
+			set_notify('success', lang('delete_data_complete'));
+		}
+		redirect($_SERVER['HTTP_REFERER']);
+	}
+	
 }
 ?>

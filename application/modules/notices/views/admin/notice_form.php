@@ -37,7 +37,7 @@ $(function(){
 	<?php echo approver_form($notice);?>
 	<tr><th></th><td><img class="img" style="width:77px; height:64px;" src="<?php echo (is_file('uploads/notice/thumbnail/'.$notice->image))? 'uploads/notice/thumbnail/'.$notice->image : 'media/images/dummy/77x64.gif' ?>"  /></td></tr>
 	<tr><th>รูปภาพ :</th><td><input type="file" name="image" /></td></tr>
-	<tr><th>สถานะ :</th><td><?php echo form_dropdown('category_id',$notice->category->get_option(),$notice->category_id,'');?></td></tr>
+	<tr><th>สถานะ :</th><td><?php echo form_dropdown('category_id',$notice->category->order_by('order_list','asc')->get_option(),$notice->category_id,'');?></td></tr>
 	<tr><th>เริ่ม :</th><td><input type="text" name="start_date" value="<?php echo DB2Date(($notice->start_date)?$notice->start_date:date("Y-m-d"))?>" class="datepicker" /></td></tr>
 	<tr><th>สิ้นสุด :</th><td><input type="text" name="end_date" value="<?php echo DB2Date($notice->end_date)?>" class="datepicker" /></td></tr>
 	<tr>

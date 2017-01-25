@@ -122,8 +122,10 @@ function user_data($field,$id)
 function logout()
 {
 	$CI =& get_instance();
-	unset($_SESSION['id']); // $CI->session->unset_userdata('id');
-	unset($_SESSION['level']); // $CI->session->unset_userdata('level');
+	unset($_SESSION['id']); // 
+	$CI->session->unset_userdata('id');
+	unset($_SESSION['level']); // 
+	$CI->session->unset_userdata('level');
 }
 
 function is_auth()
@@ -333,5 +335,26 @@ function approve_comment($orm)
 			return '<div class="caution success"><div class="box">'.$fullname.'<br />'.mysql_to_th($orm->approve_date,'S',TRUE).' '.$comment.'</div></div>';
 		}
 	}
+}
+
+function auth_access($category_type,$category_id){
+     $sent_to_home = FALSE;
+     switch($category_type){
+         case 'informations':
+             $array = array(210,282,327);
+             if(in_array($category_id,$array))
+                 if(!is_login())$sent_to_home = TRUE;             
+         break;
+         case 'pages':
+             $array = array(58,63);
+             if(in_array($category_id,$array))
+                 if(!is_login())$sent_to_home = TRUE;
+         break;
+         default:
+             break;
+     }
+     
+     if($sent_to_home == TRUE){set_notify('error', 'กรุณาล้อกอินก่อนเข้าใช้งาน');redirect('home/index');}
+         
 }
 ?>

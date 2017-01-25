@@ -40,7 +40,7 @@
                           </tr>
                         <tr>
                         <td width="20%"><strong>ชื่อ - สกุล</strong></td>
-                        <td width="80%"><input type="text" class="textboxNotifyOffer" id="textfield" name="name"></td>
+                        <td width="80%"><input type="text" class="textboxNotifyOffer" id="textfield" name="name" style="background-image:none!important;width: 100%!important;height: 34px!important;"></td>
                         </tr>
                         <tr>
                         <td><strong>บริษัท</strong></td>

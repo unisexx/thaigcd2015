@@ -9,8 +9,11 @@ if(!function_exists('lang_encode'))
 			$result = array();
 			foreach($data as $key => $value)
 			{
-				$result[] = '"'.trim($key).'":"'.str_replace("\n", "<n/>",htmlspecialchars( $value)).'"';	
-			} 
+			    //$result[] = '"'.trim($key).'":"'.$value.'"';
+			    //$value = str_replace("\n", "<n/>",htmlspecialchars( $value));
+				$result[] = '"'.trim($key).'":"'.str_replace("\n", "<n/>",htmlspecialchars( $value)).'"';
+			}
+            //echo '{'.implode(',', $result).'}';
 			return '{'.implode(',', $result).'}';
 		}
 	}
@@ -23,7 +26,25 @@ if(!function_exists('lang_decode'))
 		$CI =& get_instance();
 		$lang = $select_lang ? $select_lang : $CI->session->userdata('lang');
 		$obj = json_decode($data);
-		$result = (is_object($obj)) ? @($obj->$lang ? htmlspecialchars_decode(str_replace("<n/>", "\n",$obj->$lang)) : htmlspecialchars_decode(str_replace("<n/>", "\n",$obj->en))) : $data;	
+		//$result = (is_object($obj)) ? @($obj->$lang ? htmlspecialchars_decode(str_replace("<n/>", "\n",$obj->$lang)) : htmlspecialchars_decode(str_replace("<n/>", "\n",$obj->en))) : htmlspecialchars_decode($data);
+        if(is_object($obj)){
+            if($obj->$lang){
+                $result = htmlspecialchars_decode(str_replace("<n/>", "\n",$obj->$lang));
+            }else{
+                $result = htmlspecialchars_decode(str_replace("<n/>", "\n",$obj->en));
+            }
+        } else{
+            $pos = strpos($data, '"th":');
+						if($pos>0){
+	            if($select_lang=='en'){
+	                $data = substr($data, strpos($data, ',"en":"')+7);
+	                $data = substr($data, 0,strlen($data)-2);
+	            }else{
+	                $data = substr($data, 7,strpos($data, ',"en":')-8);
+	            }
+						}
+            $result = htmlspecialchars_decode($data);
+        }
 		return $result;
 	}
 }
@@ -47,16 +68,16 @@ function censor($string)
 	$CI->load->helper('text');
 	$word = new Webboard_bad_word(1);
 	$word = explode("\n",$word->badword);
-	
+
 	$wordchange = "<img src=\"media/tiny_mce/plugins/emotions/img/cry.gif\">"; //ข้อความที่ต้องการให้เปลี่ยนเป็น
 
     for ( $i = 0 ; $i < sizeof( $word ) ; $i++ )
     {
          $string = str_replace( $word[$i] , $wordchange , $string );
     };
-	 
+
 	return $string;
-	
+
 	//return word_censor($string,$word,'<img src="media/tiny_mce/plugins/emotions/img/cry.gif">');
 }
 
@@ -73,7 +94,7 @@ if ( !function_exists('json_decode') ){
 
 function json_decode($json)
 
-{ 
+{
 
     // Author: walidator.info 2009
 
@@ -81,7 +102,7 @@ function json_decode($json)
 
     $out = '$x=';
 
-   
+
 
     for ($i=0; $i<strlen($json); $i++)
 
@@ -97,7 +118,7 @@ function json_decode($json)
 
             else if ($json[$i] == ':')    $out .= '=>';
 
-            else                         $out .= $json[$i];           
+            else                         $out .= $json[$i];
 
         }
 
@@ -111,7 +132,7 @@ function json_decode($json)
 
     return $x;
 
-} 
+}
 
 }
 
