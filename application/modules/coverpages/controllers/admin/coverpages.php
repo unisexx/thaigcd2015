@@ -83,7 +83,7 @@ class Coverpages extends Admin_Controller
 			$coverpage = new Coverpage($id);
 			$coverpage->delete();
 			
-									//savelogs
+			//savelogs
 			$remote=getenv("REMOTE_ADDR");
 			$refer=@$_SERVER['HTTP_REFERER'];
 			$d=date('Y-m-d H:i:s');
@@ -102,14 +102,8 @@ class Coverpages extends Admin_Controller
 			$ulog->updated = $d;
 			$ulog->events = $event;
 			$ulog->pages = 'coverpage';
-			
-						$userslogin_id='0';
-			$userslogin_id=$this->session->userdata('id');
-			$ulog->users_id = $userslogin_id;
-			
-			$userslogin_name='G';
-			$userslogin_name=$user->username;
-			$ulog->username = $userslogin_name;
+			$ulog->users_id = $user->id;
+			$ulog->username = $user->username;
 			
 			$ulog->save();
 			

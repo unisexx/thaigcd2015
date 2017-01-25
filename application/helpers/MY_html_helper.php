@@ -206,4 +206,25 @@ function youtube($youtubeurl,$width,$height){
 	//return '<iframe width="560" height="315" src="http://www.youtube.com/embed/'.$matches[0].'" frameborder="0" allowfullscreen></iframe>';
 }
 
+if(!function_exists('user_log'))
+{
+	function user_log($action)
+	{
+		$CI =& get_instance();
+		$user = new User($this->session->userdata('id'));
+		
+		$log = new Userslog();
+		$log->ip = getenv("REMOTE_ADDR");
+		$log->refer = @$_SERVER['HTTP_REFERER'];
+		$log->usersname = $user->display;
+		$log->updated = date('Y-m-d H:i:s');
+		$log->events = $action;
+		$log->pages = 'coverpage';
+		$log->users_id = $user->id;
+		$log->username = $user->username;
+		
+		$log->save();
+	}
+}
+
 ?>

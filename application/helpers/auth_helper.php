@@ -4,38 +4,28 @@ function login($username,$password)
 {
 	$CI =& get_instance();
 	$user = new User();
-	$user->where(array('username'=>$username,'password'=>$password))->get();
+	$user->where(array('username'=>$username,'password'=>$password,'m_status'=>'active'))->get();
+	$user->check_last_query();
+	// exit();
+	
 	if($user->exists())
 	{
-		if($user->level->id == "5")
-		{
-			$timediff = timeDiff($user->last_login,date("Y-m-d H:i:s",now()));
-			$webboard_status_config = new Webboard_status_config(1);
-			if($timediff > $webboard_status_config->memlock)
-			{
-				$user->m_status = "ban";
-			}
-			else
-			{
-				$user->m_status = "active";
-			}
-		}
+		
 		$user->last_login = date("Y-m-d H:i:s",now());
 		$user->save();
-		if($user->m_status == "ban")
-		{
-			return FALSE;
-		}
+		
 		$_SESSION['id'] = $user->id;  
 		$CI->session->set_userdata('id',$user->id);
 		$_SESSION['level'] = $user->level_id;  
 		$CI->session->set_userdata('level',$user->level_id);
+		
 		return TRUE;
 	}
 	else
 	{
 		return FALSE;
 	}
+	
 }
 
 function email_login($email,$password)

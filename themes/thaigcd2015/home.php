@@ -57,6 +57,9 @@
 
 <div id="login" >
 
+<!--
+	
+	
 	<?php
 		if($this->session->userdata('id')){
 			$user = new User($this->session->userdata('id'));
@@ -79,8 +82,6 @@
     			     <span class="login_welcome">ยินดีต้อนรับ</span><br>
     			     <span><strong>Login: </strong></span><?php echo $user->display;?>
     			     <br/>
-    			     <!-- <span><strong>Email: </strong></span><?php echo $user->email;?>
-    			     <br/> -->
     			     <div class="btn-signout" style="text-align:right;margin-top:5px;">
     			         <a href="admin/">
                          
@@ -151,6 +152,8 @@
 
 
     <div class="line1">&nbsp;</div>
+    
+   -->
 
     <div style="width:87%; margin:0 auto;">
 
