@@ -41,6 +41,10 @@ class Weblinks extends Admin_Controller{
 			if(!$id)$_POST['user_id'] = $this->session->userdata('id');
 			$weblink->from_array($_POST);
 			$weblink->save();
+			
+			//savelogs
+			user_log($this->db->insert_id(),$_POST['title']); // content_id,content_title
+			
 			set_notify('success', lang('save_data_complete'));
 			redirect($_POST['referer']);
 		}
@@ -52,6 +56,10 @@ class Weblinks extends Admin_Controller{
 		if($id)
 		{
 			$weblink = new Weblink($id);
+			
+			//savelogs
+			user_log($id,$weblink->title); // content_id,content_title
+			
 			$weblink->delete_file($weblink->id,'uploads/weblinks/','image');
 			$weblink->delete();
 			set_notify('success', lang('delete_data_complete'));

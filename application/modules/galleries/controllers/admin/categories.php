@@ -49,6 +49,10 @@ class categories extends Admin_Controller
 			$_POST['name'] = lang_encode($_POST['name']);
 			$category->from_array($_POST);
 			$category->save();
+			
+			//savelogs
+			user_log($this->db->insert_id(),$_POST['name']); // content_id,content_title
+			
 			set_notify('success', lang('save_data_complete'));
 		}
 		redirect('galleries/admin/categories');
@@ -59,6 +63,10 @@ class categories extends Admin_Controller
 		if($id)
 		{
 			$category = new Category($id);
+			
+			//savelogs
+			user_log($id,$category->name); // content_id,content_title
+			
 			$module = $category->module;
 			$category->delete();
 			set_notify('success', lang('delete_data_complete'));

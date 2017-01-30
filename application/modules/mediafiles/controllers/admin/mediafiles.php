@@ -53,6 +53,10 @@ Class Mediafiles extends Admin_Controller{
 			}
 			$mediafile->from_array($_POST);
 			$mediafile->save();
+			
+			//savelogs
+			user_log($this->db->insert_id(),$_POST['title']); // content_id,content_title
+			
 			set_notify('success', lang('save_data_complete'));
 		}
 		redirect("mediafiles/admin/mediafiles");
@@ -62,6 +66,10 @@ Class Mediafiles extends Admin_Controller{
 		if($id)
 		{
 			$mediafile = new Mediafile($id);
+			
+			//savelogs
+			user_log($id,$mediafile->title); // content_id,content_title
+			
 			$mediafile->delete_file($mediafile->id,'uploads/mediafiles/','image');
 			$mediafile->delete();
 			set_notify('success', lang('delete_data_complete'));

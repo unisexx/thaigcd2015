@@ -22,6 +22,10 @@ class Blogs extends Admin_Controller
 			$alert->get_by_blogcomment_id($id);
 			$alert->delete_all();
 			$comment = new blogcomment($id);
+			
+			//savelogs
+			user_log($id,$comment->comment); // content_id,content_title
+			
 			$comment->delete();
 			set_notify('success', lang('delete_data_complete'));
 		}

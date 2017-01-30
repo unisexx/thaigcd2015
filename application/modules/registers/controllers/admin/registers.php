@@ -41,6 +41,10 @@ class Registers extends Admin_Controller
 		if($id)
 		{
 			$register = new Register($id);
+			
+			//savelogs
+			user_log($id,$register->center); // content_id,content_title
+			
 			$register->delete();
 			set_notify('success', lang('delete_data_complete'));
 		}

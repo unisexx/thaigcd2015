@@ -36,6 +36,10 @@ class Levels extends Admin_Controller {
 			$level->view = (isset($_POST['view']))?$_POST['view']:0;
 			$level->auth = json_encode($_POST['module']);
 			$level->save();
+			
+			//savelogs
+			user_log($id,$_POST['level']); // content_id,content_title
+			
 			set_notify('success','บันทึกข้อมูลเรียบร้อยแล้วค่ะ');
 			redirect('users/admin/levels');
 		}
@@ -46,9 +50,13 @@ class Levels extends Admin_Controller {
 		if($id)
 		{
 			$level = new Level($id);
+			
+			//savelogs
+			user_log($id,$level->level); // content_id,content_title
+			
 			$level->delete();
 			set_notify('success','ลบข้อมูลเรียบร้อยแล้วค่ะ');
-			redirect('users/admin/users');
+			redirect('users/admin/levels');
 		}
 	}
 }

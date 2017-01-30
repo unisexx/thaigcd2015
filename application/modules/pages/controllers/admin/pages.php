@@ -39,37 +39,7 @@ class Pages extends Admin_Controller
 			$page->save();
 			
 			//savelogs
-			$remote=getenv("REMOTE_ADDR");
-			$refer=@$_SERVER['HTTP_REFERER'];
-			$d=date('Y-m-d H:i:s');
-			
-			
-			$userslogin='G';
-			$user = new User($this->session->userdata('id'));
-			$userslogin=$user->display;
-			
-			$event='add';
-			if($id)$event='edit';
-			
-			$ulog = new Userslog();
-			$ulog->ip = $remote;
-			$ulog->refer = $refer;
-			$ulog->usersname = $userslogin;
-			$ulog->updated = $d;
-			$ulog->events = $event;
-			$ulog->pages = 'pages';
-			
-						$userslogin_id='0';
-			$userslogin_id=$this->session->userdata('id');
-			$ulog->users_id = $userslogin_id;
-			
-			$userslogin_name='G';
-			$userslogin_name=$user->username;
-			$ulog->username = $userslogin_name;
-			
-			$ulog->save();
-			
-			
+			user_log($this->db->insert_id(),$_POST['title']); // content_id,content_title
 			
 			set_notify('success', lang('save_data_complete'));
 		}
@@ -83,41 +53,13 @@ class Pages extends Admin_Controller
 		
 			$page = new Page($id);
 			
+			//savelogs
+			user_log($id,$page->title); // content_id,content_title
+			
 			$page->shows = '0';
 			
 			$page->save();
 		
-		
-					//savelogs
-			$remote=getenv("REMOTE_ADDR");
-			$refer=@$_SERVER['HTTP_REFERER'];
-			$d=date('Y-m-d H:i:s');
-			
-			
-			$userslogin='G';
-			$user = new User($this->session->userdata('id'));
-			$userslogin=$user->display;
-			
-			$event='delete';
-			
-			$ulog = new Userslog();
-			$ulog->ip = $remote;
-			$ulog->refer = $refer;
-			$ulog->usersname = $userslogin;
-			$ulog->updated = $d;
-			$ulog->events = $event;
-			$ulog->pages = 'pages'.'id:'.$id;
-			
-						$userslogin_id='0';
-			$userslogin_id=$this->session->userdata('id');
-			$ulog->users_id = $userslogin_id;
-			
-			$userslogin_name='G';
-			$userslogin_name=$user->username;
-			$ulog->username = $userslogin_name;
-			
-			$ulog->save();
-			
 			
 		set_notify('success', lang('delete_data_complete'));
 		redirect('pages/admin/pages');

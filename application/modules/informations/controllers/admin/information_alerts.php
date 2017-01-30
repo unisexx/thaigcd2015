@@ -22,6 +22,10 @@ class Information_alerts extends Admin_Controller
 			$alert->get_by_information_comment_id($id);
 			$alert->delete_all();
 			$comment = new Information_comment($id);
+			
+			//savelogs
+			user_log($id,$comment->comment); // content_id,content_title
+			
 			$comment->delete();
 			set_notify('success', lang('delete_data_complete'));
 		}

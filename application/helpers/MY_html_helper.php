@@ -206,25 +206,38 @@ function youtube($youtubeurl,$width,$height){
 	//return '<iframe width="560" height="315" src="http://www.youtube.com/embed/'.$matches[0].'" frameborder="0" allowfullscreen></iframe>';
 }
 
-if(!function_exists('user_log'))
+function user_log($id=false,$content_title=false)
 {
-	function user_log($action)
-	{
-		$CI =& get_instance();
-		$user = new User($this->session->userdata('id'));
-		
-		$log = new Userslog();
-		$log->ip = getenv("REMOTE_ADDR");
-		$log->refer = @$_SERVER['HTTP_REFERER'];
-		$log->usersname = $user->display;
-		$log->updated = date('Y-m-d H:i:s');
-		$log->events = $action;
-		$log->pages = 'coverpage';
-		$log->users_id = $user->id;
-		$log->username = $user->username;
-		
-		$log->save();
+	$CI =& get_instance();
+	
+	$content_id = $id;
+	
+	if($CI->router->fetch_method() == 'save'){ // ถ้าเป็น save
+		if(is_numeric(end($CI->uri->segment_array()))){ // เช็ค url ถ้ามีไอดีที่ segment สุดท้าย
+			$event = 'edit' ;
+			$content_id = end($CI->uri->segment_array());
+		}else{
+			$event = 'add';
+		}
+	}else{
+		$event = $CI->router->fetch_method();
 	}
+	
+	$user = new User($CI->session->userdata('id'));
+	
+	$log = new Userslog();
+	$log->ip = getenv("REMOTE_ADDR");
+	$log->refer = current_url();
+	$log->usersname = $user->display;
+	$log->updated = date('Y-m-d H:i:s');
+	$log->events = $event;
+	$log->pages = $CI->router->fetch_class();
+	$log->users_id = $user->id;
+	$log->username = $user->username;
+	$log->content_id = $content_id;
+	$log->content_title = $content_title;
+		
+	$log->save();
 }
 
 ?>

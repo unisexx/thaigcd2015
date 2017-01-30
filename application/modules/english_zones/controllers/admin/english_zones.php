@@ -31,6 +31,10 @@ class English_zones extends Admin_Controller
 			if(!$id)$_POST['user_id'] = $this->session->userdata('id');
 			$english_zone->from_array($_POST);
 			$english_zone->save();
+			
+			//savelogs
+			user_log($this->db->insert_id(),$_POST['title']); // content_id,content_title
+			
 			set_notify('success', lang('save_data_complete'));
 		}
 		redirect($_POST['referer']);
@@ -55,6 +59,10 @@ class English_zones extends Admin_Controller
 		if($id)
 		{
 			$english_zone = new English_zone($id);
+			
+			//savelogs
+			user_log($id,$english_zone->title); // content_id,content_title
+			
 			$english_zone->delete();
 			set_notify('success', lang('delete_data_complete'));
 		}

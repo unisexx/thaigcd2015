@@ -42,35 +42,7 @@ class Coverpages extends Admin_Controller
 			$coverpage->save();
 			
 			//savelogs
-			$remote=getenv("REMOTE_ADDR");
-			$refer=@$_SERVER['HTTP_REFERER'];
-			$d=date('Y-m-d H:i:s');
-			
-			
-			$userslogin='G';
-			$user = new User($this->session->userdata('id'));
-			$userslogin=$user->display;
-			
-			$event='add';
-			if($id)$event='edit';
-			
-			$ulog = new Userslog();
-			$ulog->ip = $remote;
-			$ulog->refer = $refer;
-			$ulog->usersname = $userslogin;
-			$ulog->updated = $d;
-			$ulog->events = $event;
-			$ulog->pages = 'coverpage';
-			
-						$userslogin_id='0';
-			$userslogin_id=$this->session->userdata('id');
-			$ulog->users_id = $userslogin_id;
-			
-			$userslogin_name='G';
-			$userslogin_name=$user->username;
-			$ulog->username = $userslogin_name;
-			
-			$ulog->save();
+			user_log($this->db->insert_id(),$_POST['title']); // content_id,content_title
 			
 			set_notify('success', lang('save_data_complete'));
 		}
@@ -81,32 +53,11 @@ class Coverpages extends Admin_Controller
 		if($id)
 		{
 			$coverpage = new Coverpage($id);
-			$coverpage->delete();
 			
 			//savelogs
-			$remote=getenv("REMOTE_ADDR");
-			$refer=@$_SERVER['HTTP_REFERER'];
-			$d=date('Y-m-d H:i:s');
+			user_log($id,$coverpage->title); // content_id,content_title
 			
-			
-			$userslogin='G';
-			$user = new User($this->session->userdata('id'));
-			$userslogin=$user->display;
-			
-			$event='delete';
-			
-			$ulog = new Userslog();
-			$ulog->ip = $remote;
-			$ulog->refer = $refer;
-			$ulog->usersname = $userslogin;
-			$ulog->updated = $d;
-			$ulog->events = $event;
-			$ulog->pages = 'coverpage';
-			$ulog->users_id = $user->id;
-			$ulog->username = $user->username;
-			
-			$ulog->save();
-			
+			$coverpage->delete();
 			set_notify('success', lang('delete_data_complete'));
 		} 
 		redirect('coverpages/admin/coverpages');

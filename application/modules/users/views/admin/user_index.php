@@ -19,6 +19,7 @@
 <table width="100%" class="list">
 	<tr>
 		<th>ชื่อ-นามสกุล</th>
+		<th>ชื่อที่ใช้ในระบบ</th>
 		<th>อีเมล์</th>
 		<th>ระดับ</th>
 		<th>วันที่สมัคร</th>
@@ -27,6 +28,7 @@
 	<?php foreach($users as $user):?>
 	<tr <?php echo cycle()?>>
 		<td><a href="users/profile/<?php echo $user->id?>" target="_blank"><?php echo $user->profile->first_name.' '.$user->profile->last_name?></a></td>
+		<td><?php echo $user->display?></td>
 		<td><?php echo $user->username?></td>
 		<td><?php echo $user->level->level?></td>
 		<td><?php echo mysql_to_th($user->created)?></td>

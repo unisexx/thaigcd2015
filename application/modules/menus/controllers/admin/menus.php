@@ -60,6 +60,10 @@ Class Menus extends Admin_Controller{
 				$_POST['user_id'] = $this->session->userdata('id');
 				$menu->from_array($_POST);
 				$menu->save();
+				
+				//savelogs
+				user_log($this->db->insert_id(),$_POST['title']); // content_id,content_title
+			
 				set_notify('success', lang('save_data_complete'));
 			}
 		}
@@ -70,6 +74,10 @@ Class Menus extends Admin_Controller{
 		if($id)
 		{
 			$menu = new Menu($id);
+			
+			//savelogs
+			user_log($id,$menu->title); // content_id,content_title
+			
 			$menu->delete_file('uploads/icon/','icon');
 			$menu->delete();
 			set_notify('success', lang('delete_data_complete'));

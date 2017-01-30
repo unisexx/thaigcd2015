@@ -54,6 +54,10 @@ class Calendars extends Admin_Controller
 			$_POST['end'] = ($_POST['end']) ? Date2DB($_POST['end']) : $_POST['start'];
 			$calendar->from_array($_POST);
 			$calendar->save();
+			
+			//savelogs
+			user_log($this->db->insert_id(),$_POST['title']); // content_id,content_title
+			
 			set_notify('success', lang('save_data_complete'));
 		}
 		redirect('calendars/admin/calendars');
@@ -64,6 +68,10 @@ class Calendars extends Admin_Controller
 		if($id)
 		{
 			$calendar = New Calendar($id);
+			
+			//savelogs
+			user_log($id,$calendar->title); // content_id,content_title
+			
 			$calendar->delete();
 			set_notify('success', lang('delete_data_complete'));
 		} 

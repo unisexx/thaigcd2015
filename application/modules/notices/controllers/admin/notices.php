@@ -48,27 +48,8 @@ class Notices extends Admin_Controller
 			$notice->from_array($_POST);
 			$notice->save();
 			
-						//savelogs
-			$remote=getenv("REMOTE_ADDR");
-			$refer=@$_SERVER['HTTP_REFERER'];
-			$d=date('Y-m-d H:i:s');
-			
-			
-			$userslogin='G';
-			$user = new User($this->session->userdata('id'));
-			$userslogin=$user->display;
-			
-			$event='add';
-			if($id)$event='edit';
-			
-			$ulog = new Userslog();
-			$ulog->ip = $remote;
-			$ulog->refer = $refer;
-			$ulog->usersname = $userslogin;
-			$ulog->updated = $d;
-			$ulog->events = $event;
-			$ulog->pages = 'notics';
-			$ulog->save();
+			//savelogs
+			user_log($this->db->insert_id(),$_POST['title']); // content_id,content_title
 			
 			set_notify('success', lang('save_data_complete'));
 			redirect($_POST['referer']);
@@ -81,28 +62,11 @@ class Notices extends Admin_Controller
 		if($id)
 		{
 			$notice = new Notice($id);
+			
+			//savelogs
+			user_log($id,$notice->title); // content_id,content_title
+		
 			$notice->delete();
-			
-											//savelogs
-			$remote=getenv("REMOTE_ADDR");
-			$refer=@$_SERVER['HTTP_REFERER'];
-			$d=date('Y-m-d H:i:s');
-			
-			
-			$userslogin='G';
-			$user = new User($this->session->userdata('id'));
-			$userslogin=$user->display;
-			
-			$event='delete';
-			
-			$ulog = new Userslog();
-			$ulog->ip = $remote;
-			$ulog->refer = $refer;
-			$ulog->usersname = $userslogin;
-			$ulog->updated = $d;
-			$ulog->events = $event;
-			$ulog->pages = 'notics';
-			$ulog->save();
 			
 			set_notify('success', lang('delete_data_complete'));
 		}

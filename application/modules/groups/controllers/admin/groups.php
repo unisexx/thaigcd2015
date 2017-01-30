@@ -45,37 +45,9 @@ class Groups extends Admin_Controller
 			$group->from_array($_POST);
 			$group->save();
 			
-						//savelogs
-			$remote=getenv("REMOTE_ADDR");
-			$refer=@$_SERVER['HTTP_REFERER'];
-			$d=date('Y-m-d H:i:s');
 			
-			
-			$userslogin='G';
-			$user = new User($this->session->userdata('id'));
-			$userslogin=$user->display;
-			
-			$event='add';
-			if($id)$event='edit';
-			
-			$ulog = new Userslog();
-			$ulog->ip = $remote;
-			$ulog->refer = $refer;
-			$ulog->usersname = $userslogin;
-			$ulog->updated = $d;
-			$ulog->events = $event;
-			$ulog->pages = 'group';
-			
-			
-						$userslogin_id='0';
-			$userslogin_id=$this->session->userdata('id');
-			$ulog->users_id = $userslogin_id;
-			
-			$userslogin_name='G';
-			$userslogin_name=$user->username;
-			$ulog->username = $userslogin_name;
-			
-			$ulog->save();
+			//savelogs
+			user_log($this->db->insert_id(),$_POST['name']); // content_id,content_title
 			
 			set_notify('success', lang('save_data_complete'));
 		}
@@ -87,40 +59,14 @@ class Groups extends Admin_Controller
 		if($id)
 		{
 			$group = new Group($id);
+			
+			//savelogs
+			user_log($id,$group->name); // content_id,content_title
+			
 			//$group->delete();
 			$group->status = '1';
 			
 			$group->save();
-											//savelogs
-			$remote=getenv("REMOTE_ADDR");
-			$refer=@$_SERVER['HTTP_REFERER'];
-			$d=date('Y-m-d H:i:s');
-			
-			
-			$userslogin='G';
-			$user = new User($this->session->userdata('id'));
-			$userslogin=$user->display;
-			
-			$event='delete';
-			
-			$ulog = new Userslog();
-			$ulog->ip = $remote;
-			$ulog->refer = $refer;
-			$ulog->usersname = $userslogin;
-			$ulog->updated = $d;
-			$ulog->events = $event;
-			$ulog->pages = 'group';
-			
-						$userslogin_id='0';
-			$userslogin_id=$this->session->userdata('id');
-			$ulog->users_id = $userslogin_id;
-			
-			$userslogin_name='G';
-			$userslogin_name=$user->username;
-			$ulog->username = $userslogin_name;
-			
-			
-			$ulog->save();
 			
 			set_notify('success', lang('delete_data_complete'));
 		}

@@ -30,6 +30,7 @@ class polls extends Admin_Controller
 			if($id)$poll->user_id = $this->session->userdata('id');
 			$poll->title = $_POST['title'];
 			$poll->save();
+			$content_id = $this->db->insert_id();
 			$id = $poll->id;
 			foreach($_POST['name'] as $key => $item)
 			{
@@ -40,6 +41,10 @@ class polls extends Admin_Controller
 					$polldetail->save();
 				}
 			}
+			
+			//savelogs
+			user_log($content_id,$_POST['title']); // content_id,content_title
+			
 			set_notify('success', lang('save_data_complete'));
 		}
 		redirect('polls/admin/polls/form/'.$id);
@@ -63,6 +68,10 @@ class polls extends Admin_Controller
 		if($id)
 		{
 			$poll = new Poll($id);
+			
+			//savelogs
+			user_log($id,$poll->title); // content_id,content_title
+			
 			$poll->delete();
 			set_notify('success', lang('delete_data_complete'));
 		} 

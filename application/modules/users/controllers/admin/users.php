@@ -46,42 +46,16 @@ class Users extends Admin_Controller {
 			$user = new User($id);
 			$user->from_array($_POST);
 			$user->save();
+			
+			$content_id = $this->db->insert_id();
+			
 			$_POST['birth_day'] = Date2DB($_POST['birth_day']);
 			$user->profile->from_array($_POST);
 			$user->profile->user_id = $user->id;
 			$user->profile->save();
 			
-			
-						//savelogs
-			$remote=getenv("REMOTE_ADDR");
-			$refer=@$_SERVER['HTTP_REFERER'];
-			$d=date('Y-m-d H:i:s');
-			
-			
-			$userslogin='G';
-			$user = new User($this->session->userdata('id'));
-			$userslogin=$user->display;
-			
-			$event='add';
-			if($id)$event='edit';
-			
-			$ulog = new Userslog();
-			$ulog->ip = $remote;
-			$ulog->refer = $refer;
-			$ulog->usersname = $userslogin;
-			$ulog->updated = $d;
-			$ulog->events = $event;
-			$ulog->pages = 'users';
-			
-						$userslogin_id='0';
-			$userslogin_id=$this->session->userdata('id');
-			$ulog->users_id = $userslogin_id;
-			
-			$userslogin_name='G';
-			$userslogin_name=$user->username;
-			$ulog->username = $userslogin_name;
-			
-			$ulog->save();
+			//savelogs
+			user_log($content_id,$_POST['display']); // content_id,content_title
 			
 			set_notify('success','บันทึกข้อมูลเรียบร้อยแล้วค่ะ');
 			redirect($_POST['referer']);
@@ -91,37 +65,11 @@ class Users extends Admin_Controller {
 	function delete($id=FALSE)
 	{
 		$user = new User($id);
-		$user->delete();
 		
-										//savelogs
-			$remote=getenv("REMOTE_ADDR");
-			$refer=@$_SERVER['HTTP_REFERER'];
-			$d=date('Y-m-d H:i:s');
+		//savelogs
+		user_log($id,$user->display); // content_id,content_title
 			
-			
-			$userslogin='G';
-			$user = new User($this->session->userdata('id'));
-			$userslogin=$user->display;
-			
-			$event='delete';
-			
-			$ulog = new Userslog();
-			$ulog->ip = $remote;
-			$ulog->refer = $refer;
-			$ulog->usersname = $userslogin;
-			$ulog->updated = $d;
-			$ulog->events = $event;
-			$ulog->pages = 'users';
-			
-						$userslogin_id='0';
-			$userslogin_id=$this->session->userdata('id');
-			$ulog->users_id = $userslogin_id;
-			
-			$userslogin_name='G';
-			$userslogin_name=$user->username;
-			$ulog->username = $userslogin_name;
-			
-			$ulog->save();
+		$user->delete();
 		
 		set_notify('success','ลบข้อมูลเรียบร้อยแล้วค่ะ');
 		redirect($_SERVER['HTTP_REFERER']);

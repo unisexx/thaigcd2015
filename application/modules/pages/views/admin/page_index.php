@@ -21,7 +21,7 @@
 		<td>
 			<a class="btn" href="pages/admin/pages/form/<?php echo $page->id?>" >แก้ไข</a>
 			<?php if(($page->id<>1)&&($page->id<>3)): ?>
-			<a class="btn" href="pages/admin/pages/delete/<?php echo $page->id?>"  >ลบ</a>
+			<a class="btn" href="pages/admin/pages/delete/<?php echo $page->id?>"  onclick="return confirm('<?php echo lang('notice_confirm_delete');?>')" >ลบ</a>
 			<?php endif; ?>
 		</td>
 	</tr>
