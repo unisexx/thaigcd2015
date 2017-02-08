@@ -31,6 +31,8 @@ class Users extends Public_Controller {
 		$this->template->build('admin/user_form',$data);
 	}
 	
+/*
+ 
 	function register()
 	{
 		//$this->template->append_metadata(js_datepicker());
@@ -97,6 +99,8 @@ class Users extends Public_Controller {
 			redirect('home');
 		}
 	}
+
+ */
 	
 	function signin()
 	{

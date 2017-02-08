@@ -65,6 +65,16 @@ function email_login($email,$password)
 	}
 }
 
+function is_admin(){
+	$CI =& get_instance();
+	$user = new User($_SESSION['id']); //$user = new User($CI->session->userdata('id'));
+	if($user->level->is_admin == 1){
+		return true;
+	}else{
+		return false;
+	}
+}
+
 function is_login($level_name = FALSE)
 {
 	$CI =& get_instance();
