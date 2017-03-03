@@ -4,9 +4,9 @@ class Auth extends Public_Controller {
 
 	function __construct()
 	{
-		parent::__construct();	
+		parent::__construct();
 	}
-	
+
 	function index()
 	{
 		if(is_login('Administrator')) redirect('users/admin/profiles');
@@ -15,7 +15,7 @@ class Auth extends Public_Controller {
 		$this->template->set_layout('blank');
 		$this->template->build('admin/login');
 	}
-	
+
 	function signin()
 	{
 		if($_POST)
@@ -35,9 +35,9 @@ class Auth extends Public_Controller {
 			}
 			else
 			{
-				set_notify('error', 'ชื่อผู้ใช้หรือรหัสผ่านผิดพลาดค่ะ');
+				set_notify('error', 'ไม่สามารถเข้าสู่ระบบได้เนื่องจากชื่อผู้ใช้หรือรหัสผ่านผิดพลาดหรือสถานะอยู่ในระหว่างการตรวจสอบค่ะ');
 				redirect('admin');
-			}	
+			}
 		}
 		else
 		{
@@ -45,13 +45,13 @@ class Auth extends Public_Controller {
 			redirect('admin');
 		}
 	}
-	
+
 	function signout($id=FALSE)
 	{
 		logout();
 		redirect('users/admin/auth');
 	}
-	
+
 	function fail($id=FALSE)
 	{
 		$this->template->set_theme('admin');

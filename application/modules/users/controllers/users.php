@@ -4,11 +4,11 @@ class Users extends Public_Controller {
 
 	function __construct()
 	{
-		parent::__construct();	
+		parent::__construct();
 	}
-	
-	
-	
+
+
+
 	function inc_left()
 	{
 		if(is_login())
@@ -20,9 +20,9 @@ class Users extends Public_Controller {
 		{
 			$this->load->view('inc_signin');
 		}
-		
+
 	}
-	
+
 	function form($id=FALSE)
 	{
 		$data['user'] = new User($id);
@@ -30,23 +30,23 @@ class Users extends Public_Controller {
 		$data['levels'] = $levels->get();
 		$this->template->build('admin/user_form',$data);
 	}
-	
-/*
- 
+
+
+
 	function register()
 	{
 		//$this->template->append_metadata(js_datepicker());
 		$this->template->build('register');
 	}
-	
-	
+
+
 	function signup()
 	{
 		if($_POST)
-		{	
+		{
 			// if(((@$_POST['level_id']==4)&&(@$_POST['code']=="6880"))||(@$_POST['level_id']==5)||(@$_POST['level_id']==7)){
 				// $user = new User();
-// 				
+//
 				// $user->from_array($_POST);
 				// $user->last_login = date('Y-m-d H:i:s');
 				// if(isset($_POST['newsletters'])){
@@ -58,26 +58,27 @@ class Users extends Public_Controller {
 					// $_POST['permission_id']=4;
 					// $user->profile->from_array($_POST);
 					// $user->profile->save();
-// 					
+//
 					// login($_POST['username'], $_POST['password']);
-// 					
+//
 			// }else{
-// 				
+//
 				// if((@$_POST['level_id']==4)&&(@$_POST['code']<>"6880"))
 				// {
 					// set_notify('error','รหัสเจ้าหน้าที่ไม่ถูกต้อง');
 				// }
 			// }
-			
-			
-			
+
+
+
 			$captcha = $this->session->userdata('captcha');
-            if(($_POST['captcha'] == $captcha) && !empty($captcha)){
-            	
+      if(($_POST['captcha'] == $captcha) && !empty($captcha)){
+
 				$user = new User();
-				
+
 				$user->from_array($_POST);
 				$user->last_login = date('Y-m-d H:i:s');
+				$user->m_status = 'wait';
 				if(isset($_POST['newsletters'])){
 					$user->newsletter = implode(',',$_POST['newsletters']);
 				}
@@ -87,21 +88,21 @@ class Users extends Public_Controller {
 					$_POST['permission_id']=4;
 					$user->profile->from_array($_POST);
 					$user->profile->save();
-					
+
 					login($_POST['username'], $_POST['password']);
-					
+
 			}else{
-                set_notify('error','กรอกรหัสไม่ถูกต้อง');
-                redirect($_SERVER['HTTP_REFERER']);
-            }	
-			
-			
+          set_notify('error','กรอกรหัสไม่ถูกต้อง');
+          redirect($_SERVER['HTTP_REFERER']);
+      }
+
+			set_notify('success', 'ลงทะเบียนสำเร็จ รอการตรวจสอบจากเจ้าหน้าที่');
 			redirect('home');
 		}
 	}
 
- */
-	
+
+
 	function signin()
 	{
 		if($_POST)
@@ -115,7 +116,7 @@ class Users extends Public_Controller {
 			{
 				set_notify('error', 'ชื่อผู้ใช้หรือรหัสผ่านผิดพลาดค่ะ');
 				redirect($_SERVER['HTTP_REFERER']);
-			}	
+			}
 		}
 		else
 		{
@@ -123,28 +124,28 @@ class Users extends Public_Controller {
 			redirect($_SERVER['HTTP_REFERER']);
 		}
 	}
-	
+
 	function signout()
 	{
 		logout();
 		set_notify('error', 'ออกจากระบบเรียบร้อยแล้วค่ะ');
 		redirect('home');
 	}
-	
+
 	function check_email()
 	{
 		$user = new User();
 		$user->get_by_username($_GET['username']);
 		echo ($user->username)?"false":"true";
 	}
-	
+
 	function check_display()
 	{
 		$user = new User();
 		$user->get_by_display($_GET['display']);
 		echo ($user->username)?"false":"true";
 	}
-	
+
 	function admin_check_email()
 	{
 		$user = new User();
@@ -153,7 +154,7 @@ class Users extends Public_Controller {
 		$user->get();
 		echo ($user->exists())?"false":"true";
 	}
-	
+
 	function admin_check_display()
 	{
 		$user = new User();
@@ -162,7 +163,7 @@ class Users extends Public_Controller {
 		$user->get();
 		echo ($user->exists())?"false":"true";
 	}
-	
+
 	function check_captcha()
 	{
 		if($this->session->userdata('captcha')==$_GET['captcha'])
@@ -174,13 +175,13 @@ class Users extends Public_Controller {
 			echo "false";
 		}
 	}
-	
+
 	function profile($id){
 		$data['user'] = new User($id);
 		$this->template->set_layout('layout_user_profile');
 		$this->template->build('user_profile',$data);
 	}
-	
+
 	function profile_save($id=FALSE)
 	{
 		if($_POST)
@@ -201,19 +202,19 @@ class Users extends Public_Controller {
 		}
 		redirect('users/profile/'.$id);
 	}
-	
+
 	function forgot()
 	{
 		if($_POST)
 		{
-			
+
 		}
 		else
 		{
 			$this->template->build("user_forgot");
 		}
 	}
-	
+
 	function sig_save($id=FALSE){
 		if($_POST)
 		{
@@ -224,7 +225,7 @@ class Users extends Public_Controller {
 			redirect('users/profile/'.$id);
 		}
 	}
-	
+
 	function sidebar($id){
 		$data['user'] = new User($id);
 		$this->load->view("user_sidebar",$data);

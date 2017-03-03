@@ -1,16 +1,16 @@
 <script type="text/javascript">
 	$(function(){
 		if($('select[name=level_id]').val()==5){
-				$(".type2").hide();	
+				$(".type2").hide();
 			}else{
-				$(".type2").show();	
+				$(".type2").show();
 			}
-		
+
 		$('select[name=level_id]').change(function(){
 			if($(this).val()==5){
 				$(".type2").hide();
 			}else{
-				$(".type2").show();	
+				$(".type2").show();
 			}
 		})
 	})
@@ -18,7 +18,12 @@
 <h1>สมาชิก</h1>
 <form method="post" action="users/admin/users/save/<?php echo $user->id?>" enctype="multipart/form-data">
 	<table class="form">
-		<tr class="type2"><th>กลุ่มงาน :</th><td><?php echo form_dropdown('group_id',get_option('id','name','groups','','th'),$user->group->id,'class="text select"',' ')?></td></tr>
+		<tr><th>สถานะ:</th><td>
+			<input type="radio" name="m_status" value="active" <?=$user->m_status == 'active' ? 'checked' : '' ;?>> ใช้งาน
+			<input type="radio" name="m_status" value="ban" <?=$user->m_status == 'ban' ? 'checked' : '' ;?>> ถูกระงับ
+			<input type="radio" name="m_status" value="wait" <?=$user->m_status == 'wait' ? 'checked' : '' ;?>> รอการตรวจสอบ
+		</td></tr>
+		<tr><th>กลุ่มงาน :</th><td><?php echo form_dropdown('group_id',get_option('id','name','groups','','th'),$user->group->id,'class="text select"',' ')?></td></tr>
 		<tr><th>สิทธิ์การเข้าใช้:</th><td><?php echo form_dropdown('level_id',$levels->all_to_assoc('id','level'),$user->level->id,'class="text select"')?></td></tr>
 		<tr><th>ชื่อในระบบ:</th><td><input type="text" class="text small" name="display" value="<?php echo $user->display?>"> </td></tr>
 		<tr><th>อีเมล์ล็อคอิน:</th><td><input type="text" class="text small" name="username" value="<?php echo $user->username?>"> </td></tr>
@@ -35,11 +40,11 @@
 		<tr>
 			<th>เพศ:</th>
 			<td><span style="padding-right:15px;">
-					<input type="radio" name="gender" value="m" <?php echo ($user->profile->gender == "m")?'checked="checked"':''?> /> 
+					<input type="radio" name="gender" value="m" <?php echo ($user->profile->gender == "m")?'checked="checked"':''?> />
 					<img src="themes/gcdnew/images/male.jpg" width="16" height="16" />
 				</span>
 				<span>
-					<input type="radio" name="gender" value="f" <?php echo ($user->profile->gender == "f")?'checked="checked"':''?> /> 
+					<input type="radio" name="gender" value="f" <?php echo ($user->profile->gender == "f")?'checked="checked"':''?> />
 					<img src="themes/gcdnew/images/female.jpg" width="16" height="16" />
 				</span>
 			</td>
@@ -86,4 +91,3 @@
 		<?php echo form_referer() ?>
 	</table>
 </form>
-

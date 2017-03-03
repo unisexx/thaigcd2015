@@ -57,7 +57,7 @@ p { word-break: break-all; }
 		.form-login input:-moz-placeholder { /* Firefox 18- */  color: #6ebbde; }
 		.form-login input::-moz-placeholder {  /* Firefox 19+ */  color:#6ebbde; }
 		.form-login input:-ms-input-placeholder {     color: #6ebbde;  }
-		
+
 .btn-regis a{float:left; display:block;width:104px; height:33px; background-image: url(../images/btn-regis-reg.png); background-repeat:no-repeat;}
 .btn-regis a:hover{width:104px; height:33px; background-image: url(../images/btn-regis-hot.png); background-repeat:no-repeat; text-decoration:none;}
 
@@ -316,6 +316,7 @@ body div.pagination span.current,div.pagination a:hover{
 /* Dear custom css */
 span.date{font-size: 11px;color: #999;}
 ul.mediapublic li,ul.notice li{padding:8px 5px; border-bottom:1px #ccc dashed;}
+.error{color:#E61919;}
 
 /*img {
             -webkit-filter: grayscale(100%);

@@ -7,25 +7,24 @@ function login($username,$password)
 	$user->where(array('username'=>$username,'password'=>$password,'m_status'=>'active'))->get();
 	$user->check_last_query();
 	// exit();
-	
+
 	if($user->exists())
 	{
-		
 		$user->last_login = date("Y-m-d H:i:s",now());
 		$user->save();
-		
-		$_SESSION['id'] = $user->id;  
+
+		$_SESSION['id'] = $user->id;
 		$CI->session->set_userdata('id',$user->id);
-		$_SESSION['level'] = $user->level_id;  
+		$_SESSION['level'] = $user->level_id;
 		$CI->session->set_userdata('level',$user->level_id);
-		
+
 		return TRUE;
 	}
 	else
 	{
 		return FALSE;
 	}
-	
+
 }
 
 function email_login($email,$password)
@@ -122,9 +121,9 @@ function user_data($field,$id)
 function logout()
 {
 	$CI =& get_instance();
-	unset($_SESSION['id']); // 
+	unset($_SESSION['id']); //
 	$CI->session->unset_userdata('id');
-	unset($_SESSION['level']); // 
+	unset($_SESSION['level']); //
 	$CI->session->unset_userdata('level');
 }
 
@@ -188,7 +187,7 @@ function is_auth()
 		return false;
 	}
 }
-	
+
 function is_publish($class)
 {
 	$CI =& get_instance();
@@ -343,7 +342,7 @@ function auth_access($category_type,$category_id){
          case 'informations':
              $array = array(210,282,327);
              if(in_array($category_id,$array))
-                 if(!is_login())$sent_to_home = TRUE;             
+                 if(!is_login())$sent_to_home = TRUE;
          break;
          case 'pages':
              $array = array(58,63);
@@ -353,8 +352,8 @@ function auth_access($category_type,$category_id){
          default:
              break;
      }
-     
+
      if($sent_to_home == TRUE){set_notify('error', 'กรุณาล้อกอินก่อนเข้าใช้งาน');redirect('home/index');}
-         
+
 }
 ?>

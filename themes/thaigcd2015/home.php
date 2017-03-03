@@ -57,9 +57,9 @@
 
 <div id="login" >
 
-<!--
-	
-	
+
+
+
 	<?php
 		if($this->session->userdata('id')){
 			$user = new User($this->session->userdata('id'));
@@ -83,9 +83,11 @@
     			     <span><strong>Login: </strong></span><?php echo $user->display;?>
     			     <br/>
     			     <div class="btn-signout" style="text-align:right;margin-top:5px;">
-    			         <a href="admin/">
-                         
-                         <img src="media/images/icons/icon_admin.png" alt="Administrator" title="Administrator"></a>
+								 	 <?if($user->m_status == 'wait'):?>
+									 		สถานะ : รอการตรวจสอบ
+									 <?elseif($user->m_tatus == 'active'):?>
+									 		<a href="admin/"><img src="media/images/icons/icon_admin.png" alt="Administrator" title="Administrator"></a>
+									 <?endif;?>
     			         <a href="users/signout" onclick="confirm('ออกจากระบบ?');" class="btn btn-sm btn-default">Logout</a>
     			     </div>
     			</div>
@@ -152,8 +154,8 @@
 
 
     <div class="line1">&nbsp;</div>
-    
-   -->
+
+
 
     <div style="width:87%; margin:0 auto;">
 
@@ -496,9 +498,9 @@
 
 	<ul class="domtabs">
 		<li style="margin-left:5px;" class="active">
-        
+
 		<a href="#km">vdo/clip vdo</a>
-        
+
 		</li>
 	</ul>
 	<div style="margin-bottom:15px; margin-top:33px;"></div>

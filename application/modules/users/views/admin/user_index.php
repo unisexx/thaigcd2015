@@ -1,3 +1,4 @@
+<? $statusArr = array('active'=>'ใช้งาน','ban'=>'ถูกระงับ','wait'=>'รอการตรวจสอบ'); ?>
 <h1>สมาชิก</h1>
 <div class="search">
 	<form method="get">
@@ -23,6 +24,7 @@
 		<th>อีเมล์</th>
 		<th>ระดับ</th>
 		<th>วันที่สมัคร</th>
+		<th>สถานะ</th>
 		<th width="90"><a class="btn" href="users/admin/users/form">เพิ่มรายการ</a></th>
 	</tr>
 	<?php foreach($users as $user):?>
@@ -32,6 +34,7 @@
 		<td><?php echo $user->username?></td>
 		<td><?php echo $user->level->level?></td>
 		<td><?php echo mysql_to_th($user->created)?></td>
+		<td><?=$statusArr[$user->m_status]?></td>
 		<td>
 			<a class="btn" href="users/admin/users/form/<?php echo $user->id?>" >แก้ไข</a>
 			<a class="btn" href="users/admin/users/delete/<?php echo $user->id?>" onclick="return confirm('<?php echo lang('notice_confirm_delete')?>')">ลบ</a>
