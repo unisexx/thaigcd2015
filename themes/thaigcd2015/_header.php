@@ -1,6 +1,6 @@
 <div id="name">&nbsp;</div>
     <div id="select-font-size">
-    
+
 
     	<div class="font-a">
             <ul>
@@ -9,7 +9,7 @@
                 <li><a class="fontSizePlus" href="#" ><img src="themes/thaigcd2015/images/a-large.png" width="27" height="14"  /></a></li>
             </ul>
         </div>
-		       
+
     	<div class="font-c">
             <ul>
                 <li><a class="cbw" href="#" ><img src="themes/thaigcd2015/images/c-black-white.png" width="19" height="21" /></a></li>
@@ -20,18 +20,18 @@
     </div>
     <div class="clearfix">&nbsp;</div>
     <div id="search">
-    
-    
+
+
     	<!--<input name="searchbox" id="searchbox" maxlength="50" value="Search..." type="text">-->
-    	
-      <INPUT TYPE='text' name='searchbox' id='searchbox' maxlength='50' value='Search...' onClick="document.getElementById('searchbox').value=''" onkeydown="if (event.keyCode == 13 || event.which == 13) { location='http://www.google.com/search?q=' + encodeURIComponent(document.getElementById('searchbox').value)+'&sa=' + encodeURIComponent(document.getElementById('searchbox').value)+'&domains=thaigcd.ddc.moph.go.th&sitesearch=thaigcd.ddc.moph.go.th'; }">   	
-    	
-    	
+
+      <INPUT TYPE='text' name='searchbox' id='searchbox' maxlength='50' value='Search...' onClick="document.getElementById('searchbox').value=''" onkeydown="if (event.keyCode == 13 || event.which == 13) { location='http://www.google.com/search?q=' + encodeURIComponent(document.getElementById('searchbox').value)+'&sa=' + encodeURIComponent(document.getElementById('searchbox').value)+'&domains=thaigcd.ddc.moph.go.th&sitesearch=thaigcd.ddc.moph.go.th'; }">
+
+
         <br>
         <div class="filter"><a href="#">ค้นหาอย่างละเอียด</a></div>
     </div>
     <div id="topmenu">
-    		<div id='cssmenu'> 
+    		<div id='cssmenu'>
                 <ul>
                    <li><a href='home' class="active">หน้าแรก</a></li>
                    <li class='active has-sub'><a href='pages/aboutus'>เกี่ยวกับสำนัก</a>
@@ -47,8 +47,8 @@
                    <li><a href='executives'>ผู้บริหาร</a></li>
                    <li class='active has-sub'><a href='#'>กลุ่มงาน</a>
                       <ul class="has-sub2">
-                          <?php      
-                          $groups = get_option('id','name','groups','order by id asc ','th');
+                          <?php
+                          $groups = get_option('id','name','groups where status = 0','order by id asc ','th');
                           foreach ($groups as $key => $val){
                           ?>
                           <li><a href="groups/view/<?php echo $key;?>"><?php echo (string) $val?></a></li>
@@ -78,34 +78,34 @@
                    <li class='last'><a href='pages/contactus'>ติดต่อสอบถาม</a></li>
                 </ul>
       		</div>
-    </div> 
-    <!------------------------------------------------------END TopMenu---------------------------------------------------> 
-<div id="mail">  
+    </div>
+    <!------------------------------------------------------END TopMenu--------------------------------------------------->
+<div id="mail">
 	<ul>
 	    	<li>
-	    	
+
 		    	<a href="https://www.facebook.com/tmanwg" class="link-facebook">&nbsp;</a>
 		    	<span style="padding-left:13px;padding-right:18px">|</span>
-	    	
+
 	    	</li>
 	    	<li>
-	    	
+
 		    	<a href="https://twitter.com/gcdmoph" class="link-twitter">&nbsp;</a>
 		    	<span style="padding-left:13px;padding-right:18px">|</span>
-	    	
-	    	</li>	    	
-	    	
+
+	    	</li>
+
     	<li>
-    	
+
     		<img src="themes/thaigcd2015/images/icon-email.png" width="20" height="20" />&nbsp;
     		<a href="#">ตอบรับข่าวสาร</a><span style="padding-left:13px;padding-right:18px">|</span>
-    	
+
     	</li>
         <li>
-        
+
         	<img src="themes/thaigcd2015/images/icon-graph.png" width="21" height="22" />&nbsp;
         	<a href="polls">แบบสำรวจความคิดเห็น</a>
-        
+
         </li>
     </ul>
 </div>

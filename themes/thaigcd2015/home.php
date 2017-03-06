@@ -85,7 +85,7 @@
     			     <div class="btn-signout" style="text-align:right;margin-top:5px;">
 								 	 <?if($user->m_status == 'wait'):?>
 									 		สถานะ : รอการตรวจสอบ
-									 <?elseif($user->m_tatus == 'active'):?>
+									 <?elseif($user->m_status == 'active'):?>
 									 		<a href="admin/"><img src="media/images/icons/icon_admin.png" alt="Administrator" title="Administrator"></a>
 									 <?endif;?>
     			         <a href="users/signout" onclick="confirm('ออกจากระบบ?');" class="btn btn-sm btn-default">Logout</a>
@@ -541,13 +541,14 @@
       </ul>
     </div>
     <div id="about_col3">
+			<?php echo modules::run('polls/inc_left'); ?>
     	<?php //echo modules::run('executives/inc_home_video'); ?>
-        <a href="executives/pole">
+        <!-- <a href="executives/pole">
         	<img src="themes/thaigcd2015/images/poles.png" style="border:4px solid #fff;
         -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
         -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);
         box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.3);" />
-        </a>
+        </a> -->
     </div>
 </div>
 <!------------------------------------------------------------END ABOUT----------------------------------------------------------->
