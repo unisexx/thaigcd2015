@@ -28,7 +28,7 @@ $(function(){
 <div id="poll">
 	<strong><?php echo $poll->title ?></strong>
 	<div id="listpoll">
-		<?php foreach($poll->polldetail as $key=>$item): ?>
+		<?php foreach($poll->polldetail->order_by('id','asc')->get() as $key=>$item): ?>
 		<p><input type="radio" value="<?php echo $item->id ?>" name="poll" <?=$key == 0 ? 'checked' : '' ;?> style="margin-top:0px; vertical-align:middle;"> <?php echo $item->name ?></p>
 		<?php endforeach ?>
 		<p><input type="submit" value="ส่งความคิดเห็น" class="btn_pollcomment" name="pollBtn2"> <input value="ดูผลสำรวจ" type="button" class="btn_pollview" name="viewBtn2"></p>
