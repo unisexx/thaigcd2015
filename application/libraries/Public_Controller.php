@@ -15,7 +15,7 @@ class Public_Controller extends Master_Controller
 		// Set js
 		$this->lang->load('admin');
 		$this->template->append_metadata(js_notify());
-		$this->template->append_metadata(js_lightbox());
+		// $this->template->append_metadata(js_lightbox());
 		
 		// set lang
 		if(!$this->session->userdata('lang')) $this->session->set_userdata('lang','th');

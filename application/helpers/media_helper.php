@@ -76,7 +76,7 @@ if(!function_exists('set_notify'))
  * @access	public
  * @return	str
  */	
-if(!function_exists('notify'))
+if(!function_exists('js_notify'))
 {
 	function js_notify()
 	{

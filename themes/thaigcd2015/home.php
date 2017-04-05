@@ -48,10 +48,10 @@
         color:#0084e1;
     }
 </style>
-
+<?php echo $template['metadata']; ?>
 </head>
-
 <body>
+	
 <div id="wrap1">
 	<? include "_header.php";?>
 
