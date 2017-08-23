@@ -163,7 +163,7 @@
     	<img src="themes/thaigcd2015/images/pinkform.jpg" width="203" height="40" style="margin-top:6px;"></a>
         <a href="http://r36.ddc.moph.go.th/index.html">
         <img src="themes/thaigcd2015/images/banner-left-02.png" width="203" height="40" style="margin-top:6px;"></a>
-        <a href="http://demo.favouritedesign.com/healthypreschool/home">
+        <a href="http://27.254.33.52/healthypreschool/home">
         <img src="themes/thaigcd2015/images/banner-left-03.png" width="203" height="40" style="margin-top:6px;"></a>
     </div>
 
