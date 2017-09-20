@@ -514,14 +514,14 @@
 <div id="about">
 	<div id="title_about">เกี่ยวกับ <span style="color:#333333;">สำนักโรคติดต่อทั่วไป</span></div>
     <div id="about_col1">
-    <span style="font-weight:bold; color:#0541ca;">นายแพทย์รุ่งเรือง กิจผาติ</span>
+    <span style="font-weight:bold; color:#0541ca;">นายแพทย์ โสภณ เอี่ยมศิริถาวร</span>
     <br>ผู้อำนวยการสำนักโรคติดต่อทั่วไป<br>
 		<ul>
         	<li><a href="executives">ทำเนียบผู้บริหาร</a></li>
-            <li><a href="#">ส่งสารถึงผู้อำนวยการ</a></li>
+            <!-- <li><a href="#">ส่งสารถึงผู้อำนวยการ</a></li> -->
         </ul>
 	  <div class="dr">
-      <img src="themes/thaigcd2015/images/dr.png" width="135" height="136" />
+      <img src="themes/thaigcd2015/images/6724374827981.jpg" width="135" height="136" />
 <!--      <br>
       <a href="https://www.facebook.com/tmanwg" class="link-facebook">&nbsp;</a>
       &nbsp;
