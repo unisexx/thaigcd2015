@@ -98,7 +98,7 @@ class Ga{
         //get each entries
         $xentries = $xsource->getElementsByTagName('entry');
         $i=0;
-        $tuple = null;
+        
         //process each entry
         foreach($xentries as $xentry){
         	//get each dimension into array
