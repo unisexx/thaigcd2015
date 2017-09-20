@@ -19,7 +19,7 @@ class Analytics {
 
 	protected $email = '686001543852-vojqggg9v1hchrm48hfabko938d4e8fr@developer.gserviceaccount.com';
 
-	protected $ga = 'ga:59010489';
+	protected $ga = 'ga:104355549';
 
 	public $analytic;
 
