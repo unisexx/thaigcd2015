@@ -5,13 +5,12 @@ class Dashboards extends Public_Controller
 	function __construct()
 	{
 		parent::__construct();
-		//$this->load->library('Analytics');
-		//$this->lang->load('stat');
+		$this->load->library('analytics');
 	}
 
 	function ajax_load()
 	{
-		$ga = new Analytics();
+		$ga = new analytics();
 		echo '<div id="stat">
             <span id="today"></span> วันนี้ '.number_format($ga->getToday()).' คน &nbsp;
             <span id="month"></span> เดือนนี้ '.number_format($ga->getMonth()).' คน &nbsp;
@@ -21,7 +20,22 @@ class Dashboards extends Public_Controller
 
 	function inc_side()
 	{
-		$this->load->view("inc_side");
+		$data['today'] = $ga->getToday();
+		$data['month'] = $ga->getMonth();
+		$data['total'] = $ga->getTotal();
+		$this->template->build("inc_side",$data);
+	}
+	
+	public function inc_home()
+	{
+		$ga = new analytics();
+
+		// summary
+		$data['today'] = $ga->getToday();
+		$data['month'] = $ga->getMonth();
+		$data['total'] = $ga->getTotal();
+
+		$this->load->view("index2", $data);
 	}
 
 }

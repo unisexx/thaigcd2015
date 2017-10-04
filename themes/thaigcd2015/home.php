@@ -573,7 +573,18 @@
 <!------------------------------------------------------------END WEBLINK------------------------------------------------------>
 
 	<? //include "_footer.php";?>
-    <?=modules::run('log/statvisits'); ?>
+    <?//=modules::run('log/statvisits'); ?>
+    <?=modules::run('dashboards/inc_home'); ?>
+    <script src="media/js/gaApi.js" charset="utf-8"></script>
+	<script type="text/javascript">
+	$(function(){
+	<?php $ga = new Analytics(); ?>
+	gaApi('<?php echo $ga->getToday(); ?>', '#gaToday');
+	gaApi('<?php echo $ga->getMonth(); ?>', '#gaMonth');
+	gaApi('<?php echo $ga->getTotal(); ?>', '#gaTotal');
+	});
+	</script>
+	
 </div>
 <!------------------------------------------------------------END Wrap1----------------------------------------------------------->
     <div class="clearfix">&nbsp;</div>

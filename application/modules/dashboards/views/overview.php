@@ -70,4 +70,4 @@ $(document).ready(function() {
 });	
 </script>
 <h1>สถิติการเพิ่มบทความแต่ละประเภทแบ่งตามกลุ่มงาน</h1>
-<div id="chart" style="width: 100%; height: 600px; margin: 0 auto"></div>
+<div id="chart" style="width: 100%; height: 1000px; margin: 0 auto"></div>
