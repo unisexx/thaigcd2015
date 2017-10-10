@@ -108,7 +108,7 @@
       <input type="text" name="username" id="username" placeholder="Username or email" style="margin-bottom:-5px;">
       <input type="password" name="password" id="password" placeholder="Password" style="margin-bottom:8px;">
         <div style="width:87%; margin:0 auto;">
-        	<div class="btn-regis"><a href="users/register">&nbsp;</a></div>
+        	<!-- <div class="btn-regis"><a href="users/register">&nbsp;</a></div> -->
         	<div class="btn-login">
         	    <input type="submit" name="btn-login2" value="" class="btn-login">
         	</div>

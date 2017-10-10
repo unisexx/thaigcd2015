@@ -33,14 +33,15 @@ class Users extends Public_Controller {
 
 
 
-	function register()
-	{
-		//$this->template->append_metadata(js_datepicker());
-		$this->template->build('register');
-	}
+	// function register()
+	// {
+	// 	//$this->template->append_metadata(js_datepicker());
+	// 	$this->template->build('register');
+	// }
 
 
-	function signup()
+	// function signup()
+	function signup_disabled()
 	{
 		if($_POST)
 		{

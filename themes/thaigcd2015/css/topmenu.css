@@ -53,7 +53,7 @@ top .25s ease;  -ms-transition: opacity .3s ease, top .25s ease;  -o-transition:
 #cssmenu.align-right ul ul li.has-sub:hover:after { border-left-color: transparent;  left: -5px;  -webkit-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);  -moz-transform: rotateY(180deg);  -o-transform: rotateY(180deg);  transform: rotateY(180deg);}
 
-@media all and (max-width: 800px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+@media all and (max-width: 0px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
   #cssmenu {    width: auto;  }
   #cssmenu.align-center ul {    text-align: left;  }
   #cssmenu.align-right > ul > li {    float: none;  }
