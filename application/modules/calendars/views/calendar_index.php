@@ -6,29 +6,29 @@
 <script type='text/javascript' src='media/js/fullcalendar-1.4.3/fullcalendar.js'></script>
 <!-- !Calendar -->
 <script type="text/javascript">
-	$(function(){	
-		$142.fullCalendar.parseDate( 'a' );		
-		$142('#calendar').fullCalendar({
-			header: {
-						left: 'today',
-						center: 'title',
-						right: 'prev,next'
-					},
-			theme: true,
-			editable: true,
-			disableDragging : true,
-			disableResizing : true,
-			eventClick: function(event){
-			window.location = '<?php echo base_url()?>calendars/view/' + event.id + '/<?php echo $id ?>';
-					},
-					events: "<?php echo base_url()?>calendars/events/<?php echo $id ?><?php echo @$_GET['group_id'] ?>",
-					loading: function(bool) {
-					if (bool) $142('#loading').show();
-						else $142('#loading').hide();
-					}
-				});
-            });
-        </script>
+$(function(){	
+$142.fullCalendar.parseDate( 'a' );		
+$142('#calendar').fullCalendar({
+	header: {
+				left: 'today',
+				center: 'title',
+				right: 'prev,next'
+			},
+	theme: true,
+	editable: true,
+	disableDragging : true,
+	disableResizing : true,
+	eventClick: function(event){
+	window.location = '<?php echo base_url()?>calendars/view/' + event.id + '/<?php echo $id ?>';
+			},
+			events: "<?php echo base_url()?>calendars/events/<?php echo $id ?><?php echo @$_GET['group_id'] ?>",
+			loading: function(bool) {
+			if (bool) $142('#loading').show();
+				else $142('#loading').hide();
+			}
+		});
+    });
+</script>
 
 <div class="topic"><img class="topic_carendar" src="themes/thaigcd/images/topic_calendar.png" /></div>
 
