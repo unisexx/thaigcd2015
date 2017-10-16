@@ -41,9 +41,9 @@ $142('#calendar').fullCalendar({
 </p>
 </form>
 <div style="clear:left;display:inline-block;width:100%">
-		<div style="height:30px;">&nbsp;
+	<div style="height:30px;">&nbsp;
 		<div id='loading' style='display:none;text-align:center;'><img src="images/etc/ajax-loader.gif" /></div>
 	</div>
 	<div id='calendar'></div>
-	<div style="clear:both;"></div></div>
+	<div style="clear:both;"></div>
 </div>
