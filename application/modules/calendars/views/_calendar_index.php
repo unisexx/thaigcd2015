@@ -1,14 +1,15 @@
 <!-- Calendar -->
-<script src="media/js/jquery-1.4.2.min.js" type="text/javascript"></script>
-<script> $142 = jQuery.noConflict();</script>
-<link rel='stylesheet' type='text/css' href='media/js/fullcalendar-1.4.3/redmond/theme.css' />
-<link rel='stylesheet' type='text/css' href='media/js/fullcalendar-1.4.3/fullcalendar-my.css' />
-<script type='text/javascript' src='media/js/fullcalendar-1.4.3/fullcalendar.js'></script>
+			<link rel='stylesheet' type='text/css' href='media/js/fullcalendar-1.4.3/redmond/theme.css' />
+			<link rel='stylesheet' type='text/css' href='media/js/fullcalendar-1.4.3/fullcalendar-my.css' />
+			<script type='text/javascript' src='media/js/fullcalendar-1.4.3/fullcalendar.js'></script>
+			<script type='text/javascript' src='media/js/ui.core.js'></script>
+			<script type='text/javascript' src='media/js/ui.draggable.js'></script>
+			<script type='text/javascript' src='media/js/ui.resizable.js'></script>
 <!-- !Calendar -->
 <script type="text/javascript">
 	$(function(){	
-		$142.fullCalendar.parseDate( 'a' );		
-		$142('#calendar').fullCalendar({
+		$.fullCalendar.parseDate( 'a' );		
+		$('#calendar').fullCalendar({
 			header: {
 						left: 'today',
 						center: 'title',
@@ -23,8 +24,8 @@
 					},
 					events: "<?php echo base_url()?>calendars/events/<?php echo $id ?><?php echo @$_GET['group_id'] ?>",
 					loading: function(bool) {
-					if (bool) $142('#loading').show();
-						else $142('#loading').hide();
+					if (bool) $('#loading').show();
+						else $('#loading').hide();
 					}
 				});
             });
