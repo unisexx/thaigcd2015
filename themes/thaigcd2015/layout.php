@@ -29,7 +29,7 @@
     </script>
     <script>
     	$(document).ready(function(){
-    		$('#page img').addClass('img-responsive');
+    		// $('#page img').addClass('img-responsive');
     	});
     </script>
 <?php echo $template['metadata'] ?>
