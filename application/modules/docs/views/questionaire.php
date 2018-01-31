@@ -25,7 +25,7 @@ $(function(){
 		<h1>แบบสอบถาม - <?php echo $topic->title ?></h1>
 	</div>
 	<div class="right">
-		<input type="submit" value="บันทึก" />
+		<input type="submit" value="submit" />
 	</div>
 	<div class="clear"></div>
 </div>

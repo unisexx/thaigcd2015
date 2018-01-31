@@ -1,12 +1,12 @@
 <?php
 class Publics extends Question_Controller
 {
-	
+
 	function __construct()
 	{
 		parent::__construct();
 	}
-	
+
 	function index()
 	{
 		$data['topics'] = new Topic();
@@ -19,7 +19,7 @@ class Publics extends Question_Controller
 		$this->template->append_metadata(js_datepicker());
 		$this->template->build('public_index',$data);
 	}
-	
+
 	function questionaire($id)
 	{
 		if(!is_login())
@@ -42,13 +42,14 @@ class Publics extends Question_Controller
 		}
 		$this->template->build('questionaire',$data);
 	}
-	
+
 	function questionaire_save()
 	{
 		/*echo '<pre>';
 		print_r($_POST);
 		echo '</pre>';
 		exit();*/
+		$answer_date = date("Y-m-d H:i:s");
 		foreach($_POST['question_id'] as $key => $value)
 		{
 			if(($_POST['type'][$key]=="text")||($_POST['type'][$key]=="textarea")||($_POST['type'][$key]=="scale"))
@@ -70,6 +71,8 @@ class Publics extends Question_Controller
 					}
 					$answer->questionaire_id = $value;
 					$answer->answer = $_POST['answer'][$value];
+					$answer->answer_date = $answer_date;
+					$answer->ipaddress = $_SERVER['REMOTE_ADDR'];
 					$answer->save();
 				}
 			}
@@ -97,6 +100,8 @@ class Publics extends Question_Controller
 						$answer->choice_id = 0;
 						$answer->answer = $_POST['other'][$value];
 					}
+					$answer->answer_date = $answer_date;
+					$answer->ipaddress = $_SERVER['REMOTE_ADDR'];
 					$answer->save();
 				}
 			}
@@ -133,6 +138,8 @@ class Publics extends Question_Controller
 							$answer->choice_id = 0;
 							$answer->answer = $_POST['other'][$value];
 						}
+						$answer->answer_date = $answer_date;
+						$answer->ipaddress = $_SERVER['REMOTE_ADDR'];
 						$answer->save();
 					}
 				}
@@ -161,20 +168,20 @@ class Publics extends Question_Controller
 						$answer->questionaire_id = $value;
 						$answer->choice_id = $key;
 						$answer->answer = $ans;
+						$answer->answer_date = $answer_date;
+						$answer->ipaddress = $_SERVER['REMOTE_ADDR'];
 						$answer->save();
 					}
 				}
 			}
-			
+
 		}
 		redirect('docs/publics/thankyou');
 	}
-	
+
 	function thankyou()
 	{
 		$this->template->build('thankyou');
-	}
-	
-	
+	}	
 }
 ?>

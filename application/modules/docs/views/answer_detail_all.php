@@ -182,48 +182,75 @@ table td{
 		    border-spacing: 0;
 				padding:5px 10px;
 		}
+		.page-break	{ display: block; page-break-before: always; }
 }
 </style>
 </head>
 <body>
+	<?php foreach ($all_answer_list as $all_ans) : ?>
+	<?php
+$session = $all_ans->session;
+$user_id = $all_ans->user_id;
+$condition = '';
+$condition .= $session != '' ? " and qa.session ='" . $session . "'" : '';
+$condition .= $user_id != '' ? " and qa.user_id =" . $user_id : '';
+$sql = " SELECT
+		qa.id,
+		session,
+		qa.user_id,
+		topic_id,
+		answer_date,
+		ipaddress
+	FROM
+		question_answers qa
+	left join question_choices qc on qa.choice_id = qc.id
+	left join question_titles qt on qa.questionaire_id = qt.id
+	where topic_id = " . $topic_id . " " . $condition . "
+	group by session, user_id, topic_id
+	order by qa.id asc ";
+$answer_list = $this->db->query($sql);
+$answer_list = $answer_list->result();
+?>	
 <table>
-	<tr>
-		<th style="padding:10px 10px;border:1px solid #CCCCCC;">
-					<h1>แบบสอบถาม - <?php echo $topic->title ?></h1>
-					<?php
-				if ($answer_list[0]->session != '') :
-					echo 'session id ::: ' . $answer_list[0]->session;
-				endif;
-				?>
-					<?php
-				if ($answer_list[0]->user_id > 0) :
-					echo 'user id ::: ' . $answer_list[0]->user_id;
-				endif;
-				?>
-					(<?php echo mysql_to_th($answer_list[0]->answer_date, 'S', true); ?>)
-					<br>
-		</th>
-	</tr>
-<tbody>
-	<tr>
+		<tr>
+			<th style="padding:10px 10px;border:1px solid #CCCCCC;">
+						<h1>แบบสอบถาม - <?php echo $topic->title ?></h1>
+						<?php
+					if ($answer_list[0]->session != '') :
+						echo 'session id ::: ' . $answer_list[0]->session;
+					endif;
+					?>
+						<?php
+					if ($answer_list[0]->user_id > 0) :
+						echo 'user id ::: ' . $answer_list[0]->user_id;
+					endif;
+					?>
+						(<?php echo mysql_to_th($answer_list[0]->answer_date, 'S', true); ?>)
+						<br>
+			</th>
+		</tr>
+	<tbody>
+		<tr>
 		<td>
-<div id="form-body">
-	<div class="form-inner">
-		<h2>คำชี้แจง</h2>
-		<p class="detail"><?php echo nl2br($topic->detail) ?></p>
-		<ul id="sortable">
-			<?php foreach ($topic->questionaire->order_by('sequence')->get() as $key => $question) : ?>
-			<?php question_form2($question, $key, true, $answer_list[0]->session, $answer_list[0]->user_id); ?>
-			<?php endforeach; ?>
-		</ul>
-	</div>
-</div>
+			<div id="form-body">
+				<div class="form-inner">
+					<h2>คำชี้แจง</h2>
+					<p class="detail"><?php echo nl2br($topic->detail) ?></p>
+					<ul id="sortable">
+						<?php foreach ($topic->questionaire->order_by('sequence')->get() as $key => $question) : ?>
+						<?php question_form2($question, $key, true, $answer_list[0]->session, $answer_list[0]->user_id); ?>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+			</div>
 		</td>
 	</tr>
-</tbody>
+	</tbody>
 </table>
+<div class="page-break"></div>
+<?php endforeach; ?>
 <script type="text/javascript">
-	// window.print();
+	window.print();
 </script>
 </body>
 </html>
