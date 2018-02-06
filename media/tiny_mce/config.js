@@ -23,8 +23,8 @@ function tiny(elements) {
 		accessibility_warnings: false,
 		pdw_toggle_on: 1,
 		pdw_toggle_toolbars: "2,3",
-		force_br_newlines: true,
-		force_p_newlines: false,
+		force_br_newlines: false,
+		force_p_newlines: true,
 		// forced_root_block: ''
 	});
 }
