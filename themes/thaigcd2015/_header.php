@@ -44,15 +44,16 @@
                          <!-- <li class='last'><a href='#'>ผลการดำเนินงาน</a></li> -->
                       </ul>
 				   </li>
-                   <li><a href='executives'>ผู้บริหาร</a></li>
+                   <!-- <li><a href='executives'>ผู้บริหาร</a></li> -->
                    <li class='active has-sub'><a href='#'>กลุ่มงาน</a>
                       <ul class="has-sub2">
                           <?php
-                          $groups = get_option('id','name','groups where status = 0','order by id asc ','th');
-                          foreach ($groups as $key => $val){
-                          ?>
-                          <li><a href="groups/view/<?php echo $key;?>"><?php echo (string) $val?></a></li>
-                          <?php }?>
+                            $groups = get_option('id', 'name', 'groups where status = 0', 'order by id asc ', 'th');
+                            foreach ($groups as $key => $val) {
+                                ?>
+                          <li><a href="groups/view/<?php echo $key; ?>"><?php echo (string)$val ?></a></li>
+                          <?php 
+                        } ?>
                           <!--
 					      <li><a href="groups/view/2">กลุ่มโรคติดต่อทางอาหารและน้ำ</a></li>
 					      <li><a href="groups/view/3">กลุ่มโรคติดต่อที่ป้องกันได้ด้วยวัคซีน</a></li>
