@@ -34,19 +34,19 @@
 					<!-- Alignment classes -->
 					<h3>
 					
-					ประกาศ ณ วันที่ <?php echo mysql_to_th($notice->start_date,'S',TRUE); ?>
+					ประกาศ ณ วันที่ <?php echo mysql_to_th($notice->start_date, 'S', false); ?>
 					
 					<?php
-					
-						if($notice->category_id==7){
-							echo '<img src="themes/thaigcd2015/images/ico_notify_03.png">';
-						}elseif($notice->category_id==8){
-							echo '<img src="themes/thaigcd2015/images/ico_notify_06.png">';
-						}elseif($notice->category_id==9){
-							echo '<img src="themes/thaigcd2015/images/ico_notify_08.png">';
-						}
-					
-					?>
+
+				if ($notice->category_id == 7) {
+					echo '<img src="themes/thaigcd2015/images/ico_notify_03.png">';
+				} elseif ($notice->category_id == 8) {
+					echo '<img src="themes/thaigcd2015/images/ico_notify_06.png">';
+				} elseif ($notice->category_id == 9) {
+					echo '<img src="themes/thaigcd2015/images/ico_notify_08.png">';
+				}
+
+				?>
 					 	
 					 	
 					 </h3>
@@ -60,24 +60,24 @@
 					<table class="table table-striped">
 
 						<tbody>
-							<tr>
+							<!-- <tr>
 								
 								<td style="width: 25%;">ยื่นซองสอบราคา :</td>
-								<td><?php echo mysql_to_th($notice->start_date,'S',TRUE); ?></td>
+								<td><?php echo mysql_to_th($notice->start_date, 'S', false); ?></td>
 								
-							</tr>
+							</tr> -->
 							<tr>
 								
 								<td>วันเปิดซอง :</td>
-								<td><?php echo mysql_to_th($notice->open_date,'S',TRUE); ?></td>
+								<td><?php echo mysql_to_th($notice->open_date, 'S', false); ?></td>
 								
 							</tr>
-							<tr>
+							<!-- <tr>
 								
 								<td>ร่วมสังเกตการณ์ :</td>
 								<td></td>
 								
-							</tr>
+							</tr> -->
 							<tr>
 								
 								<td>สถานที่ :</td>
@@ -106,7 +106,7 @@
 					</table>
 					<hr>
 
-					<?php if($notice->category_id==7){ ?>
+					<?php if ($notice->category_id == 7) { ?>
 					
 					<!-- Forms -->
 					<h3 style="font-weight: blod; color:#fbb42b;">แบบฟอร์มเสนอแนะวิจารณ์</h3>
@@ -146,7 +146,8 @@
 						</form>
 					</div>
 					
-					<?php } ?>
+					<?php 
+			} ?>
 					
 					<hr>
 
@@ -158,11 +159,11 @@
 						
 <!--							<li><a href="<?php echo $notice->file_src1; ?>"><?php echo $notice->file_name1; ?></a></li>-->
 
-                        	<?php for($i=1;$i<=5;$i++): ?>
+                        	<?php for ($i = 1; $i <= 5; $i++) : ?>
                         	
-								<?php if(($notice->{'file_src'.$i})&&($notice->{'file_name'.$i})): ?>
+								<?php if (($notice->{'file_src' . $i}) && ($notice->{'file_name' . $i})) : ?>
 								
-	                            	<li><a href="<?php echo $notice->{'file_src'.$i} ?>"><?php echo $notice->{'file_name'.$i} ?></a></li>
+	                            	<li><a href="<?php echo $notice->{'file_src' . $i} ?>"><?php echo $notice->{'file_name' . $i} ?></a></li>
 	                            
 								<?php endif; ?>
 							
