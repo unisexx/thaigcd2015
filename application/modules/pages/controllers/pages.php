@@ -61,7 +61,7 @@ class Pages extends Public_Controller
 		}
 		$data['page'] = new Page($id);
         $category_type = "pages";$category_id = $id;
-        auth_access($category_type,$category_id);
+        // auth_access($category_type,$category_id);
 		$data['page']->counter();
 		$this->template->build('page_index',$data);
 	}
