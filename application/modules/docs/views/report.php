@@ -1,14 +1,14 @@
 <script type="text/javascript">
 $(function(){
-	$(".box div.child").hide();	
-	
+	$(".box div.child").hide();
+
 	$(".box h2").click(function(){
-		$(this).toggleClass("active"); 
+		$(this).toggleClass("active");
 		$(this).parent().find('div.child').slideToggle();
 		$(this).parent().siblings().find('h2').removeClass('active');
 		$(this).parent().siblings().find('div.child').slideUp();
-	})	
-	
+	})
+
 	$("a[rel=other]").click(function(){
 		var me = $(this);
 		me.text('กำลังโหลด...');
@@ -17,7 +17,7 @@ $(function(){
 			me.hide();
 		})
 		return false;
-	})	
+	})
 })
 </script>
 
@@ -27,7 +27,7 @@ $(function(){
 <?php foreach($topic->questionaire->order_by('sequence','asc')->get() as $key => $question): ?>
 <?php if($question->type=='text'): ?>
 <script type="text/javascript">
-		
+
 			var chart<?php echo $key ?>;
 			$(document).ready(function() {
 				chart = new Highcharts.Chart({
@@ -72,7 +72,7 @@ $(function(){
 					}]
 				});
 			});
-				
+
 		</script>
 <div class="box">
 <h2><?php echo $question->question ?> <span class="toggle"></span></h2>
@@ -84,7 +84,7 @@ $(function(){
 	<?php foreach ($question->answer->select('answer')->select_func('COUNT', '@answer', 'num')->group_by('answer')->get() as $answer): ?>
 	<tr <?php echo cycle() ?>><td><?php echo $answer->answer ?></td><td class="num"><?php echo $answer->num ?></td><td class="num"><?php echo round($answer->num/$question->answer->count()*100,2)?></td></tr>
 	<?php endforeach; ?>
-	
+
 </table>
 </div>
 </div>
@@ -92,7 +92,7 @@ $(function(){
 
 <?php if($question->type=='radio'): ?>
 <script type="text/javascript">
-		
+
 			var chart<?php echo $key ?>;
 			$(document).ready(function() {
 				chart = new Highcharts.Chart({
@@ -138,7 +138,7 @@ $(function(){
 					}]
 				});
 			});
-				
+
 		</script>
 <div class="box">
 <h2><?php echo $question->question ?> <span class="toggle"></span></h2>
@@ -157,7 +157,7 @@ $(function(){
 
 <?php if($question->type=='checkbox'): ?>
 <script type="text/javascript">
-		
+
 			var chart<?php echo $key ?>;
 			$(document).ready(function() {
 				chart = new Highcharts.Chart({
@@ -203,7 +203,7 @@ $(function(){
 					}]
 				});
 			});
-				
+
 		</script>
 <div class="box">
 <h2><?php echo $question->question ?> <span class="toggle"></span></h2>
@@ -222,7 +222,7 @@ $(function(){
 
 <?php if($question->type=='scale'): ?>
 <script type="text/javascript">
-		
+
 			var chart<?php echo $key ?>;
 			$(document).ready(function() {
 				chart = new Highcharts.Chart({
@@ -267,7 +267,7 @@ $(function(){
 					}]
 				});
 			});
-				
+
 		</script>
 <div class="box">
 <h2><?php echo $question->question ?> <span class="toggle"></span></h2>
@@ -285,9 +285,13 @@ $(function(){
 <?php endif; ?>
 
 <?php if($question->type=='grid'): ?>
+<?php
+	// $data['rs'] = $question->answer->select('*')->select_func('AVG', '@answer', 'num')->group_by('choice_id')->get();
+	// $data['rs']->check_last_query();
+?>
 <?php $optional = json_decode($question->optional,TRUE); ?>
 <script type="text/javascript">
-		
+
 			var chart;
 			$(document).ready(function() {
 				chart = new Highcharts.Chart({
@@ -352,13 +356,13 @@ $(function(){
 							style: {
 								font: 'normal 13px Verdana, sans-serif'
 							}
-						}			
+						}
 					}]
 				});
-				
-				
+
+
 			});
-				
+
 		</script>
 <div class="box grid">
 <h2><?php echo $question->question ?> <span class="toggle"></span></h2>
@@ -371,7 +375,7 @@ $(function(){
 		<th class="num"><?php echo (@$optional[$i-1])?$optional[$i-1]:$i ?><br /><?php echo '('.($question->range - $i + 1).')' ?></th>
 		<?php endfor; ?>
 		<th class="num">เฉลี่ย</th>
-	
+
 	</tr>
 	<?php foreach ($question->answer->select('*')->select_func('AVG', '@answer', 'num')->group_by('choice_id')->get() as $answer): ?>
 	<tr <?php echo cycle() ?>>

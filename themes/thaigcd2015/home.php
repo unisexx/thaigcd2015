@@ -108,7 +108,7 @@
       <input type="text" name="username" id="username" placeholder="Username or email" style="margin-bottom:-5px;">
       <input type="password" name="password" id="password" placeholder="Password" style="margin-bottom:8px;">
         <div style="width:87%; margin:0 auto;">
-        	<div class="btn-regis"><a href="users/register">&nbsp;</a></div>
+        	<!-- <div class="btn-regis"><a href="users/register">&nbsp;</a></div> -->
         	<div class="btn-login">
         	    <input type="submit" name="btn-login2" value="" class="btn-login">
         	</div>
@@ -573,7 +573,18 @@
 <!------------------------------------------------------------END WEBLINK------------------------------------------------------>
 
 	<? //include "_footer.php";?>
-    <?=modules::run('log/statvisits'); ?>
+    <?//=modules::run('log/statvisits'); ?>
+    <?=modules::run('dashboards/inc_home'); ?>
+    <script src="media/js/gaApi.js" charset="utf-8"></script>
+	<script type="text/javascript">
+	$(function(){
+	<?php $ga = new Analytics(); ?>
+	gaApi('<?php echo $ga->getToday(); ?>', '#gaToday');
+	gaApi('<?php echo $ga->getMonth(); ?>', '#gaMonth');
+	gaApi('<?php echo $ga->getTotal(); ?>', '#gaTotal');
+	});
+	</script>
+	
 </div>
 <!------------------------------------------------------------END Wrap1----------------------------------------------------------->
     <div class="clearfix">&nbsp;</div>

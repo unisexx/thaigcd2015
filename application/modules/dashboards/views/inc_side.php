@@ -9,13 +9,14 @@
 	<div class="box-content" id="stat-area">
 		
 	</div>
+	<div id="col-today"></div>
 	<div class="bottom"></div>
 </div>
+<script src="media/js/gaApi.js" charset="utf-8"></script>
 <script>
 	$(function(){
-		$('#stat-area').html('<div align="center"><?php echo img('media/images/ajax-loader.gif'); ?></div>');
-		$.get('dashboards/ajax_load', function(data){
-			$('#stat-area').html(data);
-		});
+		gaApi('<?php echo $today; ?>', '#col-today');
+        gaApi('<?php echo $month; ?>', '#col-month');
+        gaApi('<?php echo $total; ?>', '#col-total');
 	});
 </script>

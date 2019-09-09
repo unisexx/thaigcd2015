@@ -32,12 +32,8 @@ $('input[type=checkbox]').change(function(){
 				<th>กลุ่มงาน</th>
 				<th>วันที่สร้าง</th>
 				<th width="70"></th>
-				<?php if(is_authen('questionaire','edit')): ?>
-				<th width="60"></th>
-				<?php endif; ?>
-				<?php if(is_authen('questionaire','delete')): ?>
-				<th width="60"></th>
-				<?php endif; ?>
+        <th width="100"></th>
+				<th nowrap="nowrap"></th>
 			</tr>
 			<?php foreach($topics as $topic): ?>
 			<tr <?php echo cycle() ?>>
@@ -46,13 +42,25 @@ $('input[type=checkbox]').change(function(){
 				<td><?php echo $topic->user->profile->first_name.' '.$topic->user->profile->last_name ?></a></td>
 				<td><?php echo lang_decode($topic->user->group->name,'th') ?></a></td>
 				<td><?php echo mysql_to_th($topic->created) ?></a></td>
+
 				<td><a href="docs/report/<?php echo $topic->id ?>" ><span class="icon icon-chart-pie"></span> รายงาน</a></td>
-				<?php if(is_authen('questionaire','edit')): ?>
-				<td><a href="docs/form/<?php echo $topic->id ?>" ><span class="icon icon-table-edit"></span> แก้ไข</a></td>
-				<?php endif; ?>
-				<?php if(is_authen('questionaire','delete')): ?>
-				<td><a href="docs/delete/<?php echo $topic->id ?>"  onclick="return confirm('คุณต้องการลบแบบสอบถาม ?')" ><span class="icon icon-table-delete"></span> ลบ</a></td>
-				<?php endif; ?>
+        <td><a href="docs/list_report/<?php echo $topic->id ?>" ><img src="<?php echo base_url(); ?>themes/images/icon_print.jpg" width="35" height="39">ส่งออก</a></td>
+				<td nowrap="nowrap">
+					<a href="docs/answer_list/<?php echo $topic->id;?>" class="btn" alt="ดูรายการตอบแบบสอบถาม">
+						<span class="icon icon-application-view-icons"></span>
+						ดู (<?php $ans = new answer; ?><?php echo round($ans->select('user_id,session')->distinct()->where_related('questionaire','topic_id',$topic->id)->get()->result_count()) ?>)
+					</a>&nbsp;
+					<?php if(is_authen('questionaire','edit')): ?>
+					<a href="docs/form/<?php echo $topic->id ?>" class="btn">
+						<span class="icon icon-table-edit"></span> แก้ไข
+					</a>&nbsp;
+					<?php endif; ?>
+					<?php if(is_authen('questionaire','delete')): ?>
+					<a href="docs/delete/<?php echo $topic->id ?>"  class="btn"  onclick="return confirm('คุณต้องการลบแบบสอบถาม ?')" >
+					<span class="icon icon-table-delete"></span> ลบ
+					</a>
+					<?php endif; ?>
+				</td>
 			</tr>
 			<?php endforeach; ?>
 		</table>

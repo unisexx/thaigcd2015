@@ -49,7 +49,7 @@
 
 <div class="shadow-footer">&nbsp;</div>
 
-<div class="visitor">
+<!-- <div class="visitor">
 	ผู้เข้าชมวันนี้ <?=$todayip?> คน, ผู้เข้าชมเดือนนี้ <?=$monthip?> คน, ผู้เข้าชมปีนี้ <?=$yearip?> คน,
      เริ่มเก็บสถิติวันที่ <?=mysql_to_th($beginip)?>    
 	 <span class="visitorAll">
@@ -57,5 +57,37 @@
 	 <a href="log/lists">ดูสถิติทั้งหมด</a>
 	 
 	 </span>
+</div> -->
+
+<!-- analytics stat -->
+<div class="visitor">
+	ผู้เข้าชมวันนี้ <span id="col-today" width="80"></span> คน, 
+	ผู้เข้าชมเดือนนี้  <span id="col-month" width="80"></span> คน, 
+	ผู้เข้าชมปีนี้  <span id="col-total" width="80"></span> คน,
 </div>
+<script src="media/js/gaApi.js" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function(){
+        gaApi('<?php echo $today; ?>', '#col-today');
+        gaApi('<?php echo $month; ?>', '#col-month');
+        gaApi('<?php echo $total; ?>', '#col-total');
+    });
+    function gaApiTopDataTable(apiUrl, target){
+        $.ajax({
+            dataType: "json",
+            url: apiUrl,
+            success: function (data) {
+                $.each(data.rows, function(i, item){
+                    var row = "<tr><th>"+item[0]+"</th><td width='80'>"+item[1].replace(/(.)(?=(\d{3})+$)/g,'$1,')+"</td></tr>";
+                    $(target).append(row);
+                });
+            },
+            error: function(xhr, status) {
+                gaApiTopDataTable(apiUrl, target);
+            }
+        });
+    }
+</script>
+<!-- analytics stat -->
+
 <!------------------------------------------------------------END FOOTER------------------------------------------------------>

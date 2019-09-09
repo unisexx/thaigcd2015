@@ -1,4 +1,4 @@
-<script type="text/javascript">
+﻿<script type="text/javascript">
 $(function() {
 		<?php if(!is_login()): ?>
 	$("#saturday").hide();
@@ -32,7 +32,13 @@ $(function() {
 				<td><?php echo $topic->user->profile->first_name.' '.$topic->user->profile->last_name ?></a></td>
 				<td><?php echo lang_decode($topic->user->group->name,'th') ?></a></td>
 				<td><?php echo mysql_to_th($topic->created) ?></a></td>
-				<td style="text-align:center;"><?php $ans = new answer; ?><?php echo round($ans->select('user_id,session')->distinct()->where_related('questionaire','topic_id',$topic->id)->get()->result_count()) ?></td>
+				<td style="text-align:center;">
+<?php $ans = new answer; ?>
+<?php 
+	echo $rs = round($ans->select('user_id,session')->distinct()->where_related('questionaire','topic_id',$topic->id)->get()->result_count());
+	// echo $rs->check_last_query();
+?>
+</td>
 			</tr>
 			<?php endforeach; ?>
 		</table>

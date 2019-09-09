@@ -48,18 +48,21 @@ $(document).ready(function() {
            series: [
 		 <?php 
 		 $comma = '';
-		 foreach($groups as $group): 
+         foreach($groups as $group): 
 		 echo $comma;
 		 ?>
 		{
          name: '<?php echo lang_decode($group->name,'th') ?>',
-         data: [<?php echo $group->information->count() ?>
-		 , <?php echo $group->notice->count() ?>
-		 , <?php echo $group->mediapublic->count() ?>
-		 , <?php echo $group->calendar->count() ?>
-		 , <?php echo $group->category->where('module','galleries')->count() ?>
-			, <?php echo $group->academic->count() ?>
-		 ]
+         data:  [   <?php echo $group->information->count() ?>
+                    , <?php echo $group->notice->count() ?>
+                    , <?php echo $group->mediapublic->count() ?>
+                    , <?php echo $group->calendar->count() ?>
+                    , <?php echo $group->category->where('module','galleries')->count() ?>
+                    , <?php echo $group->academic->count() ?>
+                ],
+        <?php if($group->information->count() == 0 && $group->notice->count() == 0 && $group->mediapublic->count() == 0 && $group->calendar->count() == 0 && $group->category->where('module','galleries')->count() == 0 && $group->academic->count() == 0):?>
+            visible: false
+        <?php endif;?>
    		}
 		<?php 
 		$comma = ',';
@@ -70,4 +73,4 @@ $(document).ready(function() {
 });	
 </script>
 <h1>สถิติการเพิ่มบทความแต่ละประเภทแบ่งตามกลุ่มงาน</h1>
-<div id="chart" style="width: 100%; height: 600px; margin: 0 auto"></div>
+<div id="chart" style="width: 100%; height: 1000px; margin: 0 auto"></div>
