@@ -30,7 +30,7 @@
             $media->counter();
             $this->load->helper('download');
             $this->load->helper('file');
-            $media->file = 'http://thaigcd.ddc.moph.go.th/'.$media->file;
+            $media->file = 'http://dcd.ddc.moph.go.th/'.$media->file;
             if(!get_mime_by_extension($media->file))
             {
                 redirect($media->file);
